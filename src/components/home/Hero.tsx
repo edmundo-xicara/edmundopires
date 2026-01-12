@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 export function Hero() {
   return (
@@ -9,8 +10,11 @@ export function Hero() {
           {/* Foto */}
           <div className="flex-shrink-0 animate-fade-in">
             <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-muted border-4 border-accent/20 flex items-center justify-center overflow-hidden">
-              {/* Substitua pelo seu componente de imagem */}
-              <span className="text-muted-foreground text-sm text-center px-4">Sua foto aqui</span>
+              <img 
+                src={fotoPerfil} 
+                alt="Edmundo Pires - Produtor e Pesquisador" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
