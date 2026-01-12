@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import fotoPerfil from "@/assets/foto-perfil.jpg";
+
 export function Hero() {
-  return <section className="section-padding min-h-[90vh] flex items-center">
+  return (
+    <section className="section-padding min-h-[90vh] flex items-center">
       <div className="container-wide">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Foto */}
           <div className="flex-shrink-0 animate-fade-in">
             <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-muted border-4 border-accent/20 flex items-center justify-center overflow-hidden">
-              {/* Substitua pelo seu componente de imagem */}
-              <span className="text-muted-foreground text-sm text-center px-4">Sua foto aqui</span>
+              <img 
+                src={fotoPerfil} 
+                alt="Edmundo Pires - Produtor e Pesquisador" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
@@ -16,19 +22,15 @@ export function Hero() {
           <div className="max-w-3xl">
             <div className="accent-line mb-8 animate-fade-in" />
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in-up" style={{
-            animationDelay: "0.1s"
-          }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             Transformo pesquisa histórica em narrativas audiovisuais com escala, rigor e impacto cultural.
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl animate-fade-in-up" style={{
-            animationDelay: "0.2s"
-          }}>Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo consistência, rigor histórico e eficiência de produção.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            Sou produtor, chefe de pesquisa e um dos gerentes do TinocandoTV. Atuo da investigação histórica à entrega do produto final, organizando processos de produção, revisão e gestão editorial para elevar qualidade, consistência e performance.
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{
-            animationDelay: "0.3s"
-          }}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <Link to="/cases" className="btn-primary">
               Ver cases
               <ArrowRight className="ml-2" size={18} />
@@ -39,9 +41,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 animate-fade-in-up" style={{
-            animationDelay: "0.4s"
-          }}>
+          <div className="grid sm:grid-cols-3 gap-6 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
               <p className="text-muted-foreground">Pesquisa histórica aplicada a produtos audiovisuais</p>
@@ -58,5 +58,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
