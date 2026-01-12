@@ -5,8 +5,18 @@ export function Hero() {
   return (
     <section className="section-padding min-h-[90vh] flex items-center">
       <div className="container-wide">
-        <div className="max-w-4xl">
-          <div className="accent-line mb-8 animate-fade-in" />
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          {/* Foto */}
+          <div className="flex-shrink-0 animate-fade-in">
+            <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-muted border-4 border-accent/20 flex items-center justify-center overflow-hidden">
+              {/* Substitua pelo seu componente de imagem */}
+              <span className="text-muted-foreground text-sm text-center px-4">Sua foto aqui</span>
+            </div>
+          </div>
+          
+          {/* Conteúdo */}
+          <div className="max-w-3xl">
+            <div className="accent-line mb-8 animate-fade-in" />
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             Transformo pesquisa histórica em narrativas audiovisuais com escala, rigor e impacto cultural.
@@ -39,6 +49,7 @@ export function Hero() {
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
               <p className="text-muted-foreground">Gestão de pipeline, revisão e padronização editorial</p>
+            </div>
             </div>
           </div>
         </div>
