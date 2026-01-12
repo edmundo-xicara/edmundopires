@@ -48,11 +48,11 @@ export function Hero() {
             </div>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Produção e arquitetura de roteiros documentais</p>
+              <p className="text-muted-foreground">Gestão de projetos e calendário editorial para produção contínua de vídeos</p>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Gestão de pipeline, revisão e padronização editorial</p>
+              <p className="text-muted-foreground">Pesquisa aprofundada, com coordenação de equipe e revisão total antes da roteirização</p>
             </div>
             </div>
           </div>
