@@ -24,7 +24,7 @@ export function Hero() {
           
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl animate-fade-in-up" style={{
             animationDelay: "0.2s"
-          }}>Gestão, pesquisa e produção para canais de conteúdo de grande escala.</p>
+          }}>Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo consistência, rigor histórico e eficiência de produção.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{
             animationDelay: "0.3s"
