@@ -52,7 +52,7 @@ export function Hero() {
             </div>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Pesquisa aprofundada, com coordenação de equipe e revisão total antes da roteirização</p>
+              <p className="text-muted-foreground"><strong>Pesquisa e curadoria de imagens</strong>, garantindo coerência visual com o conteúdo explicado</p>
             </div>
             </div>
           </div>
