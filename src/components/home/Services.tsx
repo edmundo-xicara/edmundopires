@@ -2,22 +2,22 @@ import { Search, FileText, Settings } from "lucide-react";
 
 const services = [
   {
-    icon: Search,
-    title: "Pesquisa que sustenta produção",
+    icon: Settings,
+    title: "Gestão de projetos e calendário editorial",
     description:
-      "Da pergunta inicial à bibliografia, recorte temático, cronologia, personagens, controvérsias historiográficas e checagem.",
+      "Planejo e organizo os projetos do canal, definindo prioridades, prazos e dependências para garantir consistência de publicações, previsibilidade de entregas e melhor uso do tempo da equipe.",
+  },
+  {
+    icon: Search,
+    title: "Chefia de pesquisa e revisão de conteúdo",
+    description:
+      "Coordeno a equipe de pesquisadores, estabeleço padrões de qualidade e reviso todo o material histórico antes da roteirização, assegurando rigor, clareza e segurança editorial.",
   },
   {
     icon: FileText,
-    title: "Produção editorial",
+    title: "Pesquisa e curadoria de imagens para vídeos",
     description:
-      "Transformo temas complexos em produtos audiovisuais claros, envolventes e historicamente seguros, atuando diretamente na construção do roteiro e do produto final.",
-  },
-  {
-    icon: Settings,
-    title: "Gestão e processo",
-    description:
-      "Organizo pipeline de produção, checklists, revisão cruzada e handoff com edição, reduzindo retrabalho e aumentando previsibilidade.",
+      "Realizo a pesquisa e seleção de imagens que sustentam a narrativa visual dos vídeos, garantindo coerência histórica, qualidade estética e alinhamento com o roteiro e a edição.",
   },
 ];
 
@@ -29,7 +29,7 @@ export function Services() {
           <div className="accent-line mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl mb-4">O que eu entrego</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Pesquisa, produção e gestão integradas para elevar a qualidade do seu conteúdo histórico-cultural.
+            Pesquisa, produção e gestão integradas para elevar a qualidade do seu conteúdo, seja ele qual for.
           </p>
         </div>
 

@@ -21,7 +21,7 @@ const Index = () => {
             Vamos construir algo juntos?
           </h2>
           <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-            Se você trabalha com conteúdo complexo e precisa de rigor histórico, clareza narrativa e produção sólida — vamos conversar.
+            Conteúdo complexo não escala sem organização. Se você precisa estruturar pesquisa, produção e qualidade, vamos conversar.
           </p>
           <Link to="/contato" className="inline-flex items-center justify-center px-8 py-4 bg-accent text-accent-foreground font-medium tracking-wide transition-all duration-300 hover:bg-accent/90">
             Entrar em contato

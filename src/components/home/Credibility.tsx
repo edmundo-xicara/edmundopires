@@ -5,7 +5,7 @@ const stats = [
     icon: Film,
     number: "80+",
     label: "Vídeos produzidos",
-    description: "Pesquisa, produção, roteiro, revisão e produto final",
+    description: "Pesquisa, produção, revisão e produto final",
   },
   {
     icon: Users,

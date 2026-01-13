@@ -21,7 +21,7 @@ const cases = [
     title: "Parceria Disney+ — Shōgun",
     client: "Disney+",
     description:
-      "Gestão da pesquisa histórica, revisão editorial e participação direta na escrita do roteiro publicitário, integrando rigor histórico e objetivos de marketing.",
+      "Gestão da pesquisa histórica, revisão editorial e participação direta na escrita do roteiro publicitário.",
   },
 ];
 
