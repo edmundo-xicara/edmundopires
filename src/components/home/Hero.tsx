@@ -44,7 +44,7 @@ export function Hero() {
           }}>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Pesquisa histórica aplicada a produtos audiovisuais</p>
+              <p className="text-muted-foreground">Pesquisa aplicada a produtos audiovisuais</p>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
