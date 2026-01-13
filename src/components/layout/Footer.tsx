@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="font-heading text-2xl font-semibold mb-4">Edmundo Pires</h3>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Produtor, chefe de pesquisa e gestor de conteúdo. Transformando pesquisa histórica em narrativas audiovisuais com escala e impacto.
+              Gestão de projetos, pesquisa e produção audiovisual.
             </p>
           </div>
 
