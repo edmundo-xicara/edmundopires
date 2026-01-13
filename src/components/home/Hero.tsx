@@ -19,7 +19,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in-up" style={{
             animationDelay: "0.1s"
           }}>
-            Transformo pesquisa histórica em narrativas audiovisuais com escala, rigor e impacto cultural.
+            Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl animate-fade-in-up" style={{
