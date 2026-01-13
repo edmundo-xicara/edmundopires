@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const competencias = [
-  "Pesquisa histórica e checagem rigorosa",
-  "Produção e storytelling documental",
-  "Arquitetura de roteiro e formatos de série",
-  "Gestão de pipeline e revisão",
+  "Pesquisa histórica e checagem de conteúdo",
+  "Chefia de pesquisa e revisão editorial",
+  "Gestão de projetos e pipeline de produção",
+  "Planejamento editorial e organização de formatos",
   "Pesquisa e curadoria de imagens",
 ];
 
@@ -22,16 +22,17 @@ const Sobre = () => {
               
               <div className="editorial-prose">
                 <p>
-                  Sou produtor, pesquisador e gestor de conteúdo no TinocandoTV.
+                  Sou produtor, chefe de pesquisa e gestor de conteúdo no TinocandoTV.
                 </p>
                 <p>
-                  Meu trabalho é garantir que temas historicamente complexos sejam transformados em 
-                  narrativas claras, envolventes e verificáveis, sem sacrificar profundidade.
+                  Meu trabalho é organizar projetos editoriais complexos, coordenar equipes de pesquisa 
+                  e garantir rigor histórico antes da roteirização, assegurando consistência, clareza e 
+                  segurança editorial em larga escala.
                 </p>
                 <p>
-                  Atuo desde a pesquisa bruta até a entrega do produto final, passando por roteiro, 
-                  imagens, revisão e organização de processo. Tenho atenção especial à segurança 
-                  editorial, coerência interna e escalabilidade de produção.
+                  Atuo da definição de prioridades e cronogramas à revisão final do material de pesquisa 
+                  e à curadoria de imagens, estruturando processos que tornam a produção mais previsível, 
+                  eficiente e sustentável.
                 </p>
               </div>
 
@@ -64,9 +65,9 @@ const Sobre = () => {
           <div className="accent-line mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl mb-6">Minha abordagem</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Acredito que conteúdo histórico de qualidade não precisa ser inacessível. 
-            Meu trabalho é construir pontes entre o rigor acadêmico e a linguagem audiovisual, 
-            criando produtos que informam, engajam e respeitam a inteligência do público.
+            Acredito que conteúdo histórico de qualidade depende de organização, rigor e processo. 
+            Meu trabalho é estruturar pesquisa, produção e revisão para que temas complexos sejam 
+            tratados com precisão, clareza e consistência, mesmo em grande escala.
           </p>
         </div>
       </section>
