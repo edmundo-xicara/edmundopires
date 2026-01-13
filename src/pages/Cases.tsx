@@ -25,7 +25,7 @@ const allCases = [
     client: "Disney+",
     category: "Parceria Publicitária",
     description:
-      "Gestão da pesquisa histórica, revisão editorial e participação direta na escrita do roteiro publicitário, integrando rigor histórico e objetivos de marketing.",
+      "Gestão da pesquisa histórica, revisão editorial e participação direta na escrita do roteiro publicitário.",
   },
 ];
 

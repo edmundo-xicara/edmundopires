@@ -29,9 +29,9 @@ const CaseCopaDoMundo = () => {
               <h2 className="text-2xl font-semibold mb-4">Contexto</h2>
               <p>
                 Durante a campanha da Copa do Mundo 2024, o Globo Esporte realizou uma série de gravações 
-                no Rio de Janeiro para produção de conteúdo institucional. A demanda era documentar os 
-                bastidores dessas gravações com uma abordagem que fosse além do registro técnico, 
-                capturando a narrativa por trás da produção.
+                no Rio de Janeiro para produção de conteúdo institucional. Minha demanda dentro da equipe 
+                TinocandoTV era documentar os bastidores dessas gravações com uma abordagem que fosse além 
+                do registro técnico, capturando a narrativa por trás da produção.
               </p>
             </section>
 
@@ -70,9 +70,9 @@ const CaseCopaDoMundo = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Resultado</h2>
               <p>
-                O material capturado serviu como base para peças de comunicação interna e externa do 
-                Globo Esporte, demonstrando a capacidade de construir narrativas visuais que vão além 
-                do registro documental e comunicam valores e identidade de marca.
+                O material capturado serviu como base para peças de comunicação interna do TinocandoTV, 
+                servindo como um registro fiel para o nosso público dessa campanha tão importante para 
+                a história do canal.
               </p>
             </section>
           </div>
