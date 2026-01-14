@@ -1,37 +1,43 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, FileCheck, Film, Layers, Building } from "lucide-react";
+import { ArrowRight, Search, FileCheck, Film, Layers, Building, Settings } from "lucide-react";
 
 const servicos = [
   {
-    icon: Search,
-    title: "Consultoria em pesquisa histórica",
+    icon: Layers,
+    title: "Gestão de Projetos Editoriais",
     description:
-      "Apoio especializado em investigação histórica para projetos audiovisuais, editoriais ou institucionais. Da definição do recorte temático à entrega de dossiês completos.",
+      "Organização e acompanhamento de projetos de conteúdo complexo, incluindo definição de prioridades, cronogramas, dependências e fluxo entre pesquisa, roteiro e edição. Foco em previsibilidade, consistência e eficiência de produção.",
+  },
+  {
+    icon: Search,
+    title: "Pesquisa",
+    description:
+      "Realizo pesquisa aplicada à produção audiovisual, com foco em recorte temático, cronologia, checagem e adaptação do conteúdo para formatos claros e consistentes. Tenho experiência tanto na execução da pesquisa quanto na coordenação de equipes de pesquisadores.",
   },
   {
     icon: FileCheck,
-    title: "Revisão editorial e fact-checking",
+    title: "Revisão Editorial e Fact-checking",
     description:
-      "Verificação rigorosa de informações históricas, checagem de fontes e revisão de conteúdo para garantir precisão e credibilidade.",
+      "Análise e revisão de pesquisas e roteiros com foco em precisão factual, coerência interna, clareza conceitual e prevenção de erros editoriais ou simplificações indevidas.",
+  },
+  {
+    icon: Settings,
+    title: "Estruturação de Processos de Produção",
+    description:
+      "Criação e organização de pipelines, checklists e métodos de trabalho para escalar a produção de conteúdo sem perda de qualidade.",
   },
   {
     icon: Film,
-    title: "Produção e estruturação de documentários",
+    title: "Pesquisa e Curadoria de Imagens",
     description:
-      "Desenvolvimento de estrutura narrativa, arquitetura de roteiro e organização de produção para documentários e séries de longa duração.",
-  },
-  {
-    icon: Layers,
-    title: "Desenvolvimento de formatos editoriais",
-    description:
-      "Criação e padronização de formatos de conteúdo escaláveis, com foco em consistência editorial e eficiência de produção.",
+      "Pesquisa, seleção e organização de imagens que sustentam a narrativa visual dos vídeos, garantindo coerência, qualidade estética e alinhamento com o conteúdo pesquisado.",
   },
   {
     icon: Building,
-    title: "Apoio a marcas e plataformas",
+    title: "Consultoria Editorial",
     description:
-      "Consultoria para marcas e plataformas que desejam produzir conteúdo histórico-cultural com rigor e relevância.",
+      "Apoio estratégico a canais, produtoras e marcas que trabalham com temas históricos, científicos ou culturais, ajudando a estruturar pesquisa, produção e revisão de conteúdo complexo.",
   },
 ];
 
@@ -44,7 +50,7 @@ const Servicos = () => {
             <div className="accent-line mb-6" />
             <h1 className="text-4xl md:text-5xl mb-6">Serviços</h1>
             <p className="text-xl text-muted-foreground">
-              Estou aberto a projetos de consultoria, freelas e parcerias em pesquisa histórica, 
+              Estou aberto a projetos de consultoria, freelas e parcerias em pesquisa, 
               produção editorial e gestão de conteúdo.
             </p>
           </div>
