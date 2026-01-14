@@ -11,8 +11,7 @@ const Contato = () => {
               <div className="accent-line mb-6" />
               <h1 className="text-4xl md:text-5xl mb-6">Vamos conversar</h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Se você trabalha com conteúdo complexo e precisa de rigor histórico, clareza 
-                narrativa e produção sólida — entre em contato.
+                Se você trabalha com conteúdo complexo e precisa organizar pesquisa, produção e qualidade — entre em contato.
               </p>
               <p className="text-muted-foreground">
                 Respondo a todas as mensagens em até 48 horas úteis.
