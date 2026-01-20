@@ -17,8 +17,8 @@ const CaseGreciaAntiga = () => {
               TinocandoTV • Documentário
             </span>
             <h1 className="text-4xl md:text-5xl mb-6">Documentário Grécia Antiga</h1>
-            <p className="text-xl text-muted-foreground">
-              O maior documentário já produzido pelo canal, com foco em rigor histórico e produção visual de alta qualidade.
+            <p className="text-xl text-muted-foreground text-justify">
+              O maior documentário já produzido pelo canal.
             </p>
           </header>
 
@@ -27,20 +27,15 @@ const CaseGreciaAntiga = () => {
           <div className="editorial-prose space-y-12">
             <section>
               <h2 className="text-2xl font-semibold mb-4">Contexto</h2>
-              <p>
-                O documentário sobre a Grécia Antiga representou o projeto mais ambicioso do TinocandoTV até então. 
-                O objetivo era criar um conteúdo de longa duração que mantivesse o padrão de engajamento do canal 
-                enquanto elevava significativamente o rigor histórico e a qualidade visual da produção.
+              <p className="text-justify">
+                O documentário sobre a Grécia Antiga representou o projeto mais ambicioso do TinocandoTV até então. O objetivo era criar um conteúdo de longa duração que elevasse o padrão de engajamento e a qualidade visual de produção num nível sem precedentes no canal.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Meu papel como produtor</h2>
-              <p>
-                Atuei diretamente na ampliação do rigor histórico do projeto, complementando o roteiro inicial 
-                com pesquisa aprofundada sobre o período. Fui responsável por conduzir cerca de 70% da pesquisa 
-                de imagens do vídeo final, garantindo que cada elemento visual estivesse alinhado com a 
-                precisão histórica exigida pelo tema.
+              <h2 className="text-2xl font-semibold mb-4">Meu papel como produtor e pesquisador</h2>
+              <p className="text-justify">
+                Atuei diretamente na ampliação da narrativa, complementando o roteiro inicial com uma pesquisa aprofundada sobre o período. Além de ter sido responsável por conduzir cerca de 70% da pesquisa de imagens do vídeo final, garantindo que cada elemento visual estivesse alinhado com a precisão histórica exigida pelo tema. O maior desafio foi, sem dúvidas, o trabalho nos mapas. Fiz uma extensa pesquisa sobre as diversas mudanças territoriais ocorridas ao longo de toda a história narrada no vídeo para orientar o ilustrador e editores na criação de mapas historicamente precisos e coerentes.
               </p>
             </section>
 
@@ -49,26 +44,26 @@ const CaseGreciaAntiga = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Revisão e complementação do roteiro com foco em precisão historiográfica</span>
+                  <span className="text-justify">Revisão e complementação do roteiro com foco em precisão historiográfica</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Curadoria extensiva de fontes visuais (obras de arte, reconstruções, mapas históricos)</span>
+                  <span className="text-justify">Curadoria extensiva de fontes visuais (obras de arte, reconstruções, mapas históricos)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Checagem cruzada de informações com fontes acadêmicas primárias</span>
+                  <span className="text-justify">Checagem cruzada de informações com fontes acadêmicas primárias</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Organização do material para facilitar o trabalho de edição</span>
+                  <span className="text-justify">Organização do material para facilitar o trabalho de edição</span>
                 </li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">Resultado</h2>
-              <p>
+              <p className="text-justify">
                 O documentário consolidou-se como referência de conteúdo histórico de longa duração no YouTube brasileiro, 
                 demonstrando que é possível manter engajamento com produção rigorosa. O projeto estabeleceu um novo 
                 padrão de qualidade para o canal e serviu como modelo para produções subsequentes.
@@ -79,8 +74,8 @@ const CaseGreciaAntiga = () => {
           <div className="mt-16 pt-12 border-t border-border">
             <h3 className="text-lg font-semibold mb-6">Outros cases</h3>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/cases/copa-do-mundo-2024" className="btn-secondary flex-1 justify-center">
-                Copa do Mundo 2024
+              <Link to="/cases/copa-do-mundo-2022" className="btn-secondary flex-1 justify-center">
+                Copa do Mundo 2022
               </Link>
               <Link to="/cases/shogun-disney" className="btn-secondary flex-1 justify-center">
                 Parceria Disney+ — Shōgun

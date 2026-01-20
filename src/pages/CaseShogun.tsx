@@ -17,9 +17,8 @@ const CaseShogun = () => {
               Disney+ • Parceria Publicitária
             </span>
             <h1 className="text-4xl md:text-5xl mb-6">Parceria Disney+ — Shōgun</h1>
-            <p className="text-xl text-muted-foreground">
-              Gestão da pesquisa histórica e participação direta na escrita do roteiro publicitário, 
-              integrando rigor histórico e objetivos de marketing.
+            <p className="text-xl text-muted-foreground text-justify">
+              Gestão da pesquisa histórica, revisão do produto final e participação direta na escrita do roteiro publicitário.
             </p>
           </header>
 
@@ -28,7 +27,7 @@ const CaseShogun = () => {
           <div className="editorial-prose space-y-12">
             <section>
               <h2 className="text-2xl font-semibold mb-4">Contexto</h2>
-              <p>
+              <p className="text-justify">
                 A parceria com a Disney+ para a série Shōgun exigiu um equilíbrio delicado: produzir 
                 conteúdo que atendesse aos objetivos de marketing da plataforma enquanto mantinha o 
                 rigor histórico que caracteriza o trabalho do TinocandoTV. O desafio era integrar 
@@ -37,12 +36,15 @@ const CaseShogun = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Meu papel como produtor</h2>
-              <p>
-                Atuei na gestão da pesquisa histórica sobre o período retratado na série, na revisão 
-                editorial do conteúdo produzido e participei diretamente da escrita do roteiro publicitário. 
-                Meu trabalho foi garantir que os elementos promocionais estivessem ancorados em contexto 
-                histórico sólido, agregando valor ao conteúdo sem comprometer os objetivos comerciais.
+              <h2 className="text-2xl font-semibold mb-4">Meu papel como produtor e pesquisador</h2>
+              <p className="text-justify">
+                Durante a campanha, produzimos dois vídeos: <a href="https://www.youtube.com/watch?v=peMqRTi6gT4" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SAMURAIS: os MAIORES GUERREIROS do JAPÃO</a> e <a href="https://www.youtube.com/watch?v=yYWIQOGgllw" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">NINJAS: REALIDADE ou MITO?</a>. No primeiro, atuei como chefe de pesquisa e revisor para garantir a coerência na narrativa e o padrão de qualidade que estamos acostumados no canal. Já no segundo vídeo, atuei diretamente no processo de pesquisa, o que me exigiu uma cuidadosa curadoria de fontes graças à natureza do tema, com uma enorme variedade de informações falsas espalhadas pela internet.
+              </p>
+              <p className="text-justify mt-4">
+                Além disso, trabalhei na pesquisa de imagens dos dois vídeos e revisei ambos para garantir a coerência histórica da forma como as imagens são mostradas e principalmente os letterings do vídeo, já que trabalhamos com a língua japonesa, traduzindo nomes de equipamentos e armas do Japão Feudal.
+              </p>
+              <p className="text-justify mt-4">
+                Por fim, participei ativamente no desenvolvimento do roteiro publicitário. Fizemos uma seleção das imagens fornecidas pela Disney+ e conseguimos desenvolver uma integração publicitária de acordo com o briefing fornecido, aprovada pela marca.
               </p>
             </section>
 
@@ -51,30 +53,27 @@ const CaseShogun = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Pesquisa aprofundada sobre o Japão feudal e o contexto histórico da série</span>
+                  <span className="text-justify">Pesquisa aprofundada sobre o Japão feudal e o contexto histórico da série</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Identificação de pontos de conexão entre a narrativa histórica e os elementos da série</span>
+                  <span className="text-justify">Identificação de pontos de conexão entre a narrativa histórica e os elementos da série</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Desenvolvimento de roteiro que integra contexto histórico e chamadas promocionais</span>
+                  <span className="text-justify">Desenvolvimento de roteiro que integra contexto histórico e chamadas promocionais</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span>Revisão editorial para garantir consistência e precisão</span>
+                  <span className="text-justify">Revisão editorial para garantir consistência e precisão</span>
                 </li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">Resultado</h2>
-              <p>
-                O projeto demonstrou que é possível atender demandas comerciais sem abrir mão de 
-                qualidade editorial. A parceria foi bem-sucedida tanto do ponto de vista de engajamento 
-                quanto de percepção de marca, estabelecendo um modelo para futuras colaborações entre 
-                criadores de conteúdo e grandes plataformas de streaming.
+              <p className="text-justify">
+                Foi um projeto de grandes proporções que conseguimos realizar em tempo hábil para a promoção de lançamento da série, demonstrando nossa capacidade como uma equipe bem coordenada de atender demandas comerciais sem abrir mão de qualidade.
               </p>
             </section>
           </div>
@@ -85,8 +84,8 @@ const CaseShogun = () => {
               <Link to="/cases/grecia-antiga" className="btn-secondary flex-1 justify-center">
                 Documentário Grécia Antiga
               </Link>
-              <Link to="/cases/copa-do-mundo-2024" className="btn-secondary flex-1 justify-center">
-                Copa do Mundo 2024
+              <Link to="/cases/copa-do-mundo-2022" className="btn-secondary flex-1 justify-center">
+                Copa do Mundo 2022
               </Link>
             </div>
           </div>
