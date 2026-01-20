@@ -5,19 +5,19 @@ const stats = [
     icon: Film,
     number: "80+",
     label: "Vídeos produzidos",
-    description: "Pesquisa, produção, revisão e produto final",
+    description: "Participei ativamente na pesquisa, produção e revisão de mais de 80 vídeos no canal do Youtube do TinocandoTV, muitos dos quais ultrapassaram 1 milhão de visualizações. Nesses anos de experiência, pude aprender muito sobre a produção audiovisual dentro de um canal no Youtube, além de ter reunido um grande acervo profissional de pesquisas que cobrem basicamente qualquer período histórico.",
   },
   {
     icon: Users,
     number: "1M → 2.6M",
     label: "Crescimento acompanhado",
-    description: "De 1 milhão para 2,6 milhões de inscritos",
+    description: "Desde que entrei no canal, acompanhei o crescimento do TinocandoTV desde 1 milhão até 2,6 milhões de inscritos, o que me deu ampla experiência na gestão e produção de um canal de larga escala em crescimento.",
   },
   {
     icon: Award,
     number: "Grandes marcas",
     label: "Parcerias institucionais",
-    description: "Documentários longos e campanhas com grandes marcas",
+    description: "Ao longo de todos os vídeos que produzi, lidei diretamente o marketing de grandes marcas do mercado, sendo os principais exemplos: DIsney+, Globo Esporte, Canva, Insider, Manual, Opera, Promova, Uninassau, NordVPN, entre outros",
   },
 ];
 

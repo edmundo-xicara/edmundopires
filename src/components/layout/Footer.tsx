@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="font-heading text-2xl font-semibold mb-4">Edmundo Pires</h3>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Gestão de projetos, pesquisa e produção audiovisual.
+              Gestão de projetos, pesquisa e produção audiovisual em larga escala.
             </p>
           </div>
 
