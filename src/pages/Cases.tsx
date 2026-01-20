@@ -9,7 +9,7 @@ const allCases = [
     client: "TinocandoTV",
     category: "Documentário",
     description:
-      "O maior documentário já produzido pelo canal. Atuei na ampliação do rigor histórico do projeto, complementando o roteiro e conduzindo cerca de 70% da pesquisa de imagens do vídeo final.",
+      "O maior documentário já produzido pelo canal. Atuei na ampliação do revisão e ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
   },
   {
     slug: "copa-do-mundo-2024",
@@ -17,7 +17,7 @@ const allCases = [
     client: "Globo Esporte",
     category: "Making Of Institucional",
     description:
-      "Responsável por toda a captação do making of institucional durante gravações no Rio de Janeiro, com olhar narrativo para bastidores e produção profissional.",
+      "Tive a honra de participar dessa campanha juntamente com o Tinôco, dono do canal. Além de auxiliar em todo o planejamento da campanha dentro do TinocandoTV, fiquei responsável por toda a captação do making of durante as gravações no Rio de Janeiro, tendo a experiência de como funciona os bastidores de uma produção profissional de grande porte como a do Globo Esporte.",
   },
   {
     slug: "shogun-disney",
@@ -25,7 +25,7 @@ const allCases = [
     client: "Disney+",
     category: "Parceria Publicitária",
     description:
-      "Gestão da pesquisa histórica, revisão editorial e participação direta na escrita do roteiro publicitário.",
+      "Tive a oportunidade de participar ativamente da parceria entre TinocandoTV e Disney+ para a divulgação da séria Shōgun. Fiquei responsável pela pesquisa dos vídeos, tanto como gestor e revisor, quanto como pesquisador. Também revisei historicamente o vídeo final, garantindo a coerência visual com a historiografia conhecida. Além disso, participei ativamente na escrita da inserção publicitária no roteiro final do vídeo.",
   },
 ];
 
@@ -37,8 +37,8 @@ const Cases = () => {
           <div className="max-w-3xl mb-16">
             <div className="accent-line mb-6" />
             <h1 className="text-4xl md:text-5xl mb-6">Cases</h1>
-            <p className="text-xl text-muted-foreground">
-              Projetos que demonstram a integração entre pesquisa histórica rigorosa, produção editorial e gestão de processos.
+            <p className="text-xl text-muted-foreground text-justify">
+              Principais projetos nos quais trabalhei, servindo como exemplos práticos da qualidade do meu trabalho como gestor, produtor e pesquisador.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Cases = () => {
                     <h2 className="text-2xl font-semibold mb-4 group-hover:text-accent transition-colors">
                       {caseItem.title}
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-justify">
                       {caseItem.description}
                     </p>
                   </div>

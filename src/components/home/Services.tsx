@@ -28,7 +28,7 @@ export function Services() {
         <div className="text-center mb-16">
           <div className="accent-line mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl mb-4">O que eu entrego</h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-justify">
             Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo que o canal consiga manter um ritmo incessante de vídeos dentro de um alto padrão de qualidade.
           </p>
         </div>
@@ -45,7 +45,7 @@ export function Services() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <p className="text-muted-foreground leading-relaxed text-justify">{service.description}</p>
               </div>
             </div>
           ))}

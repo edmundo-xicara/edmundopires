@@ -43,23 +43,25 @@ export function FeaturedCases() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-8">
           {cases.map((caseItem, index) => (
             <div
               key={index}
-              className="card-editorial flex flex-col animate-fade-in-up"
+              className="card-editorial flex flex-col md:flex-row md:items-start gap-6 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <span className="text-sm text-accent font-medium uppercase tracking-wider mb-3">
-                {caseItem.client}
-              </span>
-              <h3 className="text-xl font-semibold mb-4">{caseItem.title}</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1 mb-6">
-                {caseItem.description}
-              </p>
+              <div className="flex-1">
+                <span className="text-sm text-accent font-medium uppercase tracking-wider mb-3 block">
+                  {caseItem.client}
+                </span>
+                <h3 className="text-xl font-semibold mb-4">{caseItem.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-justify">
+                  {caseItem.description}
+                </p>
+              </div>
               <Link
                 to={`/cases/${caseItem.slug}`}
-                className="btn-accent self-start"
+                className="btn-accent self-start shrink-0"
               >
                 Ver case completo
                 <ArrowRight size={16} />

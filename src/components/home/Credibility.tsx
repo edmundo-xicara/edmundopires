@@ -25,19 +25,25 @@ export function Credibility() {
   return (
     <section className="section-padding bg-card border-y border-border">
       <div className="container-wide">
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="text-center mb-12">
+          <div className="accent-line mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl">Experiência profissional</h2>
+        </div>
+        <div className="flex flex-col gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center md:text-left animate-fade-in-up"
+              className="card-editorial flex flex-col md:flex-row md:items-start gap-6 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded bg-accent/10 text-accent mb-4">
-                <stat.icon size={24} />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded bg-accent/10 text-accent flex-shrink-0">
+                <stat.icon size={28} />
               </div>
-              <div className="stat-number">{stat.number}</div>
-              <div className="stat-label">{stat.label}</div>
-              <p className="text-muted-foreground mt-3">{stat.description}</p>
+              <div className="flex-1">
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label mb-2">{stat.label}</div>
+                <p className="text-muted-foreground leading-relaxed text-justify">{stat.description}</p>
+              </div>
             </div>
           ))}
         </div>
