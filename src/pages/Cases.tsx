@@ -12,8 +12,8 @@ const allCases = [
       "O maior documentário já produzido pelo canal. Atuei na ampliação do revisão e ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
   },
   {
-    slug: "copa-do-mundo-2024",
-    title: "Campanha Copa do Mundo 2024",
+    slug: "copa-do-mundo-2022",
+    title: "Campanha Copa do Mundo 2022",
     client: "Globo Esporte",
     category: "Making Of Institucional",
     description:
