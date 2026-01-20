@@ -10,8 +10,8 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
-      <Credibility />
       <Services />
+      <Credibility />
       <FeaturedCases />
       
       {/* CTA Final */}

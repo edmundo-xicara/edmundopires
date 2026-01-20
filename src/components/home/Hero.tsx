@@ -23,14 +23,14 @@ export function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 animate-fade-in-up" style={{
             animationDelay: "0.1s"
           }}>
-            Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.
+            Youtube Manager
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl animate-fade-in-up" style={{
             animationDelay: "0.2s"
-          }}>Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo consistência, rigor histórico e eficiência de produção.</p>
+          }}>Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.</p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up" style={{
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{
             animationDelay: "0.3s"
           }}>
             <Link to="/cases" className="btn-primary">
@@ -42,23 +42,6 @@ export function Hero() {
               Falar comigo
             </Link>
           </div>
-
-          <div className="grid sm:grid-cols-3 gap-6 animate-fade-in-up" style={{
-            animationDelay: "0.4s"
-          }}>
-            <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Pesquisa aplicada a produtos audiovisuais</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Gestão de projetos e calendário editorial para produção contínua de vídeos</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-              <p className="text-muted-foreground">Pesquisa e curadoria de imagens, garantindo coerência visual com o conteúdo explicado</p>
-            </div>
-            </div>
           </div>
         </div>
       </div>
