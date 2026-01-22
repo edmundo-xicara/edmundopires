@@ -41,14 +41,14 @@ const Portfolio = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.map((video, index) => (
               <div
                 key={index}
-                className="card-editorial p-0 overflow-hidden animate-fade-in-up flex flex-col md:flex-row"
+                className="card-editorial p-0 overflow-hidden animate-fade-in-up flex flex-col"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="md:w-1/3 aspect-video md:aspect-auto">
+                <div className="aspect-video">
                   <a
                     href={`https://youtu.be/${video.id}`}
                     target="_blank"
@@ -62,7 +62,7 @@ const Portfolio = () => {
                     />
                   </a>
                 </div>
-                <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                <div className="p-6 flex flex-col">
                   <h3 className="text-xl md:text-2xl font-semibold mb-4">{video.title}</h3>
                   <p className="text-muted-foreground leading-relaxed text-justify mb-4">
                     {video.description}
