@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 const videos = [
   {
     id: "Jn99lnP5yik",
-    title: "HITLER: ASCENSÃO e QUEDA",
+    title: "QUEDA de HITLER",
     description: "Além do enorme desafio da pesquisa histórica em si, esse vídeo foi provavelmente meu maior desafio em questão de mapas, já que ao longo da história narrada no vídeo, houve diversas mudanças drásticas nos territórios conquistados pelos nazistas, exigindo um trabalho de pesquisa minucioso para representarmos visualmente para o público como, de fato, Adolf Hitler perdeu a guerra.",
     researchLink: "https://docs.google.com/document/d/1iUIrrrKGCvzM6SaYR4k8Uvafvh8Nmj1wFzE8AyzHwHY/edit?tab=t.0",
   },
