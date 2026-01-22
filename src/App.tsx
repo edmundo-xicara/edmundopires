@@ -10,7 +10,7 @@ import CaseCopaDoMundo from "./pages/CaseCopaDoMundo";
 import CaseShogun from "./pages/CaseShogun";
 import Sobre from "./pages/Sobre";
 import Servicos from "./pages/Servicos";
-import Midia from "./pages/Midia";
+import Portfolio from "./pages/Midia";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/cases/shogun-disney" element={<CaseShogun />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
-          <Route path="/midia" element={<Midia />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
