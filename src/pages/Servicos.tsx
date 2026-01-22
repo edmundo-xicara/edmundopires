@@ -1,8 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, FileCheck, Film, Layers, Building, Settings } from "lucide-react";
+import { ArrowRight, Search, FileCheck, Film, Layers, Building, FileText, Briefcase } from "lucide-react";
 
 const servicos = [
+  {
+    icon: Building,
+    title: "Consultoria",
+    description:
+      "Consultoria especializada para canais no Youtube. Cada canal do Youtube tem suas especificidades, seu público-alvo e a própria identidade do criador intrinsicamente ligada a identidade do canal. Como alguém com ampla experiência na gestão de um canal no Youtube de grande porte, posso te ajudar sobre estratégias de crescimento específicas para você e conhecimentos gerais sobre como pensar como um gestor do seu próprio canal.",
+  },
   {
     icon: Layers,
     title: "Gestão de Projetos Editoriais",
@@ -16,28 +22,28 @@ const servicos = [
       "Realizo pesquisa aplicada à produção audiovisual, com foco em recorte temático, cronologia, checagem e adaptação do conteúdo para formatos claros e consistentes. Tenho experiência tanto na execução da pesquisa quanto na coordenação de equipes de pesquisadores.",
   },
   {
+    icon: FileText,
+    title: "Roteiro",
+    description:
+      "Além da pesquisa, tenho experiência na escrita de roteiro também aplicado à produção audiovisual, selecionando os pontos-chave de qualquer tema para conectá-los numa narrativa coerente e imersiva para o público, já pensando em como ela pode conversar com a edição.",
+  },
+  {
+    icon: Briefcase,
+    title: "Mídia Kit",
+    description:
+      "Trabalho também com a produção de Mídia Kits, que é basicamente um currículo para influenciadores e imprescindível para qualquer criador de conteúdo que pensa em fazer parcerias com marcas, as famosas \"publis\".",
+  },
+  {
     icon: FileCheck,
     title: "Revisão Editorial e Fact-checking",
     description:
-      "Análise e revisão de pesquisas e roteiros com foco em precisão factual, coerência interna, clareza conceitual e prevenção de erros editoriais ou simplificações indevidas.",
-  },
-  {
-    icon: Settings,
-    title: "Estruturação de Processos de Produção",
-    description:
-      "Criação e organização de pipelines, checklists e métodos de trabalho para escalar a produção de conteúdo sem perda de qualidade.",
+      "Com um estudo aprofundado sobre qualquer tema, consigo revisar tanto o roteiro quanto a edição final do seu vídeo, garantindo que há uma coerência e veracidade nas informações faladas e na forma que elas são apresentadas visualmente para o público.",
   },
   {
     icon: Film,
     title: "Pesquisa e Curadoria de Imagens",
     description:
-      "Pesquisa, seleção e organização de imagens que sustentam a narrativa visual dos vídeos, garantindo coerência, qualidade estética e alinhamento com o conteúdo pesquisado.",
-  },
-  {
-    icon: Building,
-    title: "Consultoria Editorial",
-    description:
-      "Apoio estratégico a canais, produtoras e marcas que trabalham com temas históricos, científicos ou culturais, ajudando a estruturar pesquisa, produção e revisão de conteúdo complexo.",
+      "Pesquisa e curadoria de imagens que sustentam a narrativa visual dos vídeos, seja com pinturas, filmagens, notícias da época ou até representações visuais abstratas. Em casos de vídeos históricos, realizo uma pesquisa extensa sobre os mapas e territórios de cada época abordada no vídeo para evitar imprecisões.",
   },
 ];
 
@@ -50,8 +56,7 @@ const Servicos = () => {
             <div className="accent-line mb-6" />
             <h1 className="text-4xl md:text-5xl mb-6">Serviços</h1>
             <p className="text-xl text-muted-foreground">
-              Estou aberto a projetos de consultoria, freelas e parcerias em pesquisa, 
-              produção editorial e gestão de conteúdo.
+              Estou aberto a serviços de consultoria, freelas, pesquisa/roteiro sob demanda e também desenvolvimento de Mídia Kits.
             </p>
           </div>
 
@@ -66,7 +71,7 @@ const Servicos = () => {
                   <servico.icon size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{servico.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{servico.description}</p>
+                <p className="text-muted-foreground leading-relaxed text-justify">{servico.description}</p>
               </div>
             ))}
           </div>

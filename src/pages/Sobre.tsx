@@ -8,6 +8,7 @@ const competencias = [
   "Gestão de projetos e pipeline de produção",
   "Planejamento editorial e organização de formatos",
   "Pesquisa e curadoria de imagens",
+  "Desenvolvimento de Mídia Kits",
 ];
 
 const Sobre = () => {
@@ -20,19 +21,30 @@ const Sobre = () => {
               <div className="accent-line mb-6" />
               <h1 className="text-4xl md:text-5xl mb-8">Sobre mim</h1>
               
-              <div className="editorial-prose">
+              <div className="editorial-prose text-justify">
                 <p>
                   Sou produtor, chefe de pesquisa e gestor de conteúdo no TinocandoTV.
                 </p>
                 <p>
-                  Meu trabalho é organizar projetos editoriais complexos, coordenar equipes de pesquisa 
-                  e garantir rigor histórico antes da roteirização, assegurando consistência, clareza e 
-                  segurança editorial em larga escala.
+                  Meu principal trabalho dentro do canal é o de <em>Youtube Manager</em>, isso significa que atuo basicamente como o coordenador do TinocandoTV, organizando todos os projetos do canal.
                 </p>
                 <p>
-                  Atuo da definição de prioridades e cronogramas à revisão final do material de pesquisa 
-                  e à curadoria de imagens, estruturando processos que tornam a produção mais previsível, 
-                  eficiente e sustentável.
+                  Sou eu quem organizo, juntamente com o Tinôco, o calendário completo do canal, decidindo os vídeos que serão postados nos próximos meses e as pessoas responsáveis por cada um. Ou seja, fico responsável por organizar qual vídeo será postado em qual data e quem irá trabalhar nele, desde a pesquisa até a edição final.
+                </p>
+                <p>
+                  E essa é uma palavra chave aqui: "pesquisa". Isso porque, como chefe de pesquisa do canal, sou eu quem fica responsável por coordenar a equipe de pesquisa do TinocandoTV, orientando sobre o cada tema e revisando a pesquisa final para garantir a entrega de uma pesquisa correta, coerente e, acima de tudo, otimizada para servir de base para a escrita do roteiro, que fica a cargo do Tinôco.
+                </p>
+                <p>
+                  Depois disso, participo da revisão de cada roteiro juntamente com os especialistas do canal e sou eu também quem desenvolve a pesquisa de imagens de cada vídeo, selecionando as pinturas, mapas e representações visuais que serão usadas pelos editores no vídeo final.
+                </p>
+                <p>
+                  E para finalizar, depois da edição, reviso cada um dos vídeos para garantir que as imagens e, principalmente, mapas selecionados foram apresentados no vídeo de forma historicamente correta.
+                </p>
+                <p>
+                  Agora já na hora da postagem, como produtor, sou eu quem organiza todos os detalhes que rodeiam os vídeos, como os nomes dos membros do canal e dos apoiadores que aparecem no final de todo vídeo, ou também os nomes da Ficha Técnica, garantindo que cada integrante da equipe receba o devido reconhecimento.
+                </p>
+                <p>
+                  Dito isso, pode-se dizer que sou um grande "faz-tudo" de um canal no Youtube e é justamente por isso que reuni uma ampla experiência trabalhando em um canal não só de grande porte, mas também em crescimento.
                 </p>
               </div>
 
@@ -56,19 +68,6 @@ const Sobre = () => {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Abordagem */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container-narrow text-center">
-          <div className="accent-line mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl mb-6">Minha abordagem</h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Acredito que conteúdo histórico de qualidade depende de organização, rigor e processo. 
-            Meu trabalho é estruturar pesquisa, produção e revisão para que temas complexos sejam 
-            tratados com precisão, clareza e consistência, mesmo em grande escala.
-          </p>
         </div>
       </section>
     </Layout>

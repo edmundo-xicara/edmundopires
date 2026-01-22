@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -44,6 +44,15 @@ export function Footer() {
               >
                 <Mail size={18} />
                 edmundopires@outlook.com
+              </a>
+              <a
+                href="https://w.app/4bpne2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+              >
+                <Phone size={18} />
+                (31) 99333-1644
               </a>
               <a
                 href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
