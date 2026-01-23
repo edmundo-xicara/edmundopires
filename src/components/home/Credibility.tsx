@@ -1,4 +1,5 @@
 import { Film, Users, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const stats = [
   {
@@ -17,7 +18,7 @@ const stats = [
     icon: Award,
     number: "Grandes marcas",
     label: "Parcerias institucionais",
-    description: "Ao longo de todos os vídeos que produzi, lidei diretamente o marketing de grandes marcas do mercado, sendo os principais exemplos: DIsney+, Globo Esporte, Canva, Insider, Manual, Opera, Promova, Uninassau, NordVPN, entre outros",
+    hasLinks: true,
   },
 ];
 
@@ -42,7 +43,22 @@ export function Credibility() {
               <div className="flex-1">
                 <div className="stat-number">{stat.number}</div>
                 <div className="stat-label mb-2">{stat.label}</div>
-                <p className="text-muted-foreground leading-relaxed text-justify">{stat.description}</p>
+                {stat.hasLinks ? (
+                  <p className="text-muted-foreground leading-relaxed text-justify">
+                    Ao longo de todos os vídeos que produzi, lidei diretamente o marketing de grandes marcas do mercado, sendo os principais exemplos:{" "}
+                    <Link to="/cases/shogun-disney" className="text-accent hover:underline">Disney+</Link>,{" "}
+                    <Link to="/cases/copa-do-mundo-2022" className="text-accent hover:underline">Globo Esporte</Link>,{" "}
+                    <a href="https://youtu.be/XDOWW7CQmhg?t=243" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Insider</a>,{" "}
+                    <a href="https://youtu.be/j_BSyCFzxuM?t=119" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Opera</a>,{" "}
+                    <a href="https://youtu.be/ttkt5pdArZY?t=145" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Manual</a>,{" "}
+                    <a href="https://youtu.be/lcpzeK1-Ulg?t=76" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Uninassau</a>,{" "}
+                    <a href="https://youtu.be/BpuNlQ_x2AA?t=99" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">CyberGhost</a>,{" "}
+                    <a href="https://youtu.be/97ozWnsSq0A?t=109" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Promova</a>,{" "}
+                    entre outros.
+                  </p>
+                ) : (
+                  <p className="text-muted-foreground leading-relaxed text-justify">{stat.description}</p>
+                )}
               </div>
             </div>
           ))}

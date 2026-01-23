@@ -28,7 +28,16 @@ const CaseCopaDoMundo = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4">Contexto</h2>
               <p className="text-justify">
-                Durante a campanha da Copa do Mundo 2022, o Globo Esporte convidou o Tinôco, dono do canal, para realizar uma série de gravações no Rio de Janeiro para produção de conteúdo institucional.
+                Durante a campanha da Copa do Mundo 2022, o Globo Esporte convidou o Tinôco, dono do canal, para realizar{" "}
+                <a 
+                  href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40geglobo%2Fvideo%2F7398979892722830597%3Fq%3Dtinocandotv%2520globo%2520esporte%2520torcedor%26t%3D1768226170070&lang=en&enter_method=mandatory"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                >
+                  uma série de gravações no Rio de Janeiro
+                </a>{" "}
+                para produção de conteúdo institucional.
               </p>
             </section>
 
