@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, FileCheck, Film, Layers, Building, FileText, Briefcase } from "lucide-react";
+import { ArrowRight, Search, FileText, Film, Building, Briefcase } from "lucide-react";
 
 const servicos = [
   {
@@ -8,12 +8,6 @@ const servicos = [
     title: "Consultoria",
     description:
       "Consultoria especializada para canais no Youtube. Cada canal do Youtube tem suas especificidades, seu público-alvo e a própria identidade do criador intrinsicamente ligada a identidade do canal. Como alguém com ampla experiência na gestão de um canal no Youtube de grande porte, posso te ajudar sobre estratégias de crescimento específicas para você e conhecimentos gerais sobre como pensar como um gestor do seu próprio canal.",
-  },
-  {
-    icon: Layers,
-    title: "Gestão de Projetos Editoriais",
-    description:
-      "Organização e acompanhamento de projetos de conteúdo complexo, incluindo definição de prioridades, cronogramas, dependências e fluxo entre pesquisa, roteiro e edição. Foco em previsibilidade, consistência e eficiência de produção.",
   },
   {
     icon: Search,
@@ -32,12 +26,6 @@ const servicos = [
     title: "Mídia Kit",
     description:
       "Trabalho também com a produção de Mídia Kits, que é basicamente um currículo para influenciadores e imprescindível para qualquer criador de conteúdo que pensa em fazer parcerias com marcas, as famosas \"publis\".",
-  },
-  {
-    icon: FileCheck,
-    title: "Revisão Editorial e Fact-checking",
-    description:
-      "Com um estudo aprofundado sobre qualquer tema, consigo revisar tanto o roteiro quanto a edição final do seu vídeo, garantindo que há uma coerência e veracidade nas informações faladas e na forma que elas são apresentadas visualmente para o público.",
   },
   {
     icon: Film,
@@ -60,18 +48,20 @@ const Servicos = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col gap-8">
             {servicos.map((servico, index) => (
               <div
                 key={index}
-                className="card-editorial animate-fade-in-up"
+                className="card-editorial flex flex-col md:flex-row md:items-start gap-6 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded bg-accent/10 text-accent mb-6">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded bg-accent/10 text-accent flex-shrink-0">
                   <servico.icon size={28} />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{servico.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-justify">{servico.description}</p>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">{servico.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-justify">{servico.description}</p>
+                </div>
               </div>
             ))}
           </div>
