@@ -7,11 +7,12 @@ export function Hero() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Foto */}
           <div className="flex-shrink-0 animate-fade-in">
-            <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-muted border-4 border-accent/20 flex items-center justify-center overflow-hidden">
+            <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-muted border-4 border-accent/20 overflow-hidden">
               <img 
                 src={fotoPerfil} 
                 alt="Edmundo Pires" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
+                style={{ minWidth: '100%', minHeight: '100%' }}
               />
             </div>
           </div>

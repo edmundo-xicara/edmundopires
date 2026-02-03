@@ -1,6 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import midiaKitEstranhaHistoria from "@/assets/midia-kit-estranha-historia.png";
+import midiaKitCetaligado from "@/assets/midia-kit-cetaligado.png";
+import midiaKitEntrosamento from "@/assets/midia-kit-entrosamento.png";
 
 const videos = [
   {
@@ -56,6 +59,7 @@ const outrosExemplos = [
   { title: "Uninassau", videoLink: "https://youtu.be/lcpzeK1-Ulg?t=76", videoId: "lcpzeK1-Ulg" },
   { title: "CyberGhost", videoLink: "https://youtu.be/BpuNlQ_x2AA?t=99", videoId: "BpuNlQ_x2AA" },
   { title: "Promova", videoLink: "https://youtu.be/97ozWnsSq0A?t=109", videoId: "97ozWnsSq0A" },
+  { title: "Alura", videoLink: "https://www.youtube.com/watch?v=MBwGOxEoJgQ", videoId: "MBwGOxEoJgQ" },
 ];
 
 const Portfolio = () => {
@@ -201,6 +205,44 @@ const Portfolio = () => {
             <p className="text-xl text-muted-foreground">
               Alguns dos Mídia Kits que já desenvolvi tanto para canais grandes quanto para influenciadores menores.
             </p>
+          </div>
+
+          {/* Mídia Kit Images */}
+          <div className="flex flex-col gap-6">
+            {/* Horizontal image on top with hover effect */}
+            <a
+              href="https://www.figma.com/design/thkL4L1YTCauQSvoR9QPHM/M%C3%ADdia-Kit-Hist%C3%B3ria-Estranha?m=auto&t=28Rb0GjM7P2ImmQo-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group overflow-hidden rounded-lg"
+            >
+              <img
+                src={midiaKitEstranhaHistoria}
+                alt="Mídia Kit Estranha História"
+                className="w-full h-auto object-cover transition-all duration-300 group-hover:brightness-50"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-xl md:text-2xl font-semibold">Ver Mídia Kit completo</span>
+              </div>
+            </a>
+
+            {/* Two vertical images side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={midiaKitCetaligado}
+                  alt="Mídia Kit Cê Tá Ligado"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={midiaKitEntrosamento}
+                  alt="Mídia Kit Entrosamento em Dia"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
