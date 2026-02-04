@@ -17,7 +17,7 @@ const CaseNobel = () => {
 
           <div className="max-w-4xl">
             <div className="accent-line mb-6" />
-            <h1 className="text-4xl md:text-5xl mb-4">Entrevista de especialistas para Prêmio Nobel 2025</h1>
+            <h1 className="text-4xl md:text-5xl mb-4">Entrevistas de especialistas para Prêmio Nobel 2025</h1>
             <p className="text-xl text-muted-foreground mb-12">
               Entrevistas exclusivas com especialistas para cada categoria do Nobel de 2025.
             </p>
@@ -67,13 +67,18 @@ const CaseNobel = () => {
                 href="https://www.youtube.com/watch?v=j_BSyCFzxuM"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg hover:opacity-90 transition-opacity"
+                className="block overflow-hidden rounded-lg relative group"
               >
                 <img
                   src="https://img.youtube.com/vi/j_BSyCFzxuM/maxresdefault.jpg"
                   alt="Vídeo Prêmio Nobel 2025"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover transition-all duration-300 group-hover:brightness-50"
                 />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white text-xl md:text-2xl font-semibold text-center px-4">
+                    Confira o vídeo no Youtube
+                  </span>
+                </div>
               </a>
             </div>
           </div>
