@@ -37,7 +37,7 @@ const allCases = [
   },
   {
     slug: "nobel-2025",
-    title: "Entrevista de especialistas para Prêmio Nobel 2025",
+    title: "Entrevistas de especialistas para Prêmio Nobel 2025",
     client: "TinocandoTV",
     category: "Produção e Entrevistas",
     description:
