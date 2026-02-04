@@ -27,6 +27,22 @@ const allCases = [
     description:
       "Tive a oportunidade de participar ativamente da parceria entre TinocandoTV e Disney+ para a divulgação da séria Shōgun. Fiquei responsável pela pesquisa dos vídeos, tanto como gestor e revisor, quanto como pesquisador. Também revisei historicamente o vídeo final, garantindo a coerência visual com a historiografia conhecida. Além disso, participei ativamente na escrita da inserção publicitária no roteiro final do vídeo.",
   },
+  {
+    slug: "revista-instagram",
+    title: "Revista digital - Instagram",
+    client: "TinocandoTV",
+    category: "Design Editorial",
+    description:
+      "Durante um período específico, eu e o Tinôco decidimos testar um projeto novo no Instagram do TinocandoTV: a criação de revistas digitais com notícias socioculturais e, em alguns casos, políticas. Fui responsável pela criação da maior parte das revistas privadas destinadas aos assinantes.",
+  },
+  {
+    slug: "nobel-2025",
+    title: "Entrevista de especialistas para Prêmio Nobel 2025",
+    client: "TinocandoTV",
+    category: "Produção e Entrevistas",
+    description:
+      "Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles.",
+  },
 ];
 
 const Cases = () => {
