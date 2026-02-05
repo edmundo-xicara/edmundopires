@@ -1,4 +1,5 @@
 import { Search, FileText, Settings } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const services = [
   {
@@ -25,29 +26,29 @@ export function Services() {
   return (
     <section className="section-padding">
       <div className="container-wide">
-        <div className="text-center mb-16">
-          <div className="accent-line mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl mb-4">O que eu faço</h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-justify">
-            Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo que o canal consiga manter um ritmo incessante de vídeos dentro de um alto padrão de qualidade.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <div className="accent-line mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl mb-4">O que eu faço</h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto text-justify">
+              Sou chefe de pesquisa, produtor e um dos gestores do TinocandoTV. Organizo todos os projetos e calendário do canal, lidero a equipe de pesquisa, reviso todo o material antes da roteirização e realizo a pesquisa de imagens de todos os vídeos, garantindo que o canal consiga manter um ritmo incessante de vídeos dentro de um alto padrão de qualidade.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="flex flex-col gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="card-editorial flex flex-col md:flex-row md:items-start gap-6 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded bg-primary text-primary-foreground flex-shrink-0">
-                <service.icon size={28} />
+            <ScrollReveal key={index} delay={index * 80}>
+              <div className="card-editorial flex flex-col md:flex-row md:items-start gap-6">
+                <div className="icon-box inline-flex items-center justify-center w-14 h-14 rounded bg-primary text-primary-foreground flex-shrink-0">
+                  <service.icon size={28} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-justify">{service.description}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-justify">{service.description}</p>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
