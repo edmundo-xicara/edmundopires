@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import midiaKitEstranhaHistoria from "@/assets/midia-kit-estranha-historia.png";
 import midiaKitCetaligado from "@/assets/midia-kit-cetaligado.png";
 import midiaKitEntrosamento from "@/assets/midia-kit-entrosamento.png";
@@ -68,51 +69,51 @@ const Portfolio = () => {
       {/* Pesquisas Section */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <div className="accent-line mb-6" />
-            <h1 className="text-4xl md:text-5xl mb-6">Pesquisas</h1>
-            <p className="text-xl text-muted-foreground">
-              Vídeos que melhor representam meu trabalho em pesquisa dentro do TinocandoTV.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="max-w-3xl mb-16">
+              <div className="accent-line mb-6" />
+              <h1 className="text-4xl md:text-5xl mb-6">Pesquisas</h1>
+              <p className="text-xl text-muted-foreground">
+                Vídeos que melhor representam meu trabalho em pesquisa dentro do TinocandoTV.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.map((video, index) => (
-              <div
-                key={index}
-                className="card-editorial p-0 overflow-hidden animate-fade-in-up flex flex-col"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="aspect-video">
-                  <a
-                    href={`https://youtu.be/${video.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-full"
-                  >
-                    <img
-                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover hover:opacity-90 transition-opacity"
-                    />
-                  </a>
+              <ScrollReveal key={index} delay={index * 80} direction="none">
+                <div className="card-editorial p-0 overflow-hidden flex flex-col h-full">
+                  <div className="aspect-video overflow-hidden">
+                    <a
+                      href={`https://youtu.be/${video.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-250"
+                      />
+                    </a>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{video.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
+                      {video.description}
+                    </p>
+                    <a
+                      href={video.researchLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-accent inline-flex w-fit mt-auto"
+                    >
+                      Link para pesquisa
+                      <ExternalLink size={16} className="ml-2" />
+                    </a>
+                  </div>
                 </div>
-                <div className="p-6 flex flex-col">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4">{video.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-justify mb-4">
-                    {video.description}
-                  </p>
-                  <a
-                    href={video.researchLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-accent inline-flex w-fit"
-                  >
-                    Link para pesquisa
-                    <ExternalLink size={16} className="ml-2" />
-                  </a>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -121,127 +122,134 @@ const Portfolio = () => {
       {/* Publis Section */}
       <section className="section-padding bg-card border-y border-border">
         <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <div className="accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl mb-6">Publis</h2>
-            <p className="text-xl text-muted-foreground">
-              Principais marcas com quem já trabalhei dentro do TinocandoTV.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="max-w-3xl mb-16">
+              <div className="accent-line mb-6" />
+              <h2 className="text-3xl md:text-4xl mb-6">Publis</h2>
+              <p className="text-xl text-muted-foreground">
+                Principais marcas com quem já trabalhei dentro do TinocandoTV.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="flex flex-col gap-8">
             {publis.map((publi, index) => (
-              <div
-                key={index}
-                className="card-editorial p-0 overflow-hidden animate-fade-in-up flex flex-col md:flex-row"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="md:w-1/3 aspect-video md:aspect-auto bg-muted flex items-center justify-center">
-                  <span className="text-4xl font-bold text-muted-foreground/50">{publi.title}</span>
+              <ScrollReveal key={index} delay={index * 80}>
+                <div className="card-editorial p-0 overflow-hidden flex flex-col md:flex-row">
+                  <div className="md:w-1/3 aspect-video md:aspect-auto bg-muted flex items-center justify-center">
+                    <span className="text-4xl font-bold text-muted-foreground/50">{publi.title}</span>
+                  </div>
+                  <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{publi.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
+                      {publi.description}
+                    </p>
+                    {publi.caseLink && (
+                      <Link to={publi.caseLink} className="btn-accent inline-flex w-fit">
+                        {publi.caseLinkText}
+                        <ExternalLink size={16} className="ml-2" />
+                      </Link>
+                    )}
+                    {publi.videoLink && (
+                      <a
+                        href={publi.videoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-accent inline-flex w-fit"
+                      >
+                        {publi.videoLinkText}
+                        <ExternalLink size={16} className="ml-2" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-4">{publi.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-justify mb-4">
-                    {publi.description}
-                  </p>
-                  {publi.caseLink && (
-                    <Link to={publi.caseLink} className="btn-accent inline-flex w-fit">
-                      {publi.caseLinkText}
-                      <ExternalLink size={16} className="ml-2" />
-                    </Link>
-                  )}
-                  {publi.videoLink && (
-                    <a
-                      href={publi.videoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-accent inline-flex w-fit"
-                    >
-                      {publi.videoLinkText}
-                      <ExternalLink size={16} className="ml-2" />
-                    </a>
-                  )}
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
           {/* Outros Exemplos */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-semibold mb-8">Outros exemplos</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {outrosExemplos.map((exemplo, index) => (
-                <a
-                  key={index}
-                  href={exemplo.videoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-editorial p-0 overflow-hidden animate-fade-in-up group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="aspect-square">
-                    <img
-                      src={`https://img.youtube.com/vi/${exemplo.videoId}/maxresdefault.jpg`}
-                      alt={exemplo.title}
-                      className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h4 className="font-semibold group-hover:text-accent transition-colors">{exemplo.title}</h4>
-                  </div>
-                </a>
-              ))}
+          <ScrollReveal>
+            <div className="mt-16">
+              <h3 className="text-2xl font-semibold mb-8">Outros exemplos</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                {outrosExemplos.map((exemplo, index) => (
+                  <ScrollReveal key={index} delay={index * 60} direction="none">
+                    <a
+                      href={exemplo.videoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card-editorial p-0 overflow-hidden group block"
+                    >
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={`https://img.youtube.com/vi/${exemplo.videoId}/maxresdefault.jpg`}
+                          alt={exemplo.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-250"
+                        />
+                      </div>
+                      <div className="p-4 text-center">
+                        <h4 className="font-semibold group-hover:text-accent transition-colors duration-250">{exemplo.title}</h4>
+                      </div>
+                    </a>
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Mídia Kits Section */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <div className="accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl mb-6">Mídia Kits</h2>
-            <p className="text-xl text-muted-foreground">
-              Alguns dos Mídia Kits que já desenvolvi tanto para canais grandes quanto para influenciadores menores.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="max-w-3xl mb-16">
+              <div className="accent-line mb-6" />
+              <h2 className="text-3xl md:text-4xl mb-6">Mídia Kits</h2>
+              <p className="text-xl text-muted-foreground">
+                Alguns dos Mídia Kits que já desenvolvi tanto para canais grandes quanto para influenciadores menores.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          {/* Mídia Kit Images */}
           <div className="flex flex-col gap-6">
-            {/* Horizontal image on top with hover effect */}
-            <a
-              href="https://www.figma.com/design/thkL4L1YTCauQSvoR9QPHM/M%C3%ADdia-Kit-Hist%C3%B3ria-Estranha?m=auto&t=28Rb0GjM7P2ImmQo-1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group overflow-hidden rounded-lg"
-            >
-              <img
-                src={midiaKitEstranhaHistoria}
-                alt="Mídia Kit Estranha História"
-                className="w-full h-auto object-cover transition-all duration-300 group-hover:brightness-50"
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-white text-xl md:text-2xl font-semibold">Ver Mídia Kit completo</span>
-              </div>
-            </a>
+            <ScrollReveal>
+              <a
+                href="https://www.figma.com/design/thkL4L1YTCauQSvoR9QPHM/M%C3%ADdia-Kit-Hist%C3%B3ria-Estranha?m=auto&t=28Rb0GjM7P2ImmQo-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group overflow-hidden rounded-lg block"
+              >
+                <img
+                  src={midiaKitEstranhaHistoria}
+                  alt="Mídia Kit Estranha História"
+                  className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                  <span className="text-white text-xl md:text-2xl font-semibold">Ver Mídia Kit completo</span>
+                </div>
+              </a>
+            </ScrollReveal>
 
-            {/* Two vertical images side by side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="overflow-hidden rounded-lg">
-                <img
-                  src={midiaKitCetaligado}
-                  alt="Mídia Kit Cê Tá Ligado"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="overflow-hidden rounded-lg">
-                <img
-                  src={midiaKitEntrosamento}
-                  alt="Mídia Kit Entrosamento em Dia"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+              <ScrollReveal delay={0}>
+                <div className="overflow-hidden rounded-lg">
+                  <img
+                    src={midiaKitCetaligado}
+                    alt="Mídia Kit Cê Tá Ligado"
+                    className="w-full h-auto object-cover transition-transform duration-250 hover:scale-[1.02]"
+                  />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={80}>
+                <div className="overflow-hidden rounded-lg">
+                  <img
+                    src={midiaKitEntrosamento}
+                    alt="Mídia Kit Entrosamento em Dia"
+                    className="w-full h-auto object-cover transition-transform duration-250 hover:scale-[1.02]"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
