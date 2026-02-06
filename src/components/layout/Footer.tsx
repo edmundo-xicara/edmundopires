@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useState } from "react";
 
 export function Footer() {
+  const [phoneCopied, setPhoneCopied] = useState(false);
+
+  const copyPhone = () => {
+    navigator.clipboard.writeText("31993331644");
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2000);
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-wide px-6 md:px-12 lg:px-20 py-16">
@@ -51,15 +60,13 @@ export function Footer() {
                   <Mail size={18} />
                   edmundopires@outlook.com
                 </a>
-                <a
-                  href="https://w.app/4bpne2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1"
+                <button
+                  onClick={copyPhone}
+                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
                 >
-                  <Phone size={18} />
-                  (31) 99333-1644
-                </a>
+                  {phoneCopied ? <Check size={18} /> : <Phone size={18} />}
+                  {phoneCopied ? "Copiado!" : "(31) 99333-1644"}
+                </button>
                 <a
                   href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
                   target="_blank"

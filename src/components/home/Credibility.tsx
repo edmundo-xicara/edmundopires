@@ -45,7 +45,7 @@ export function Credibility() {
                   <div className="stat-label mb-2">{stat.label}</div>
                   {stat.hasLinks ? (
                     <p className="text-muted-foreground leading-relaxed text-justify">
-                      Ao longo de todos os vídeos que produzi, lidei diretamente o marketing de grandes marcas do mercado, sendo os principais exemplos:{" "}
+                      Ao longo de todos os vídeos que produzi, lidei diretamente com o marketing de grandes marcas do mercado, sendo os principais exemplos:{" "}
                       <Link to="/cases/shogun-disney" className="text-accent hover:underline">Disney+</Link>,{" "}
                       <Link to="/cases/copa-do-mundo-2022" className="text-accent hover:underline">Globo Esporte</Link>,{" "}
                       <a href="https://youtu.be/XDOWW7CQmhg?t=243" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Insider</a>,{" "}

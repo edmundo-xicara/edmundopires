@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { OtherCases } from "@/components/OtherCases";
 
 const CaseShogun = () => {
   return (
@@ -89,19 +90,7 @@ const CaseShogun = () => {
             </ScrollReveal>
           </div>
 
-          <ScrollReveal>
-            <div className="mt-16 pt-12 border-t border-border">
-              <h3 className="text-lg font-semibold mb-6">Outros cases</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/cases/grecia-antiga" className="btn-secondary flex-1 justify-center">
-                  Documentário Grécia Antiga
-                </Link>
-                <Link to="/cases/copa-do-mundo-2022" className="btn-secondary flex-1 justify-center">
-                  Copa do Mundo 2022
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
+          <OtherCases currentSlug="shogun-disney" />
         </div>
       </article>
     </Layout>

@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { OtherCases } from "@/components/OtherCases";
 import revista1 from "@/assets/revista-1.png";
 import revista2 from "@/assets/revista-2.png";
 import revista3 from "@/assets/revista-3.png";
@@ -97,6 +98,8 @@ const CaseRevistaInstagram = () => {
                 </ScrollReveal>
               ))}
             </div>
+
+            <OtherCases currentSlug="revista-instagram" />
           </div>
         </div>
       </article>

@@ -2,22 +2,19 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import { useLanguage } from "@/contexts/LanguageContext";
 
-const navLinksData = [
-  { href: "/", labelKey: "nav.home" },
-  { href: "/cases", labelKey: "nav.cases" },
-  { href: "/sobre", labelKey: "nav.about" },
-  { href: "/servicos", labelKey: "nav.services" },
-  { href: "/portfolio", labelKey: "nav.portfolio" },
-  { href: "/contato", labelKey: "nav.contact" },
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/cases", label: "Cases" },
+  { href: "/sobre", label: "Sobre" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/portfolio", label: "Portfólio" },
+  { href: "/contato", label: "Contato" },
 ];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -29,7 +26,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinksData.map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
@@ -37,15 +34,14 @@ export function Header() {
                   location.pathname === link.href ? "text-foreground" : ""
                 }`}
               >
-                {t(link.labelKey)}
+                {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Theme & Language Toggles */}
+          {/* Theme Toggle */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <LanguageToggle />
             
             {/* Mobile Menu Button */}
             <button
@@ -62,7 +58,7 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-6 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navLinksData.map((link) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
@@ -73,7 +69,7 @@ export function Header() {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {t(link.labelKey)}
+                  {link.label}
                 </Link>
               ))}
             </div>

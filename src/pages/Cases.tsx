@@ -5,12 +5,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const allCases = [
   {
+    slug: "nobel-2025",
+    title: "Entrevistas de especialistas para Prêmio Nobel 2025",
+    client: "TinocandoTV",
+    category: "Produção e Entrevistas",
+    description:
+      "Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles.",
+  },
+  {
     slug: "grecia-antiga",
     title: "Documentário Grécia Antiga",
     client: "TinocandoTV",
     category: "Documentário",
     description:
-      "O maior documentário já produzido pelo canal. Atuei na ampliação do revisão e ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
+      "O maior documentário já produzido pelo canal. Atuei na ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
   },
   {
     slug: "copa-do-mundo-2022",
@@ -35,14 +43,6 @@ const allCases = [
     category: "Design Editorial",
     description:
       "Durante um período específico, eu e o Tinôco decidimos testar um projeto novo no Instagram do TinocandoTV: a criação de revistas digitais com notícias socioculturais e, em alguns casos, políticas. Fui responsável pela criação da maior parte das revistas privadas destinadas aos assinantes.",
-  },
-  {
-    slug: "nobel-2025",
-    title: "Entrevistas de especialistas para Prêmio Nobel 2025",
-    client: "TinocandoTV",
-    category: "Produção e Entrevistas",
-    description:
-      "Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles.",
   },
 ];
 
