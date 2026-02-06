@@ -1,8 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
-import { Mail, Linkedin, ArrowRight, Phone } from "lucide-react";
+import { Mail, Linkedin, ArrowRight, Phone, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useState } from "react";
 
 const Contato = () => {
+  const [phoneCopied, setPhoneCopied] = useState(false);
+
+  const copyPhone = () => {
+    navigator.clipboard.writeText("31993331644");
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2000);
+  };
+
   return (
     <Layout>
       <section className="section-padding min-h-[80vh] flex items-center">
@@ -39,21 +48,21 @@ const Contato = () => {
               </ScrollReveal>
 
               <ScrollReveal delay={80} direction="left">
-                <a
-                  href="https://w.app/4bpne2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-editorial flex items-center gap-6 group"
+                <button
+                  onClick={copyPhone}
+                  className="card-editorial flex items-center gap-6 group w-full text-left cursor-pointer"
                 >
                   <div className="icon-box inline-flex items-center justify-center w-16 h-16 rounded bg-primary text-primary-foreground group-hover:bg-accent transition-colors duration-250">
-                    <Phone size={28} />
+                    {phoneCopied ? <Check size={28} /> : <Phone size={28} />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">Whatsapp</h3>
-                    <p className="text-muted-foreground">(31) 99333-1644</p>
+                    <h3 className="text-lg font-semibold mb-1">Telefone</h3>
+                    <p className="text-muted-foreground">
+                      {phoneCopied ? "Número copiado!" : "(31) 99333-1644"}
+                    </p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
-                </a>
+                </button>
               </ScrollReveal>
 
               <ScrollReveal delay={160} direction="left">

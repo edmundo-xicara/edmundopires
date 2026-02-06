@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import midiaKitEstranhaHistoria from "@/assets/midia-kit-estranha-historia.png";
@@ -135,34 +135,37 @@ const Portfolio = () => {
           <div className="flex flex-col gap-8">
             {publis.map((publi, index) => (
               <ScrollReveal key={index} delay={index * 80}>
-                <div className="card-editorial p-0 overflow-hidden flex flex-col md:flex-row">
-                  <div className="md:w-1/3 aspect-video md:aspect-auto bg-muted flex items-center justify-center">
-                    <span className="text-4xl font-bold text-muted-foreground/50">{publi.title}</span>
-                  </div>
-                  <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{publi.title}</h3>
+                {publi.caseLink ? (
+                  <Link
+                    to={publi.caseLink}
+                    className="card-editorial block group"
+                  >
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">{publi.title}</h3>
                     <p className="text-muted-foreground leading-relaxed text-justify mb-4">
                       {publi.description}
                     </p>
-                    {publi.caseLink && (
-                      <Link to={publi.caseLink} className="btn-accent inline-flex w-fit">
-                        {publi.caseLinkText}
-                        <ExternalLink size={16} className="ml-2" />
-                      </Link>
-                    )}
-                    {publi.videoLink && (
-                      <a
-                        href={publi.videoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-accent inline-flex w-fit"
-                      >
-                        {publi.videoLinkText}
-                        <ExternalLink size={16} className="ml-2" />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                    <span className="btn-accent inline-flex w-fit">
+                      {publi.caseLinkText}
+                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-250" />
+                    </span>
+                  </Link>
+                ) : (
+                  <a
+                    href={publi.videoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-editorial block group"
+                  >
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">{publi.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
+                      {publi.description}
+                    </p>
+                    <span className="btn-accent inline-flex w-fit">
+                      {publi.videoLinkText}
+                      <ExternalLink size={16} className="ml-2" />
+                    </span>
+                  </a>
+                )}
               </ScrollReveal>
             ))}
           </div>

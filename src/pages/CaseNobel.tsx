@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { OtherCases } from "@/components/OtherCases";
 
 const CaseNobel = () => {
   return (
@@ -93,6 +94,8 @@ const CaseNobel = () => {
                   </div>
                 </a>
               </ScrollReveal>
+
+              <OtherCases currentSlug="nobel-2025" />
             </div>
           </div>
         </div>
