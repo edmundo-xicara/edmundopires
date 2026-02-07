@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 export function Hero() {
   return (
-    <section className="section-padding min-h-[90vh] flex items-center">
-      <div className="container-wide">
+    <section className="section-padding min-h-[90vh] flex items-center relative">
+      <BackgroundPaths />
+      <div className="container-wide relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Foto */}
           <ScrollReveal direction="none" duration={300}>
