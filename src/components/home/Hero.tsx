@@ -5,7 +5,7 @@ import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 export function Hero() {
   return (
-    <section className="section-padding !pb-8 md:!pb-12 min-h-[70vh] flex items-center">
+    <section className="section-padding !pb-0 flex items-center">
       <div className="container-wide">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Foto */}
