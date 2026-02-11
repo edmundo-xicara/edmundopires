@@ -7,9 +7,9 @@ export function Hero() {
   return (
     <section className="section-padding !pb-0 flex items-center">
       <div className="container-wide">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-          {/* Foto - 1/3 no desktop */}
-          <ScrollReveal direction="none" duration={300} className="w-full lg:w-1/3 flex justify-center">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-12 items-center">
+          {/* Foto - 1/3 no tablet e desktop */}
+          <ScrollReveal direction="none" duration={300} className="w-full md:w-1/3 flex justify-center">
             <div className="w-48 h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full bg-muted border-4 border-accent/20 overflow-hidden transition-transform duration-250 hover:scale-105">
               <img
                 src={fotoPerfil}
@@ -20,8 +20,8 @@ export function Hero() {
             </div>
           </ScrollReveal>
 
-          {/* Conteúdo - 2/3 no desktop */}
-          <div className="lg:w-2/3">
+          {/* Conteúdo - 2/3 no tablet e desktop */}
+          <div className="md:w-2/3">
             <ScrollReveal delay={0}>
               <div className="accent-line mb-8" />
             </ScrollReveal>
