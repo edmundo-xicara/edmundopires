@@ -18,8 +18,8 @@ const cases = [
       "O maior documentário já produzido pelo canal. Atuei na ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
   },
   {
-    slug: "copa-do-mundo-2022",
-    title: "Campanha Copa do Mundo 2022",
+    slug: "olimpiadas-2024",
+    title: "Campanha Olimpíadas de 2024",
     client: "Globo Esporte",
     description:
       "Tive a honra de participar dessa campanha juntamente com o Tinôco, dono do canal. Além de auxiliar em todo o planejamento da campanha dentro do TinocandoTV, fiquei responsável por toda a captação do making of durante as gravações no Rio de Janeiro, tendo a experiência de como funciona os bastidores de uma produção profissional de grande porte como a do Globo Esporte.",

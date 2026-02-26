@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/cases/grecia-antiga" element={<CaseGreciaAntiga />} />
-          <Route path="/cases/copa-do-mundo-2022" element={<CaseCopaDoMundo />} />
+          <Route path="/cases/olimpiadas-2024" element={<CaseCopaDoMundo />} />
           <Route path="/cases/shogun-disney" element={<CaseShogun />} />
           <Route path="/cases/revista-instagram" element={<CaseRevistaInstagram />} />
           <Route path="/cases/nobel-2025" element={<CaseNobel />} />

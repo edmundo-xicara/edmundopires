@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const allCases = [
   { slug: "nobel-2025", title: "Prêmio Nobel 2025" },
   { slug: "grecia-antiga", title: "Documentário Grécia Antiga" },
-  { slug: "copa-do-mundo-2022", title: "Copa do Mundo 2022" },
+  { slug: "olimpiadas-2024", title: "Olimpíadas de 2024" },
   { slug: "shogun-disney", title: "Parceria Disney+ — Shōgun" },
   { slug: "revista-instagram", title: "Revista digital - Instagram" },
 ];

@@ -42,8 +42,8 @@ const publis = [
   },
   {
     title: "Globo Esporte",
-    description: "Acompanhei o Tinôco numa série de gravações no Rio de Janeiro para divulgação da Copa do Mundo 2022 pela equipe do Globo Esporte.",
-    caseLink: "/cases/copa-do-mundo-2022",
+    description: "Acompanhei o Tinôco numa série de gravações no Rio de Janeiro para divulgação das Olimpíadas de 2024 pela equipe do Globo Esporte.",
+    caseLink: "/cases/olimpiadas-2024",
     caseLinkText: "Veja mais no case",
   },
   {

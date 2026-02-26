@@ -19,7 +19,7 @@ const CaseCopaDoMundo = () => {
               <span className="text-sm text-accent font-medium uppercase tracking-wider mb-4 block">
                 Globo Esporte • Making Of Institucional
               </span>
-              <h1 className="text-4xl md:text-5xl mb-6">Campanha Copa do Mundo 2022</h1>
+              <h1 className="text-4xl md:text-5xl mb-6">Campanha Olimpíadas de 2024</h1>
               <p className="text-xl text-muted-foreground text-justify">
                 Captação do making of e bastidores das gravações no Rio de Janeiro.
               </p>
@@ -33,7 +33,7 @@ const CaseCopaDoMundo = () => {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">Contexto</h2>
                 <p className="text-justify">
-                  Durante a campanha da Copa do Mundo 2022, o Globo Esporte convidou o Tinôco, dono do canal, para realizar{" "}
+                  Durante a campanha das Olimpíadas de 2024, o Globo Esporte convidou o Tinôco, dono do canal, para realizar{" "}
                   <a 
                     href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40geglobo%2Fvideo%2F7398979892722830597%3Fq%3Dtinocandotv%2520globo%2520esporte%2520torcedor%26t%3D1768226170070&lang=en&enter_method=mandatory"
                     target="_blank"
@@ -88,7 +88,7 @@ const CaseCopaDoMundo = () => {
             </ScrollReveal>
           </div>
 
-          <OtherCases currentSlug="copa-do-mundo-2022" />
+          <OtherCases currentSlug="olimpiadas-2024" />
         </div>
       </article>
     </Layout>
