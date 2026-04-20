@@ -2,9 +2,11 @@ import { Layout } from "@/components/layout/Layout";
 import { Mail, Linkedin, ArrowRight, Phone, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contato = () => {
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const { t } = useLanguage();
 
   const copyPhone = () => {
     navigator.clipboard.writeText("31993331644");
@@ -20,12 +22,12 @@ const Contato = () => {
             <ScrollReveal>
               <div>
                 <div className="accent-line mb-6" />
-                <h1 className="text-4xl md:text-5xl mb-6">Vamos conversar</h1>
+                <h1 className="text-4xl md:text-5xl mb-6">{t("contato.title")}</h1>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                  Se você trabalha com conteúdo complexo e precisa organizar pesquisa, produção e qualidade — entre em contato.
+                  {t("contato.desc")}
                 </p>
                 <p className="text-muted-foreground">
-                  Respondo a todas as mensagens em até 48 horas úteis.
+                  {t("contato.responseTime")}
                 </p>
               </div>
             </ScrollReveal>
@@ -40,7 +42,7 @@ const Contato = () => {
                     <Mail size={28} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">Email</h3>
+                    <h3 className="text-lg font-semibold mb-1">{t("contato.email")}</h3>
                     <p className="text-muted-foreground">edmundopires@outlook.com</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
@@ -56,9 +58,9 @@ const Contato = () => {
                     {phoneCopied ? <Check size={28} /> : <Phone size={28} />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">Telefone</h3>
+                    <h3 className="text-lg font-semibold mb-1">{t("contato.phone")}</h3>
                     <p className="text-muted-foreground">
-                      {phoneCopied ? "Número copiado!" : "(31) 99333-1644"}
+                      {phoneCopied ? t("contato.phoneCopied") : "(31) 99333-1644"}
                     </p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
@@ -76,8 +78,8 @@ const Contato = () => {
                     <Linkedin size={28} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">LinkedIn</h3>
-                    <p className="text-muted-foreground">Conecte-se comigo</p>
+                    <h3 className="text-lg font-semibold mb-1">{t("contato.linkedin")}</h3>
+                    <p className="text-muted-foreground">{t("contato.linkedinDesc")}</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
                 </a>

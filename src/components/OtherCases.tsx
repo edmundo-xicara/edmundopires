@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
-
-const allCases = [
-  { slug: "nobel-2025", title: "Prêmio Nobel 2025" },
-  { slug: "grecia-antiga", title: "Documentário Grécia Antiga" },
-  { slug: "olimpiadas-2024", title: "Olimpíadas de 2024" },
-  { slug: "shogun-disney", title: "Parceria Disney+ — Shōgun" },
-  { slug: "revista-instagram", title: "Revista digital - Instagram" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface OtherCasesProps {
   currentSlug: string;
 }
 
 export function OtherCases({ currentSlug }: OtherCasesProps) {
+  const { t } = useLanguage();
+
+  const allCases = [
+    { slug: "nobel-2025", titleKey: "case.nobel.shortTitle" },
+    { slug: "grecia-antiga", titleKey: "case.grecia.title" },
+    { slug: "olimpiadas-2024", titleKey: "case.olimpiadas.shortTitle" },
+    { slug: "shogun-disney", titleKey: "case.shogun.title" },
+    { slug: "revista-instagram", titleKey: "case.revista.title" },
+  ];
+
   const otherCases = allCases.filter((c) => c.slug !== currentSlug);
 
   return (
     <ScrollReveal>
       <div className="mt-16 pt-12 border-t border-border">
-        <h3 className="text-lg font-semibold mb-6">Outros cases</h3>
+        <h3 className="text-lg font-semibold mb-6">{t("casesPage.others")}</h3>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4">
           {otherCases.map((caseItem) => (
             <Link
@@ -27,7 +30,7 @@ export function OtherCases({ currentSlug }: OtherCasesProps) {
               to={`/cases/${caseItem.slug}`}
               className="btn-secondary flex-1 justify-center min-w-[200px]"
             >
-              {caseItem.title}
+              {t(caseItem.titleKey)}
             </Link>
           ))}
         </div>

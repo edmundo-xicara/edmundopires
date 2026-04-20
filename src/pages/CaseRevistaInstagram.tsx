@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { OtherCases } from "@/components/OtherCases";
+import { useLanguage } from "@/contexts/LanguageContext";
 import revista1 from "@/assets/revista-1.png";
 import revista2 from "@/assets/revista-2.png";
 import revista3 from "@/assets/revista-3.png";
@@ -20,6 +21,7 @@ const revistas = [
 ];
 
 const CaseRevistaInstagram = () => {
+  const { t } = useLanguage();
   return (
     <Layout>
       <article className="section-padding">
@@ -29,48 +31,47 @@ const CaseRevistaInstagram = () => {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-250 mb-8"
           >
             <ArrowLeft size={18} />
-            Voltar para cases
+            {t("casesPage.back")}
           </Link>
 
           <div className="max-w-4xl">
             <ScrollReveal>
               <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-4">Revista digital - Instagram</h1>
+              <h1 className="text-4xl md:text-5xl mb-4">{t("case.revista.title")}</h1>
               <p className="text-xl text-muted-foreground mb-12">
-                Revistas diárias no Instagram.
+                {t("case.revista.subtitle")}
               </p>
             </ScrollReveal>
 
             <div className="prose prose-lg max-w-none">
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Contexto</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.context")}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  Durante um período específico, eu e o Tinôco decidimos testar um projeto novo no Instagram do TinocandoTV: a criação de revistas digitais com notícias socioculturais e, em alguns casos, políticas. Parte dessas revistas foi publicada gratuitamente no Instagram, enquanto outras ficaram disponíveis exclusivamente para assinantes, dentro de um sistema de membros. O objetivo era experimentar um formato editorial diferente, mais aprofundado e visualmente organizado, adaptado ao consumo rápido da plataforma.
+                  {t("case.revista.contextText")}
                 </p>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Meu papel como designer</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.revista.roleTitle")}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
-                  Fui responsável pela criação da maior parte das revistas privadas destinadas aos assinantes, atuando desde a definição da estrutura de cada edição, incluindo escrita dos textos e número de slides, até o design completo das páginas no Figma.
+                  {t("case.revista.roleText1")}
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  Ao longo do projeto, buscamos manter um padrão visual consistente, com layouts leves e uso recorrente de pinturas ou imagens históricas texturizadas, sempre escolhidas para dialogar com o conteúdo e reforçar o tema abordado em cada revista.
+                  {t("case.revista.roleText2")}
                 </p>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Processo</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.process")}</h2>
                 <ul className="text-muted-foreground leading-relaxed mb-8 list-disc list-inside space-y-2">
-                  <li>Definição do tema e recorte editorial</li>
-                  <li>Estruturação da revista (número de slides e textos)</li>
-                  <li>Pesquisa e seleção de imagens</li>
-                  <li>Desenvolvimento do design página a página</li>
+                  {[1, 2, 3, 4].map((i) => (
+                    <li key={i}>{t(`case.revista.process${i}`)}</li>
+                  ))}
                 </ul>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Resultado</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.result")}</h2>
               </ScrollReveal>
             </div>
 
@@ -91,7 +92,7 @@ const CaseRevistaInstagram = () => {
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
                       <span className="text-white text-lg md:text-xl font-semibold text-center px-4">
-                        Confira no Instagram
+                        {t("case.revista.checkInstagram")}
                       </span>
                     </div>
                   </a>

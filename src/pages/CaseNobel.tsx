@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { OtherCases } from "@/components/OtherCases";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseNobel = () => {
+  const { t } = useLanguage();
   return (
     <Layout>
       <article className="section-padding">
@@ -14,63 +16,61 @@ const CaseNobel = () => {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-250 mb-8"
           >
             <ArrowLeft size={18} />
-            Voltar para cases
+            {t("casesPage.back")}
           </Link>
 
           <div className="max-w-4xl">
             <ScrollReveal>
               <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-4">Entrevistas de especialistas para Prêmio Nobel 2025</h1>
+              <h1 className="text-4xl md:text-5xl mb-4">{t("case.nobel.title")}</h1>
               <p className="text-xl text-muted-foreground mb-12">
-                Entrevistas exclusivas com especialistas para cada categoria do Nobel de 2025.
+                {t("case.nobel.subtitle")}
               </p>
             </ScrollReveal>
 
             <div className="prose prose-lg max-w-none">
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Contexto</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.context")}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
-                  Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Para aprofundar o conteúdo, convidamos especialistas de diferentes áreas para comentar cada categoria do prêmio.
+                  {t("case.nobel.contextText1")}
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  Participaram do projeto uma geneticista, um químico, um físico e um economista, além de especialistas que ajudaram a contextualizar o Prêmio Nobel da Paz, considerando sua natureza multilateral. Para essa categoria, contamos com a colaboração de professores de geografia e geopolítica, um especialista em relações internacionais e dois historiadores, cada um contribuindo com análises complementares sobre o prêmio daquele ano.
+                  {t("case.nobel.contextText2")}
                 </p>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Meu papel como produtor e entrevistador</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.nobel.roleTitle")}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
-                  Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles. Todo o material foi registrado no{" "}
+                  {t("case.nobel.roleText1Pre")}{" "}
                   <a
                     href="https://www.youtube.com/@cortesTTVoficial"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-accent hover:underline"
                   >
-                    canal de cortes do TinocandoTV
+                    {t("case.nobel.roleText1Link")}
                   </a>
-                  , um projeto novo dentro do canal, do qual também sou responsável.
+                  {t("case.nobel.roleText1Post")}
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  Após a realização das entrevistas, selecionei e filtrei os momentos-chave de cada conversa para construir um roteiro coeso, combinando as explicações dos especialistas com trechos explicativos próprios, falados pelo Tinôco no vídeo e apresentados de forma mais clara, direta e acessível ao público.
+                  {t("case.nobel.roleText2")}
                 </p>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Processo</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.process")}</h2>
                 <ul className="text-muted-foreground leading-relaxed mb-8 list-disc list-inside space-y-2">
-                  <li>Identificação e contato com especialistas de cada área</li>
-                  <li>Estudo prévio sobre os temas e categorias do prêmio</li>
-                  <li>Desenvolvimento das perguntas para as entrevistas</li>
-                  <li>Realização das entrevistas</li>
-                  <li>Seleção e filtragem dos momentos-chave para a construção do roteiro</li>
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <li key={i}>{t(`case.nobel.process${i}`)}</li>
+                  ))}
                 </ul>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">Resultado</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.result")}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  O projeto resultou em um vídeo com mais de uma hora de duração, no qual explicamos a trajetória de Alfred Nobel, criador do prêmio, e apresentamos as categorias do Nobel de 2025, seus vencedores e as principais contribuições de cada um para suas respectivas áreas.
+                  {t("case.nobel.resultText")}
                 </p>
               </ScrollReveal>
 
@@ -84,12 +84,12 @@ const CaseNobel = () => {
                 >
                   <img
                     src="https://img.youtube.com/vi/j_BSyCFzxuM/maxresdefault.jpg"
-                    alt="Vídeo Prêmio Nobel 2025"
+                    alt={t("case.nobel.videoAlt")}
                     className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
                     <span className="text-white text-xl md:text-2xl font-semibold text-center px-4">
-                      Confira o vídeo no Youtube
+                      {t("case.nobel.watchVideo")}
                     </span>
                   </div>
                 </a>
