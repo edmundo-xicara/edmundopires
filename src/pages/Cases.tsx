@@ -2,51 +2,49 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-
-const allCases = [
-  {
-    slug: "nobel-2025",
-    title: "Entrevistas de especialistas para Prêmio Nobel 2025",
-    client: "TinocandoTV",
-    category: "Produção e Entrevistas",
-    description:
-      "Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles.",
-  },
-  {
-    slug: "grecia-antiga",
-    title: "Documentário Grécia Antiga",
-    client: "TinocandoTV",
-    category: "Documentário",
-    description:
-      "O maior documentário já produzido pelo canal. Atuei na ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
-  },
-  {
-    slug: "olimpiadas-2024",
-    title: "Campanha Olimpíadas de 2024",
-    client: "Globo Esporte",
-    category: "Making Of Institucional",
-    description:
-      "Tive a honra de participar dessa campanha juntamente com o Tinôco, dono do canal. Além de auxiliar em todo o planejamento da campanha dentro do TinocandoTV, fiquei responsável por toda a captação do making of durante as gravações no Rio de Janeiro, tendo a experiência de como funciona os bastidores de uma produção profissional de grande porte como a do Globo Esporte.",
-  },
-  {
-    slug: "shogun-disney",
-    title: "Parceria Disney+ — Shōgun",
-    client: "Disney+",
-    category: "Parceria Publicitária",
-    description:
-      "Tive a oportunidade de participar ativamente da parceria entre TinocandoTV e Disney+ para a divulgação da séria Shōgun. Fiquei responsável pela pesquisa dos vídeos, tanto como gestor e revisor, quanto como pesquisador. Também revisei historicamente o vídeo final, garantindo a coerência visual com a historiografia conhecida. Além disso, participei ativamente na escrita da inserção publicitária no roteiro final do vídeo.",
-  },
-  {
-    slug: "revista-instagram",
-    title: "Revista digital - Instagram",
-    client: "TinocandoTV",
-    category: "Design Editorial",
-    description:
-      "Durante um período específico, eu e o Tinôco decidimos testar um projeto novo no Instagram do TinocandoTV: a criação de revistas digitais com notícias socioculturais e, em alguns casos, políticas. Fui responsável pela criação da maior parte das revistas privadas destinadas aos assinantes.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Cases = () => {
+  const { t } = useLanguage();
+
+  const allCases = [
+    {
+      slug: "nobel-2025",
+      title: t("case.nobel.title"),
+      client: t("case.nobel.client"),
+      category: t("case.nobel.category"),
+      description: t("case.nobel.desc"),
+    },
+    {
+      slug: "grecia-antiga",
+      title: t("case.grecia.title"),
+      client: t("case.grecia.client"),
+      category: t("case.grecia.category"),
+      description: t("case.grecia.desc"),
+    },
+    {
+      slug: "olimpiadas-2024",
+      title: t("case.olimpiadas.title"),
+      client: t("case.olimpiadas.client"),
+      category: t("case.olimpiadas.category"),
+      description: t("case.olimpiadas.desc"),
+    },
+    {
+      slug: "shogun-disney",
+      title: t("case.shogun.title"),
+      client: t("case.shogun.client"),
+      category: t("case.shogun.category"),
+      description: t("case.shogun.desc"),
+    },
+    {
+      slug: "revista-instagram",
+      title: t("case.revista.title"),
+      client: t("case.revista.client"),
+      category: t("case.revista.category"),
+      description: t("case.revista.desc"),
+    },
+  ];
+
   return (
     <Layout>
       <section className="section-padding">
@@ -54,9 +52,9 @@ const Cases = () => {
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
               <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-6">Cases</h1>
+              <h1 className="text-4xl md:text-5xl mb-6">{t("casesPage.title")}</h1>
               <p className="text-xl text-muted-foreground text-justify">
-                Principais projetos nos quais trabalhei, servindo como exemplos práticos da qualidade do meu trabalho como gestor, produtor e pesquisador.
+                {t("casesPage.desc")}
               </p>
             </div>
           </ScrollReveal>
@@ -87,7 +85,7 @@ const Cases = () => {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 text-accent font-medium shrink-0">
-                      Ver case
+                      {t("casesPage.viewCase")}
                       <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-250" />
                     </div>
                   </div>

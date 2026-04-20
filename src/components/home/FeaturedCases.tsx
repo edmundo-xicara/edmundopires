@@ -1,32 +1,32 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-
-const cases = [
-  {
-    slug: "nobel-2025",
-    title: "Entrevistas de especialistas para Prêmio Nobel 2025",
-    client: "TinocandoTV",
-    description:
-      "Em 2025, o TinocandoTV produziu um vídeo especial explicando os vencedores do Prêmio Nobel daquele ano. Fui responsável por buscar e entrar em contato com a maior parte dos especialistas convidados, além de estruturar as perguntas e conduzir as entrevistas com cada um deles.",
-  },
-  {
-    slug: "grecia-antiga",
-    title: "Documentário Grécia Antiga",
-    client: "TinocandoTV",
-    description:
-      "O maior documentário já produzido pelo canal. Atuei na ampliação do roteiro, complementando a narrativa do vídeo com uma pesquisa histórica adicional, além de conduzir cerca de 70% da pesquisa de imagens do documentário final.",
-  },
-  {
-    slug: "olimpiadas-2024",
-    title: "Campanha Olimpíadas de 2024",
-    client: "Globo Esporte",
-    description:
-      "Tive a honra de participar dessa campanha juntamente com o Tinôco, dono do canal. Além de auxiliar em todo o planejamento da campanha dentro do TinocandoTV, fiquei responsável por toda a captação do making of durante as gravações no Rio de Janeiro, tendo a experiência de como funciona os bastidores de uma produção profissional de grande porte como a do Globo Esporte.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function FeaturedCases() {
+  const { t } = useLanguage();
+
+  const cases = [
+    {
+      slug: "nobel-2025",
+      title: t("case.nobel.title"),
+      client: t("case.nobel.client"),
+      description: t("case.nobel.desc"),
+    },
+    {
+      slug: "grecia-antiga",
+      title: t("case.grecia.title"),
+      client: t("case.grecia.client"),
+      description: t("case.grecia.desc"),
+    },
+    {
+      slug: "olimpiadas-2024",
+      title: t("case.olimpiadas.title"),
+      client: t("case.olimpiadas.client"),
+      description: t("case.olimpiadas.desc"),
+    },
+  ];
+
   return (
     <section className="section-padding bg-secondary/30">
       <div className="container-wide">
@@ -34,15 +34,15 @@ export function FeaturedCases() {
           <ScrollReveal>
             <div>
               <div className="accent-line mb-6" />
-              <h2 className="text-3xl md:text-4xl mb-4">Cases em destaque</h2>
+              <h2 className="text-3xl md:text-4xl mb-4">{t("featured.title")}</h2>
               <p className="text-muted-foreground text-lg max-w-xl">
-                Principais projetos nos quais trabalhei, servindo como exemplos práticos da qualidade do meu trabalho como gestor, produtor e pesquisador.
+                {t("featured.desc")}
               </p>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <Link to="/cases" className="btn-accent">
-              Ver todos os cases
+              {t("featured.viewAll")}
               <ArrowRight size={18} />
             </Link>
           </ScrollReveal>
@@ -66,7 +66,7 @@ export function FeaturedCases() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2 text-accent font-medium shrink-0">
-                    Ver case completo
+                    {t("featured.viewCase")}
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-250" />
                   </div>
                 </div>

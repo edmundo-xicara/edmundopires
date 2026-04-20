@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 import fotoPerfil from "@/assets/foto-perfil.jpg";
 
 export function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="section-padding !pb-0 flex items-center">
       <div className="container-wide">
@@ -28,25 +30,25 @@ export function Hero() {
 
             <ScrollReveal delay={60}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-                Youtube Manager
+                {t("hero.title")}
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-                Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.
+                {t("hero.description")}
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={180}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/cases" className="btn-primary">
-                  Ver cases
+                  {t("hero.cta.cases")}
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
                 <Link to="/contato" className="btn-secondary">
                   <MessageCircle className="mr-2" size={18} />
-                  Falar comigo
+                  {t("hero.cta.contact")}
                 </Link>
               </div>
             </ScrollReveal>

@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const { t } = useLanguage();
 
   const copyPhone = () => {
     navigator.clipboard.writeText("31993331644");
@@ -20,7 +22,7 @@ export function Footer() {
             <div>
               <h3 className="font-heading text-2xl font-semibold mb-4">Edmundo Pires</h3>
               <p className="text-primary-foreground/70 leading-relaxed">
-                Gestão de projetos, pesquisa e produção audiovisual em larga escala.
+                {t("footer.tagline")}
               </p>
             </div>
           </ScrollReveal>
@@ -28,20 +30,20 @@ export function Footer() {
           <ScrollReveal delay={80}>
             <div>
               <h4 className="font-medium uppercase tracking-widest text-sm mb-4 text-primary-foreground/60">
-                Navegação
+                {t("footer.navTitle")}
               </h4>
               <div className="flex flex-col gap-3">
                 <Link to="/cases" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  Cases
+                  {t("nav.cases")}
                 </Link>
                 <Link to="/sobre" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  Sobre
+                  {t("nav.about")}
                 </Link>
                 <Link to="/servicos" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  Serviços
+                  {t("nav.services")}
                 </Link>
                 <Link to="/contato" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  Contato
+                  {t("nav.contact")}
                 </Link>
               </div>
             </div>
@@ -50,7 +52,7 @@ export function Footer() {
           <ScrollReveal delay={160}>
             <div>
               <h4 className="font-medium uppercase tracking-widest text-sm mb-4 text-primary-foreground/60">
-                Contato
+                {t("footer.contactTitle")}
               </h4>
               <div className="flex flex-col gap-3">
                 <a
@@ -65,7 +67,7 @@ export function Footer() {
                   className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
                 >
                   {phoneCopied ? <Check size={18} /> : <Phone size={18} />}
-                  {phoneCopied ? "Copiado!" : "(31) 99333-1644"}
+                  {phoneCopied ? t("footer.copied") : "(31) 99333-1644"}
                 </button>
                 <a
                   href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
@@ -82,7 +84,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-primary-foreground/50 text-sm">
-          © {new Date().getFullYear()} Edmundo Pires. Todos os direitos reservados.
+          © {new Date().getFullYear()} Edmundo Pires. {t("footer.rights")}
         </div>
       </div>
     </footer>
