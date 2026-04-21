@@ -6,12 +6,19 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contato = () => {
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
   const { t } = useLanguage();
 
   const copyPhone = () => {
     navigator.clipboard.writeText("31993331644");
     setPhoneCopied(true);
     setTimeout(() => setPhoneCopied(false), 2000);
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("edmundopires@outlook.com");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
   };
 
   return (
@@ -34,19 +41,21 @@ const Contato = () => {
 
             <div className="space-y-6">
               <ScrollReveal delay={0} direction="left">
-                <a
-                  href="mailto:edmundopires@outlook.com"
-                  className="card-editorial flex items-center gap-6 group"
+                <button
+                  onClick={copyEmail}
+                  className="card-editorial flex items-center gap-6 group w-full text-left cursor-pointer"
                 >
                   <div className="icon-box inline-flex items-center justify-center w-16 h-16 rounded bg-primary text-primary-foreground group-hover:bg-accent transition-colors duration-250">
-                    <Mail size={28} />
+                    {emailCopied ? <Check size={28} /> : <Mail size={28} />}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-1">{t("contato.email")}</h3>
-                    <p className="text-muted-foreground">edmundopires@outlook.com</p>
+                    <p className="text-muted-foreground">
+                      {emailCopied ? t("contato.copied") : "edmundopires@outlook.com"}
+                    </p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
-                </a>
+                </button>
               </ScrollReveal>
 
               <ScrollReveal delay={80} direction="left">
