@@ -62,13 +62,13 @@ export function Footer() {
                 {t("footer.contactTitle")}
               </h4>
               <div className="flex flex-col gap-3">
-                <a
-                  href="mailto:edmundopires@outlook.com"
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1"
+                <button
+                  onClick={copyEmail}
+                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
                 >
-                  <Mail size={18} />
-                  edmundopires@outlook.com
-                </a>
+                  {emailCopied ? <Check size={18} /> : <Mail size={18} />}
+                  {emailCopied ? t("footer.copied") : "edmundopires@outlook.com"}
+                </button>
                 <button
                   onClick={copyPhone}
                   className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
