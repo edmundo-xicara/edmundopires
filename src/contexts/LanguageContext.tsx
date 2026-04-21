@@ -495,10 +495,19 @@ const translations: Record<Language, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getBrowserLanguage(): Language {
+  if (typeof navigator === "undefined") return "pt";
+  
+  const browserLang = navigator.language || (navigator as unknown as { userLanguage?: string }).userLanguage || "pt";
+  const langCode = browserLang.toLowerCase().split("-")[0];
+  
+  return langCode === "pt" ? "pt" : "en";
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem("language");
-    return (saved as Language) || "pt";
+    return (saved as Language) || getBrowserLanguage();
   });
 
   const setLanguage = (lang: Language) => {
