@@ -6,12 +6,19 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
   const { t } = useLanguage();
 
   const copyPhone = () => {
     navigator.clipboard.writeText("31993331644");
     setPhoneCopied(true);
     setTimeout(() => setPhoneCopied(false), 2000);
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("edmundopires@outlook.com");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
   };
 
   return (
