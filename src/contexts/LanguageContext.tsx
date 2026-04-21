@@ -450,7 +450,9 @@ const translations: Record<Language, Record<string, string>> = {
     "contato.responseTime": "I respond to all messages within 48 business hours.",
     "contato.email": "Email",
     "contato.phone": "Phone",
+    "contato.emailCopied": "Email copied!",
     "contato.phoneCopied": "Number copied!",
+    "contato.copied": "Copied!",
     "contato.linkedin": "LinkedIn",
     "contato.linkedinDesc": "Connect with me",
 
