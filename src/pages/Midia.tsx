@@ -20,10 +20,37 @@ const Portfolio = () => {
   const { t } = useLanguage();
 
   const videos = [
-    { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: "https://docs.google.com/document/d/1iUIrrrKGCvzM6SaYR4k8Uvafvh8Nmj1wFzE8AyzHwHY/edit?tab=t.0" },
-    { id: "V5VXxyn6G24", title: t("portfolio.video2.title"), description: t("portfolio.video2.desc"), researchLink: "https://docs.google.com/document/d/1D-lCTELT2H6kOpu3Ukrlhq0Fgp5nZnlbVUwtmUkAplQ/edit?usp=sharing" },
-    { id: "PCJ02veFgfg", title: t("portfolio.video3.title"), description: t("portfolio.video3.desc"), researchLink: "https://docs.google.com/document/d/12b0N1zQtPN6UbNCYIeD2cAPAwPYGEQbd0BE7OwMeOUk/edit?usp=sharing" },
-    { id: "cxLm8ZmgKzg", title: t("portfolio.video4.title"), description: t("portfolio.video4.desc"), researchLink: "https://docs.google.com/document/d/1oNJBFaXtNW-0YKiFDpopWtmRBeW_CzAxg05S9XIzFnY/edit?tab=t.0" },
+    { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: language === "en" ? "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" : "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" },
+    { id: "V5VXxyn6G24", title: t("portfolio.video2.title"), description: t("portfolio.video2.desc"), researchLink: "https://docs.google.com/document/d/1HBnwm7k7s1ynkiQayaugg2orrNU9zxRe7rZ7YkWt1k0/edit?usp=drive_link" },
+    { id: "PCJ02veFgfg", title: t("portfolio.video3.title"), description: t("portfolio.video3.desc"), researchLink: "https://docs.google.com/document/d/1hzXc44kfSQ6KZsbnRyvYY1p8lqTqyRKtLEIeIrdbRSs/edit?usp=drive_link" },
+    { id: "cxLm8ZmgKzg", title: t("portfolio.video4.title"), description: t("portfolio.video4.desc"), researchLink: "https://docs.google.com/document/d/1vYyymN2RqjZ_wERrFZ1d4lQ0ONUx4dXB0wGftF0F-T8/edit?tab=t.0" },
+  ];
+
+  const scripts = [
+    {
+      id: "PuJ2AKtlONM",
+      title: t("portfolio.script1.title"),
+      videoLink: "https://youtube.com/shorts/PuJ2AKtlONM",
+      scriptLink: language === "en"
+        ? "https://docs.google.com/document/d/1NI0ZGm6nZHzpm6qwTc74yhrXwT4tsaulM4fJnMbAin4/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1r7D4oCjHNdHhFvv7koFcZHTt82B0vT1_okHLaax3MiI/edit?usp=drive_link",
+    },
+    {
+      id: "lr_kwdM4AkA",
+      title: t("portfolio.script2.title"),
+      videoLink: "https://youtube.com/shorts/lr_kwdM4AkA",
+      scriptLink: language === "en"
+        ? "https://docs.google.com/document/d/1gOtwNBpc5Bawlt44IqXnfLSZNIlzefyANALJ12-_D8U/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1roSmgxwwARZne21TYS13BiSIW1NPn6MVLb298qYYl10/edit?usp=drive_link",
+    },
+    {
+      id: "6OdS2zOgxcE",
+      title: t("portfolio.script3.title"),
+      videoLink: "https://www.youtube.com/shorts/6OdS2zOgxcE",
+      scriptLink: language === "en"
+        ? "https://docs.google.com/document/d/1zEpL1-zXcMoXxljIzToqH2ojyIcSVyqKG0w45eyw_Uo/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1mERt6ARx2R8iGhZ3KKOLD3m4QnZ8aV2JF6XoBgXupGU/edit?usp=drive_link",
+    },
   ];
 
   const publis = [
