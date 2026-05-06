@@ -17,7 +17,7 @@ const outrosExemplos = [
 ];
 
 const Portfolio = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const videos = [
     { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: language === "en" ? "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" : "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" },
