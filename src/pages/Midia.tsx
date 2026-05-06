@@ -163,7 +163,7 @@ const Portfolio = () => {
       </section>
 
       {/* Publis Section */}
-      <section className="section-padding bg-card border-y border-border">
+      <section className="section-padding ">
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
