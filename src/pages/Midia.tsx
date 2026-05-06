@@ -114,6 +114,54 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Roteiros Section */}
+      <section className="section-padding bg-card border-y border-border">
+        <div className="container-wide">
+          <ScrollReveal>
+            <div className="max-w-3xl mb-16">
+              <div className="accent-line mb-6" />
+              <h2 className="text-3xl md:text-4xl mb-6">{t("portfolio.scripts.title")}</h2>
+              <p className="text-xl text-muted-foreground">
+                {t("portfolio.scripts.desc")}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {scripts.map((script, index) => (
+              <ScrollReveal key={index} delay={index * 80} direction="none">
+                <div className="card-editorial p-0 overflow-hidden flex flex-col h-full">
+                  <a
+                    href={script.videoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-[9/16] overflow-hidden bg-muted"
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${script.id}/maxresdefault.jpg`}
+                      alt={script.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-250"
+                    />
+                  </a>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{script.title}</h3>
+                    <a
+                      href={script.scriptLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-accent inline-flex w-fit mt-auto"
+                    >
+                      {t("portfolio.scripts.linkBtn")}
+                      <ExternalLink size={16} className="ml-2" />
+                    </a>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Publis Section */}
       <section className="section-padding bg-card border-y border-border">
         <div className="container-wide">
