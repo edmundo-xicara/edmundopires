@@ -190,6 +190,41 @@ const Portfolio = () => {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Modelos de Roteiros Sub-section */}
+          <ScrollReveal>
+            <div className="max-w-3xl mt-24 mb-12">
+              <div className="accent-line mb-6" />
+              <h3 className="text-2xl md:text-3xl mb-4">{t("portfolio.scriptModels.title")}</h3>
+              <p className="text-lg text-muted-foreground">
+                {t("portfolio.scriptModels.desc")}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="flex flex-col gap-6">
+            {scriptModels.map((model, index) => (
+              <ScrollReveal key={index} delay={index * 80}>
+                <a
+                  href={model.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-editorial block group"
+                >
+                  <h4 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">
+                    {model.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed text-justify mb-4">
+                    {model.description}
+                  </p>
+                  <span className="btn-accent inline-flex w-fit">
+                    {t("portfolio.scripts.linkBtn")}
+                    <ExternalLink size={16} className="ml-2" />
+                  </span>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
