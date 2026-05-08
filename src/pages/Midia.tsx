@@ -53,6 +53,37 @@ const Portfolio = () => {
     },
   ];
 
+  const scriptModels = [
+    {
+      title: t("portfolio.scriptModel1.title"),
+      description: t("portfolio.scriptModel1.desc"),
+      link: language === "en"
+        ? "https://docs.google.com/document/d/1IlG-7bYMWEC1vgtyoJOw0vUA4pltVXbk_W0y1j0LJlE/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1kb8Vnf4rO7iJtHYqaNH8RQe1AQlq0uRBy6bhbu356_U/edit?usp=drive_link",
+    },
+    {
+      title: t("portfolio.scriptModel2.title"),
+      description: t("portfolio.scriptModel2.desc"),
+      link: language === "en"
+        ? "https://docs.google.com/document/d/19b4JJCAJvKfVpF66n_mVq2p8y4-a3cto_HfJhKc7IdA/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1TfsNswKzNZQ40FOt8K1abAuI7FpPPGSAGK9ZW8z2FAY/edit?usp=drive_link",
+    },
+    {
+      title: t("portfolio.scriptModel3.title"),
+      description: t("portfolio.scriptModel3.desc"),
+      link: language === "en"
+        ? "https://docs.google.com/document/d/1xGA8WgJV5Wg46Oma5Y8ObQDts0TA1XwiGSdd-YFBTSI/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1Kw7sQOKjFdgg_VSGse4nndkY4mAaDfw1l49RbLS72cA/edit?usp=drive_link",
+    },
+    {
+      title: t("portfolio.scriptModel4.title"),
+      description: t("portfolio.scriptModel4.desc"),
+      link: language === "en"
+        ? "https://docs.google.com/document/d/1GKq2wQ48UaUNy2TgiVPwywh-d0nfvX5pJ6VWdX2DxLQ/edit?usp=drive_link"
+        : "https://docs.google.com/document/d/1epWOYMt6jYekjPdaDJQ3f1McPTb8RqqW7TGjvPWBkzo/edit?usp=drive_link",
+    },
+  ];
+
   const publis = [
     { title: "Disney+", description: t("portfolio.publi.disney.desc"), caseLink: "/cases/shogun-disney", caseLinkText: t("portfolio.publis.seeCase") },
     { title: "Globo Esporte", description: t("portfolio.publi.globo.desc"), caseLink: "/cases/olimpiadas-2024", caseLinkText: t("portfolio.publis.seeCase") },
