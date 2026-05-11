@@ -20,53 +20,49 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/92 backdrop-blur-sm border-b border-border">
       <nav className="container-wide px-6 md:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="font-heading text-xl font-semibold text-foreground">
-            Edmundo Pires
-          </Link>
+        <div className="flex items-center justify-between h-[60px] gap-6">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Brand placeholder — keeps flex spacing */}
+          <div className="flex-shrink-0 w-8" />
+
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`nav-link text-sm ${
-                  location.pathname === link.href ? "text-foreground" : ""
-                }`}
+                className={`nav-link${location.pathname === link.href ? " active" : ""}`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Toggles */}
-          <div className="flex items-center gap-2">
+          {/* Right controls */}
+          <div className="flex items-center gap-2.5 flex-shrink-0">
             <LanguageToggle />
             <ThemeToggle />
-
-            {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-foreground"
+              className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={t("nav.menu")}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile nav */}
         {isMenuOpen && (
           <div className="md:hidden py-6 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-lg font-medium transition-colors ${
+                  className={`font-mono text-[11px] uppercase tracking-[0.18em] py-3 border-b border-border transition-colors duration-250 ${
                     location.pathname === link.href
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"

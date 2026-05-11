@@ -26,78 +26,95 @@ const CaseRevistaInstagram = () => {
     <Layout>
       <article className="section-padding">
         <div className="container-wide">
-          <Link
-            to="/cases"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-250 mb-8"
-          >
-            <ArrowLeft size={18} />
+
+          <Link to="/cases" className="btn-accent mb-10 inline-flex">
+            <ArrowLeft size={13} className="mr-2" />
             {t("casesPage.back")}
           </Link>
 
           <div className="max-w-4xl">
             <ScrollReveal>
-              <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-4">{t("case.revista.title")}</h1>
-              <p className="text-xl text-muted-foreground mb-12">
-                {t("case.revista.subtitle")}
-              </p>
+              <header className="mb-12">
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">
+                  TinocandoTV · {t("case.revista.category")}
+                </div>
+                <h1 className="font-heading text-[clamp(36px,5vw,64px)] font-medium mb-5">
+                  {t("case.revista.title")}
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t("case.revista.subtitle")}
+                </p>
+              </header>
             </ScrollReveal>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="accent-line mb-12" />
+
+            <div className="space-y-14">
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.context")}</h2>
-                <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  {t("case.revista.contextText")}
-                </p>
+                <section>
+                  <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.context")}</h2>
+                  <p className="text-muted-foreground leading-relaxed text-lg">{t("case.revista.contextText")}</p>
+                </section>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.revista.roleTitle")}</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
-                  {t("case.revista.roleText1")}
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
-                  {t("case.revista.roleText2")}
-                </p>
+                <section>
+                  <h2 className="font-heading text-2xl font-medium mb-5">{t("case.revista.roleTitle")}</h2>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed text-lg">{t("case.revista.roleText1")}</p>
+                    <p className="text-muted-foreground leading-relaxed text-lg">{t("case.revista.roleText2")}</p>
+                  </div>
+                </section>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.process")}</h2>
-                <ul className="text-muted-foreground leading-relaxed mb-8 list-disc list-inside space-y-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <li key={i}>{t(`case.revista.process${i}`)}</li>
-                  ))}
-                </ul>
+                <section>
+                  <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.process")}</h2>
+                  <div className="border-t border-border">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div key={i} className="flex items-start gap-4 py-4 border-b border-border">
+                        <span className="font-mono text-[11px] tracking-[0.14em] text-accent flex-shrink-0 mt-0.5">
+                          {String(i).padStart(2, "0")}
+                        </span>
+                        <span className="text-muted-foreground leading-relaxed">
+                          {t(`case.revista.process${i}`)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               </ScrollReveal>
 
               <ScrollReveal>
-                <h2 className="text-2xl font-semibold mb-4 text-foreground">{t("case.section.result")}</h2>
-              </ScrollReveal>
-            </div>
+                <section>
+                  <h2 className="font-heading text-2xl font-medium mb-8">{t("case.section.result")}</h2>
 
-            {/* Grid de imagens com hover */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-              {revistas.map((revista, index) => (
-                <ScrollReveal key={index} delay={index * 60} direction="none">
-                  <a
-                    href="https://www.instagram.com/tinocandotv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative group overflow-hidden rounded-lg block"
-                  >
-                    <img
-                      src={revista.src}
-                      alt={revista.alt}
-                      className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                      <span className="text-white text-lg md:text-xl font-semibold text-center px-4">
-                        {t("case.revista.checkInstagram")}
-                      </span>
-                    </div>
-                  </a>
-                </ScrollReveal>
-              ))}
+                  {/* Grid de revistas */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {revistas.map((revista, index) => (
+                      <ScrollReveal key={index} delay={index * 60} direction="none">
+                        <a
+                          href="https://www.instagram.com/tinocandotv"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group overflow-hidden border border-border block"
+                        >
+                          <img
+                            src={revista.src}
+                            alt={revista.alt}
+                            className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                            <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                              {t("case.revista.checkInstagram")}
+                            </span>
+                          </div>
+                        </a>
+                      </ScrollReveal>
+                    ))}
+                  </div>
+                </section>
+              </ScrollReveal>
             </div>
 
             <OtherCases currentSlug="revista-instagram" />

@@ -97,18 +97,19 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-6">{t("portfolio.research.title")}</h1>
-              <p className="text-xl text-muted-foreground">
+              <h1 className="font-heading text-[clamp(40px,6vw,80px)] font-medium mb-6">
+                {t("portfolio.research.title")}
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("portfolio.research.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {videos.map((video, index) => (
               <ScrollReveal key={index} delay={index * 80} direction="none">
-                <div className="card-editorial p-0 overflow-hidden flex flex-col h-full">
+                <div className="border border-border bg-card overflow-hidden flex flex-col h-full">
                   <div className="aspect-video overflow-hidden">
                     <a
                       href={`https://youtu.be/${video.id}`}
@@ -124,18 +125,18 @@ const Portfolio = () => {
                     </a>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{video.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
+                    <h3 className="font-heading text-xl font-medium mb-3">{video.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-5 flex-1">
                       {video.description}
                     </p>
                     <a
                       href={video.researchLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-accent inline-flex w-fit mt-auto"
+                      className="btn-accent w-fit"
                     >
                       {t("portfolio.research.linkBtn")}
-                      <ExternalLink size={16} className="ml-2" />
+                      <ExternalLink size={13} />
                     </a>
                   </div>
                 </div>
@@ -146,22 +147,23 @@ const Portfolio = () => {
       </section>
 
       {/* Roteiros Section */}
-      <section className="section-padding bg-card border-y border-border">
+      <section className="section-padding bg-secondary">
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <div className="accent-line mb-6" />
-              <h2 className="text-3xl md:text-4xl mb-6">{t("portfolio.scripts.title")}</h2>
-              <p className="text-xl text-muted-foreground">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+                {t("portfolio.scripts.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("portfolio.scripts.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {scripts.map((script, index) => (
               <ScrollReveal key={index} delay={index * 80} direction="none">
-                <div className="card-editorial p-0 overflow-hidden flex flex-col h-full">
+                <div className="border border-border bg-card overflow-hidden flex flex-col h-full">
                   <a
                     href={script.videoLink}
                     target="_blank"
@@ -175,15 +177,15 @@ const Portfolio = () => {
                     />
                   </a>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4">{script.title}</h3>
+                    <h3 className="font-heading text-xl font-medium mb-4">{script.title}</h3>
                     <a
                       href={script.scriptLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-accent inline-flex w-fit mt-auto"
+                      className="btn-accent w-fit mt-auto"
                     >
                       {t("portfolio.scripts.linkBtn")}
-                      <ExternalLink size={16} className="ml-2" />
+                      <ExternalLink size={13} />
                     </a>
                   </div>
                 </div>
@@ -191,35 +193,38 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Modelos de Roteiros Sub-section */}
+          {/* Modelos de Roteiros */}
           <ScrollReveal>
             <div className="max-w-3xl mt-24 mb-12">
-              <div className="accent-line mb-6" />
-              <h3 className="text-2xl md:text-3xl mb-4">{t("portfolio.scriptModels.title")}</h3>
-              <p className="text-lg text-muted-foreground">
+              <h3 className="font-heading text-[clamp(28px,3.5vw,48px)] font-medium mb-4">
+                {t("portfolio.scriptModels.title")}
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("portfolio.scriptModels.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-col gap-6">
+          <div className="border-t border-border">
             {scriptModels.map((model, index) => (
               <ScrollReveal key={index} delay={index * 80}>
                 <a
                   href={model.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-editorial block group"
+                  className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                 >
-                  <h4 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">
-                    {model.title}
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed text-justify mb-4">
-                    {model.description}
-                  </p>
-                  <span className="btn-accent inline-flex w-fit">
+                  <div className="flex-1">
+                    <h4 className="font-heading text-xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                      {model.title}
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {model.description}
+                    </p>
+                  </div>
+                  <span className="btn-accent flex-shrink-0">
                     {t("portfolio.scripts.linkBtn")}
-                    <ExternalLink size={16} className="ml-2" />
+                    <ExternalLink size={13} />
                   </span>
                 </a>
               </ScrollReveal>
@@ -229,33 +234,38 @@ const Portfolio = () => {
       </section>
 
       {/* Publis Section */}
-      <section className="section-padding ">
+      <section className="section-padding">
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <div className="accent-line mb-6" />
-              <h2 className="text-3xl md:text-4xl mb-6">{t("portfolio.publis.title")}</h2>
-              <p className="text-xl text-muted-foreground">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+                {t("portfolio.publis.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("portfolio.publis.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-col gap-8">
+          <div className="border-t border-border">
             {publis.map((publi, index) => (
               <ScrollReveal key={index} delay={index * 80}>
                 {publi.caseLink ? (
                   <Link
                     to={publi.caseLink}
-                    className="card-editorial block group"
+                    className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                   >
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">{publi.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
-                      {publi.description}
-                    </p>
-                    <span className="btn-accent inline-flex w-fit">
+                    <div className="flex-1">
+                      <h3 className="font-heading text-2xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                        {publi.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {publi.description}
+                      </p>
+                    </div>
+                    <span className="btn-accent flex-shrink-0">
                       {publi.caseLinkText}
-                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-250" />
+                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-250" />
                     </span>
                   </Link>
                 ) : (
@@ -263,15 +273,19 @@ const Portfolio = () => {
                     href={publi.videoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card-editorial block group"
+                    className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                   >
-                    <h3 className="text-xl md:text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">{publi.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-justify mb-4">
-                      {publi.description}
-                    </p>
-                    <span className="btn-accent inline-flex w-fit">
+                    <div className="flex-1">
+                      <h3 className="font-heading text-2xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                        {publi.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {publi.description}
+                      </p>
+                    </div>
+                    <span className="btn-accent flex-shrink-0">
                       {publi.videoLinkText}
-                      <ExternalLink size={16} className="ml-2" />
+                      <ExternalLink size={13} />
                     </span>
                   </a>
                 )}
@@ -281,16 +295,18 @@ const Portfolio = () => {
 
           {/* Outros Exemplos */}
           <ScrollReveal>
-            <div className="mt-16">
-              <h3 className="text-2xl font-semibold mb-8">{t("portfolio.others.title")}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="mt-20">
+              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+                {t("portfolio.others.title")}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {outrosExemplos.map((exemplo, index) => (
                   <ScrollReveal key={index} delay={index * 60} direction="none">
                     <a
                       href={exemplo.videoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="card-editorial p-0 overflow-hidden group block"
+                      className="group border border-border bg-card overflow-hidden block"
                     >
                       <div className="aspect-square overflow-hidden">
                         <img
@@ -299,8 +315,10 @@ const Portfolio = () => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-250"
                         />
                       </div>
-                      <div className="p-4 text-center">
-                        <h4 className="font-semibold group-hover:text-accent transition-colors duration-250">{exemplo.title}</h4>
+                      <div className="p-3 text-center">
+                        <h4 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground group-hover:text-accent transition-colors duration-250">
+                          {exemplo.title}
+                        </h4>
                       </div>
                     </a>
                   </ScrollReveal>
@@ -312,25 +330,26 @@ const Portfolio = () => {
       </section>
 
       {/* Mídia Kits Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary">
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <div className="accent-line mb-6" />
-              <h2 className="text-3xl md:text-4xl mb-6">{t("portfolio.kits.title")}</h2>
-              <p className="text-xl text-muted-foreground">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+                {t("portfolio.kits.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("portfolio.kits.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
             <ScrollReveal>
               <a
                 href="https://www.figma.com/design/thkL4L1YTCauQSvoR9QPHM/M%C3%ADdia-Kit-Hist%C3%B3ria-Estranha?m=auto&t=28Rb0GjM7P2ImmQo-1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative group overflow-hidden rounded-lg block"
+                className="relative group overflow-hidden block border border-border"
               >
                 <img
                   src={midiaKitEstranhaHistoria}
@@ -338,14 +357,16 @@ const Portfolio = () => {
                   className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                  <span className="text-white text-xl md:text-2xl font-semibold">{t("portfolio.kits.seeFull")}</span>
+                  <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em]">
+                    {t("portfolio.kits.seeFull")}
+                  </span>
                 </div>
               </a>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <ScrollReveal delay={0}>
-                <div className="overflow-hidden rounded-lg">
+                <div className="overflow-hidden border border-border">
                   <img
                     src={midiaKitCetaligado}
                     alt="Mídia Kit Cê Tá Ligado"
@@ -354,7 +375,7 @@ const Portfolio = () => {
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={80}>
-                <div className="overflow-hidden rounded-lg">
+                <div className="overflow-hidden border border-border">
                   <img
                     src={midiaKitEntrosamento}
                     alt="Mídia Kit Entrosamento em Dia"

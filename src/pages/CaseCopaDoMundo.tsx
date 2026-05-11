@@ -11,18 +11,21 @@ const CaseCopaDoMundo = () => {
     <Layout>
       <article className="section-padding">
         <div className="container-narrow">
-          <Link to="/cases" className="btn-accent mb-8 inline-flex">
-            <ArrowLeft size={18} className="mr-2" />
+
+          <Link to="/cases" className="btn-accent mb-10 inline-flex">
+            <ArrowLeft size={13} className="mr-2" />
             {t("casesPage.back")}
           </Link>
 
           <ScrollReveal>
             <header className="mb-12">
-              <span className="text-sm text-accent font-medium uppercase tracking-wider mb-4 block">
-                Globo Esporte • {t("case.olimpiadas.category")}
-              </span>
-              <h1 className="text-4xl md:text-5xl mb-6">{t("case.olimpiadas.title")}</h1>
-              <p className="text-xl text-muted-foreground text-justify">
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">
+                Globo Esporte · {t("case.olimpiadas.category")}
+              </div>
+              <h1 className="font-heading text-[clamp(36px,5vw,64px)] font-medium mb-5">
+                {t("case.olimpiadas.title")}
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("case.olimpiadas.subtitle")}
               </p>
             </header>
@@ -30,17 +33,17 @@ const CaseCopaDoMundo = () => {
 
           <div className="accent-line mb-12" />
 
-          <div className="editorial-prose space-y-12">
+          <div className="space-y-14">
             <ScrollReveal>
               <section>
-                <h2 className="text-2xl font-semibold mb-4">{t("case.section.context")}</h2>
-                <p className="text-justify">
+                <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.context")}</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   {t("case.olimpiadas.contextPre")}{" "}
                   <a
                     href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40geglobo%2Fvideo%2F7398979892722830597%3Fq%3Dtinocandotv%2520globo%2520esporte%2520torcedor%26t%3D1768226170070&lang=en&enter_method=mandatory"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:underline"
+                    className="text-accent hover:underline underline-offset-2"
                   >
                     {t("case.olimpiadas.contextLink")}
                   </a>{" "}
@@ -51,29 +54,33 @@ const CaseCopaDoMundo = () => {
 
             <ScrollReveal>
               <section>
-                <h2 className="text-2xl font-semibold mb-4">{t("case.olimpiadas.roleTitle")}</h2>
-                <p className="text-justify">{t("case.olimpiadas.roleText")}</p>
+                <h2 className="font-heading text-2xl font-medium mb-5">{t("case.olimpiadas.roleTitle")}</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">{t("case.olimpiadas.roleText")}</p>
               </section>
             </ScrollReveal>
 
             <ScrollReveal>
               <section>
-                <h2 className="text-2xl font-semibold mb-4">{t("case.section.process")}</h2>
-                <ul className="space-y-3">
+                <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.process")}</h2>
+                <div className="border-t border-border">
                   {[1, 2, 3].map((i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                      <span className="text-justify">{t(`case.olimpiadas.process${i}`)}</span>
-                    </li>
+                    <div key={i} className="flex items-start gap-4 py-4 border-b border-border">
+                      <span className="font-mono text-[11px] tracking-[0.14em] text-accent flex-shrink-0 mt-0.5">
+                        {String(i).padStart(2, "0")}
+                      </span>
+                      <span className="text-muted-foreground leading-relaxed">
+                        {t(`case.olimpiadas.process${i}`)}
+                      </span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </section>
             </ScrollReveal>
 
             <ScrollReveal>
               <section>
-                <h2 className="text-2xl font-semibold mb-4">{t("case.section.result")}</h2>
-                <p className="text-justify">{t("case.olimpiadas.resultText")}</p>
+                <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.result")}</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">{t("case.olimpiadas.resultText")}</p>
               </section>
             </ScrollReveal>
           </div>

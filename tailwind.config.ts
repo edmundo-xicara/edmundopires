@@ -9,13 +9,14 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1440px",
       },
     },
     extend: {
       fontFamily: {
-        heading: ["'Playfair Display'", "Georgia", "serif"],
-        body: ["'Inter'", "system-ui", "sans-serif"],
+        heading: ["'Newsreader'", "Georgia", "serif"],
+        body: ["'Inter Tight'", "system-ui", "sans-serif"],
+        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,8 +55,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "var(--radius)",
+        sm: "var(--radius)",
       },
       transitionDuration: {
         '250': '250ms',

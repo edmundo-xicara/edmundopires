@@ -49,50 +49,51 @@ const Cases = () => {
     <Layout>
       <section className="section-padding">
         <div className="container-wide">
+
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <div className="accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl mb-6">{t("casesPage.title")}</h1>
-              <p className="text-xl text-muted-foreground text-justify">
+              <h1 className="font-heading text-[clamp(40px,6vw,80px)] font-medium mb-6">
+                {t("casesPage.title")}
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t("casesPage.desc")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="space-y-8">
+          <div className="border-t border-border">
             {allCases.map((caseItem, index) => (
               <ScrollReveal key={index} delay={index * 60}>
                 <Link
                   to={`/cases/${caseItem.slug}`}
-                  className="card-editorial block group"
+                  className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="flex-1">
-                      <div className="flex flex-wrap gap-3 mb-4">
-                        <span className="text-sm text-accent font-medium uppercase tracking-wider">
-                          {caseItem.client}
-                        </span>
-                        <span className="text-sm text-muted-foreground">•</span>
-                        <span className="text-sm text-muted-foreground">
-                          {caseItem.category}
-                        </span>
-                      </div>
-                      <h2 className="text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-250">
-                        {caseItem.title}
-                      </h2>
-                      <p className="text-muted-foreground leading-relaxed text-justify">
-                        {caseItem.description}
-                      </p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                        {caseItem.client}
+                      </span>
+                      <span className="text-muted-foreground text-xs">·</span>
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                        {caseItem.category}
+                      </span>
                     </div>
-                    <div className="flex items-center gap-2 text-accent font-medium shrink-0">
-                      {t("casesPage.viewCase")}
-                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-250" />
-                    </div>
+                    <h2 className="font-heading text-2xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                      {caseItem.title}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                      {caseItem.description}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-accent font-mono text-[11px] uppercase tracking-[0.18em] flex-shrink-0">
+                    {t("casesPage.viewCase")}
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-250" />
                   </div>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
+
         </div>
       </section>
     </Layout>

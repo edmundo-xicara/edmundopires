@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ArrowRight } from "lucide-react";
 
 interface OtherCasesProps {
   currentSlug: string;
@@ -22,15 +23,20 @@ export function OtherCases({ currentSlug }: OtherCasesProps) {
   return (
     <ScrollReveal>
       <div className="mt-16 pt-12 border-t border-border">
-        <h3 className="text-lg font-semibold mb-6">{t("casesPage.others")}</h3>
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+        <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+          {t("casesPage.others")}
+        </h3>
+        <div className="border-t border-border">
           {otherCases.map((caseItem) => (
             <Link
               key={caseItem.slug}
               to={`/cases/${caseItem.slug}`}
-              className="btn-secondary flex-1 justify-center min-w-[200px]"
+              className="group flex items-center justify-between py-4 border-b border-border transition-colors duration-250 hover:text-accent"
             >
-              {t(caseItem.titleKey)}
+              <span className="font-heading text-lg font-medium group-hover:text-accent transition-colors duration-250">
+                {t(caseItem.titleKey)}
+              </span>
+              <ArrowRight size={14} className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" />
             </Link>
           ))}
         </div>

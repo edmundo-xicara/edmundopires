@@ -7,29 +7,38 @@ interface LanguageToggleProps {
 
 export function LanguageToggle({ className }: LanguageToggleProps) {
   const { language, setLanguage } = useLanguage();
-  const isEn = language === "en";
 
   return (
     <div
       className={cn(
-        "relative inline-flex h-8 w-14 cursor-pointer items-center rounded-full border border-border bg-muted p-1 transition-colors duration-250",
+        "inline-flex border border-[hsl(var(--border-strong))] font-mono text-[10px] tracking-[0.14em]",
         className
       )}
-      onClick={() => setLanguage(isEn ? "pt" : "en")}
-      role="button"
-      tabIndex={0}
-      aria-label={isEn ? "Mudar para português" : "Switch to English"}
     >
-      <div
+      <button
         className={cn(
-          "relative h-6 w-6 rounded-full bg-background shadow-sm transition-transform duration-250 flex items-center justify-center",
-          isEn ? "translate-x-6" : "translate-x-0"
+          "px-2.5 py-1.5 transition-colors duration-200",
+          language === "pt"
+            ? "bg-foreground text-background"
+            : "text-muted-foreground hover:text-foreground"
         )}
+        onClick={() => setLanguage("pt")}
+        aria-label="Mudar para português"
       >
-        <span className="text-[10px] font-semibold text-foreground select-none">
-          {isEn ? "EN" : "PT"}
-        </span>
-      </div>
+        PT
+      </button>
+      <button
+        className={cn(
+          "px-2.5 py-1.5 transition-colors duration-200",
+          language === "en"
+            ? "bg-foreground text-background"
+            : "text-muted-foreground hover:text-foreground"
+        )}
+        onClick={() => setLanguage("en")}
+        aria-label="Switch to English"
+      >
+        EN
+      </button>
     </div>
   );
 }

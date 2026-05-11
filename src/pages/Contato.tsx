@@ -25,54 +25,62 @@ const Contato = () => {
     <Layout>
       <section className="section-padding min-h-[80vh] flex items-center">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+
+            {/* Left text */}
             <ScrollReveal>
               <div>
-                <div className="accent-line mb-6" />
-                <h1 className="text-4xl md:text-5xl mb-6">{t("contato.title")}</h1>
-                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                <h1 className="font-heading text-[clamp(40px,6vw,72px)] font-medium mb-6">
+                  {t("contato.title")}
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-5">
                   {t("contato.desc")}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                   {t("contato.responseTime")}
                 </p>
               </div>
             </ScrollReveal>
 
-            <div className="space-y-6">
+            {/* Contact cards */}
+            <div className="space-y-4">
               <ScrollReveal delay={0} direction="left">
                 <button
                   onClick={copyEmail}
-                  className="card-editorial flex items-center gap-6 group w-full text-left cursor-pointer"
+                  className="group flex items-center gap-5 w-full text-left p-6 border border-border bg-card transition-all duration-250 hover:border-[hsl(var(--border-strong))] hover:-translate-y-0.5"
                 >
-                  <div className="icon-box inline-flex items-center justify-center w-16 h-16 rounded bg-primary text-primary-foreground group-hover:bg-accent transition-colors duration-250">
-                    {emailCopied ? <Check size={28} /> : <Mail size={28} />}
+                  <div className="w-12 h-12 flex items-center justify-center border border-border bg-background flex-shrink-0 transition-colors duration-250 group-hover:border-accent group-hover:text-accent">
+                    {emailCopied ? <Check size={20} /> : <Mail size={20} />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">{t("contato.email")}</h3>
-                    <p className="text-muted-foreground">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                      {t("contato.email")}
+                    </p>
+                    <p className="text-base">
                       {emailCopied ? t("contato.copied") : "edmundopires@outlook.com"}
                     </p>
                   </div>
-                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
+                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" size={18} />
                 </button>
               </ScrollReveal>
 
               <ScrollReveal delay={80} direction="left">
                 <button
                   onClick={copyPhone}
-                  className="card-editorial flex items-center gap-6 group w-full text-left cursor-pointer"
+                  className="group flex items-center gap-5 w-full text-left p-6 border border-border bg-card transition-all duration-250 hover:border-[hsl(var(--border-strong))] hover:-translate-y-0.5"
                 >
-                  <div className="icon-box inline-flex items-center justify-center w-16 h-16 rounded bg-primary text-primary-foreground group-hover:bg-accent transition-colors duration-250">
-                    {phoneCopied ? <Check size={28} /> : <Phone size={28} />}
+                  <div className="w-12 h-12 flex items-center justify-center border border-border bg-background flex-shrink-0 transition-colors duration-250 group-hover:border-accent group-hover:text-accent">
+                    {phoneCopied ? <Check size={20} /> : <Phone size={20} />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">{t("contato.phone")}</h3>
-                    <p className="text-muted-foreground">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                      {t("contato.phone")}
+                    </p>
+                    <p className="text-base">
                       {phoneCopied ? t("contato.phoneCopied") : "(31) 99333-1644"}
                     </p>
                   </div>
-                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
+                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" size={18} />
                 </button>
               </ScrollReveal>
 
@@ -81,19 +89,22 @@ const Contato = () => {
                   href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-editorial flex items-center gap-6 group"
+                  className="group flex items-center gap-5 w-full p-6 border border-border bg-card transition-all duration-250 hover:border-[hsl(var(--border-strong))] hover:-translate-y-0.5"
                 >
-                  <div className="icon-box inline-flex items-center justify-center w-16 h-16 rounded bg-primary text-primary-foreground group-hover:bg-accent transition-colors duration-250">
-                    <Linkedin size={28} />
+                  <div className="w-12 h-12 flex items-center justify-center border border-border bg-background flex-shrink-0 transition-colors duration-250 group-hover:border-accent group-hover:text-accent">
+                    <Linkedin size={20} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">{t("contato.linkedin")}</h3>
-                    <p className="text-muted-foreground">{t("contato.linkedinDesc")}</p>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                      {t("contato.linkedin")}
+                    </p>
+                    <p className="text-base">{t("contato.linkedinDesc")}</p>
                   </div>
-                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250" size={20} />
+                  <ArrowRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" size={18} />
                 </a>
               </ScrollReveal>
             </div>
+
           </div>
         </div>
       </section>

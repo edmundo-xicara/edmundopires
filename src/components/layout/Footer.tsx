@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, Check } from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -22,76 +21,83 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container-wide px-6 md:px-12 lg:px-20 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          <ScrollReveal>
-            <div>
-              <h3 className="font-heading text-2xl font-semibold mb-4">Edmundo Pires</h3>
-              <p className="text-primary-foreground/70 leading-relaxed">
-                {t("footer.tagline")}
-              </p>
-            </div>
-          </ScrollReveal>
+    <footer className="border-t border-[hsl(var(--border-strong))] mt-0">
+      <div className="container-wide px-6 md:px-12 lg:px-20 pt-16 pb-8">
 
-          <ScrollReveal delay={80}>
-            <div>
-              <h4 className="font-medium uppercase tracking-widest text-sm mb-4 text-primary-foreground/60">
-                {t("footer.navTitle")}
-              </h4>
-              <div className="flex flex-col gap-3">
-                <Link to="/cases" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  {t("nav.cases")}
-                </Link>
-                <Link to="/sobre" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  {t("nav.about")}
-                </Link>
-                <Link to="/servicos" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  {t("nav.services")}
-                </Link>
-                <Link to="/contato" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-250 hover:translate-x-1 inline-block transform">
-                  {t("nav.contact")}
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
+        {/* 3-col grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
-          <ScrollReveal delay={160}>
-            <div>
-              <h4 className="font-medium uppercase tracking-widest text-sm mb-4 text-primary-foreground/60">
-                {t("footer.contactTitle")}
-              </h4>
-              <div className="flex flex-col gap-3">
-                <button
-                  onClick={copyEmail}
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
-                >
-                  {emailCopied ? <Check size={18} /> : <Mail size={18} />}
-                  {emailCopied ? t("footer.copied") : "edmundopires@outlook.com"}
-                </button>
-                <button
-                  onClick={copyPhone}
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1 cursor-pointer"
-                >
-                  {phoneCopied ? <Check size={18} /> : <Phone size={18} />}
-                  {phoneCopied ? t("footer.copied") : "(31) 99333-1644"}
-                </button>
-                <a
-                  href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-all duration-250 hover:translate-x-1"
-                >
-                  <Linkedin size={18} />
-                  LinkedIn
-                </a>
-              </div>
+          {/* Col 1 — Brand */}
+          <div>
+            <p className="font-heading text-2xl font-medium tracking-[-0.02em] mb-3">
+              Edmundo Pires
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {t("footer.tagline")}
+            </p>
+          </div>
+
+          {/* Col 2 — Nav */}
+          <div>
+            <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              {t("footer.navTitle")}
+            </h4>
+            <div className="flex flex-col gap-2.5">
+              <Link to="/cases" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.cases")}
+              </Link>
+              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.about")}
+              </Link>
+              <Link to="/servicos" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.services")}
+              </Link>
+              <Link to="/portfolio" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.portfolio")}
+              </Link>
+              <Link to="/contato" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.contact")}
+              </Link>
             </div>
-          </ScrollReveal>
+          </div>
+
+          {/* Col 3 — Contact */}
+          <div>
+            <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              {t("footer.contactTitle")}
+            </h4>
+            <div className="flex flex-col gap-2.5">
+              <button
+                onClick={copyEmail}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250 text-left"
+              >
+                {emailCopied ? <Check size={14} /> : <Mail size={14} />}
+                {emailCopied ? t("footer.copied") : "edmundopires@outlook.com"}
+              </button>
+              <button
+                onClick={copyPhone}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250 text-left"
+              >
+                {phoneCopied ? <Check size={14} /> : <Phone size={14} />}
+                {phoneCopied ? t("footer.copied") : "(31) 99333-1644"}
+              </button>
+              <a
+                href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250"
+              >
+                <Linkedin size={14} />
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-primary-foreground/50 text-sm">
-          © {new Date().getFullYear()} Edmundo Pires. {t("footer.rights")}
+        {/* Bottom bar */}
+        <div className="border-t border-border pt-6 flex justify-between items-baseline font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          <span>© {new Date().getFullYear()} Edmundo Pires</span>
+          <span>{t("footer.rights")}</span>
         </div>
       </div>
     </footer>
