@@ -12,10 +12,10 @@ export function Header() {
 
   const navLinks = [
     { href: "/", label: t("nav.home") },
-    { href: "/cases", label: t("nav.cases") },
-    { href: "/sobre", label: t("nav.about") },
-    { href: "/servicos", label: t("nav.services") },
     { href: "/portfolio", label: t("nav.portfolio") },
+    { href: "/cases", label: t("nav.cases") },
+    { href: "/servicos", label: t("nav.services") },
+    { href: "/sobre", label: t("nav.about") },
     { href: "/contato", label: t("nav.contact") },
   ];
 

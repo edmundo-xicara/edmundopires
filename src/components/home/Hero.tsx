@@ -20,7 +20,7 @@ export function Hero() {
 
         <ScrollReveal delay={60}>
           <h1 className="font-heading text-[clamp(64px,10vw,120px)] font-medium mb-6 leading-[1.0]">
-            Edmundo Pires
+            by<span className="text-accent italic">ed</span>studio
           </h1>
         </ScrollReveal>
 
@@ -32,7 +32,7 @@ export function Hero() {
 
         <ScrollReveal delay={180}>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/cases" className="btn-primary">
+            <Link to="/portfolio" className="btn-primary">
               {t("hero.cta.cases")}
               <ArrowRight className="ml-2" size={14} />
             </Link>

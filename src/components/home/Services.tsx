@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -15,13 +17,19 @@ export function Services() {
       <div className="container-wide">
 
         <ScrollReveal>
-          <div className="mb-14">
-            <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium max-w-2xl mb-6">
-              {t("services.title")}
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-[60ch]">
-              {t("services.intro")}
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div>
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium max-w-2xl mb-6">
+                {t("services.title")}
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-[60ch]">
+                {t("services.intro")}
+              </p>
+            </div>
+            <Link to="/servicos" className="btn-ghost flex-shrink-0">
+              {t("services.btn")}
+              <ArrowRight size={14} className="ml-2" />
+            </Link>
           </div>
         </ScrollReveal>
 

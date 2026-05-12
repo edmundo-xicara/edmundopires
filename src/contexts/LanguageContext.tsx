@@ -13,7 +13,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Header / Nav
     "nav.home": "Home",
     "nav.cases": "Cases",
-    "nav.about": "Sobre",
+    "nav.about": "Sobre Mim",
     "nav.services": "Serviços",
     "nav.portfolio": "Portfólio",
     "nav.contact": "Contato",
@@ -22,7 +22,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title": "Youtube Manager",
     "hero.description": "Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.",
-    "hero.cta.cases": "Ver cases",
+    "hero.cta.cases": "Portfólio",
+    "services.btn": "Serviços",
     "hero.cta.contact": "Falar comigo",
 
     // Services (home)
@@ -55,7 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CTA Home
     "cta.home.title": "Vamos construir algo juntos?",
-    "cta.home.desc": "Conteúdo complexo não escala sem organização. Se você precisa estruturar pesquisa, produção e qualidade, vamos conversar.",
+    "cta.home.desc": "Entre em contato para pesquisa, roteiro e produção de vídeos de alta qualidade.",
     "cta.home.button": "Entrar em contato",
 
     // Cases page
@@ -104,6 +105,7 @@ const translations: Record<Language, Record<string, string>> = {
     "case.grecia.process2": "Curadoria extensiva de fontes visuais (obras de arte, reconstruções, mapas históricos)",
     "case.grecia.process3": "Checagem cruzada de informações com fontes acadêmicas primárias",
     "case.grecia.process4": "Organização do material para facilitar o trabalho de edição",
+    "case.grecia.watchVideo": "Ver documentário no YouTube",
     "case.grecia.resultText": "O documentário consolidou-se como referência de conteúdo histórico de longa duração no YouTube brasileiro, demonstrando que é possível manter engajamento com produção rigorosa. O projeto estabeleceu um novo padrão de qualidade para o canal e serviu como modelo para produções subsequentes.",
 
     // Case Olimpíadas
@@ -180,7 +182,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.contactBtn": "Entrar em contato",
     "about.skillsTitle": "Competências",
     "about.skill1": "Pesquisa histórica e checagem de conteúdo",
-    "about.skill2": "Chefia de pesquisa e revisão editorial",
+    "about.skill2": "Escrita e revisão de roteiros",
     "about.skill3": "Gestão de projetos e pipeline de produção",
     "about.skill4": "Planejamento editorial e organização de formatos",
     "about.skill5": "Pesquisa e curadoria de imagens",
@@ -200,12 +202,12 @@ const translations: Record<Language, Record<string, string>> = {
     "servicos.images.title": "Pesquisa e Curadoria de Imagens",
     "servicos.images.desc": "Pesquisa e curadoria de imagens que sustentam a narrativa visual dos vídeos, seja com pinturas, filmagens, notícias da época ou até representações visuais abstratas. Em casos de vídeos históricos, realizo uma pesquisa extensa sobre os mapas e territórios de cada época abordada no vídeo para evitar imprecisões.",
     "servicos.cta.title": "Tem um projeto em mente?",
-    "servicos.cta.desc": "Se você trabalha com conteúdo complexo e precisa de rigor histórico, clareza narrativa e produção sólida — vamos conversar.",
+    "servicos.cta.desc": "Entre em contato para pesquisa, roteiro e produção de vídeos de alta qualidade.",
     "servicos.cta.button": "Entrar em contato",
 
     // Contato
     "contato.title": "Vamos conversar",
-    "contato.desc": "Se você trabalha com conteúdo complexo e precisa organizar pesquisa, produção e qualidade — entre em contato.",
+    "contato.desc": "Entre em contato para pesquisa, roteiro e produção de vídeos de alta qualidade.",
     "contato.responseTime": "Respondo a todas as mensagens em até 48 horas úteis.",
     "contato.email": "Email",
     "contato.phone": "Telefone",
@@ -256,7 +258,10 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.publi.opera.desc": "Escrevi o roteiro publicitário de acordo com o briefing fornecido pelo Opera e produzi todas as gravações apresentadas no trecho da publi no vídeo.",
 
     // Footer
-    "footer.tagline": "Gestão de projetos, pesquisa e produção audiovisual em larga escala.",
+    "footer.tagline": "Gestão de projetos, pesquisa, roteiro e produção audiovisual em larga escala.",
+    "portfolio.watchOnYoutube": "Ver no YouTube",
+    "portfolio.magazines.title": "Instagram Magazines",
+    "portfolio.magazines.desc": "Revistas digitais criadas para o Instagram do TinocandoTV.",
     "footer.navTitle": "Navegação",
     "footer.contactTitle": "Contato",
     "footer.copied": "Copiado!",
@@ -270,7 +275,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Header / Nav
     "nav.home": "Home",
     "nav.cases": "Cases",
-    "nav.about": "About",
+    "nav.about": "About Me",
     "nav.services": "Services",
     "nav.portfolio": "Portfolio",
     "nav.contact": "Contact",
@@ -279,7 +284,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title": "Youtube Manager",
     "hero.description": "Management, research, and production for large-scale channels and content creators.",
-    "hero.cta.cases": "View cases",
+    "hero.cta.cases": "Portfolio",
+    "services.btn": "Services",
     "hero.cta.contact": "Talk to me",
 
     // Services (home)
@@ -312,7 +318,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CTA Home
     "cta.home.title": "Shall we build something together?",
-    "cta.home.desc": "Complex content doesn't scale without organization. If you need to structure research, production, and quality — let's talk.",
+    "cta.home.desc": "Get in touch for research, scripting, and high-quality video production.",
     "cta.home.button": "Get in touch",
 
     // Cases page
@@ -361,6 +367,7 @@ const translations: Record<Language, Record<string, string>> = {
     "case.grecia.process2": "Extensive curation of visual sources (artworks, reconstructions, historical maps)",
     "case.grecia.process3": "Cross-checking information against primary academic sources",
     "case.grecia.process4": "Organizing material to facilitate editing work",
+    "case.grecia.watchVideo": "Watch documentary on YouTube",
     "case.grecia.resultText": "The documentary established itself as a reference for long-form historical content on Brazilian YouTube, demonstrating that engagement can be sustained alongside rigorous production. The project set a new quality standard for the channel and served as a model for subsequent productions.",
 
     // Case Olympics
@@ -437,7 +444,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.contactBtn": "Get in touch",
     "about.skillsTitle": "Skills",
     "about.skill1": "Historical research and content fact-checking",
-    "about.skill2": "Research leadership and editorial review",
+    "about.skill2": "Script writing and review",
     "about.skill3": "Project management and production pipeline",
     "about.skill4": "Editorial planning and format organization",
     "about.skill5": "Image research and curation",
@@ -457,12 +464,12 @@ const translations: Record<Language, Record<string, string>> = {
     "servicos.images.title": "Image Research and Curation",
     "servicos.images.desc": "Image research and curation that supports the visual narrative of videos, whether through paintings, footage, period news, or even abstract visual representations. For historical videos, I conduct extensive research on the maps and territories of each period covered to avoid inaccuracies.",
     "servicos.cta.title": "Got a project in mind?",
-    "servicos.cta.desc": "If you work with complex content and need historical rigor, narrative clarity, and solid production — let's talk.",
+    "servicos.cta.desc": "Get in touch for research, scripting, and high-quality video production.",
     "servicos.cta.button": "Get in touch",
 
     // Contact
     "contato.title": "Let's talk",
-    "contato.desc": "If you work with complex content and need to organize research, production, and quality — get in touch.",
+    "contato.desc": "Get in touch for research, scripting, and high-quality video production.",
     "contato.responseTime": "I respond to all messages within 48 business hours.",
     "contato.email": "Email",
     "contato.phone": "Phone",
@@ -513,7 +520,10 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.publi.opera.desc": "I wrote the advertising script according to the brief provided by Opera and produced all the footage shown in the ad segment of the video.",
 
     // Footer
-    "footer.tagline": "Project management, research, and large-scale audiovisual production.",
+    "footer.tagline": "Project management, research, scriptwriting, and large-scale audiovisual production.",
+    "portfolio.watchOnYoutube": "Watch on YouTube",
+    "portfolio.magazines.title": "Instagram Magazines",
+    "portfolio.magazines.desc": "Digital magazines created for TinocandoTV's Instagram.",
     "footer.navTitle": "Navigation",
     "footer.contactTitle": "Contact",
     "footer.copied": "Copied!",

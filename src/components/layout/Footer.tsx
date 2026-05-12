@@ -42,18 +42,21 @@ export function Footer() {
             <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
               {t("footer.navTitle")}
             </h4>
-            <div className="flex flex-col gap-2.5">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.home")}
+              </Link>
+              <Link to="/portfolio" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.portfolio")}
+              </Link>
               <Link to="/cases" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
                 {t("nav.cases")}
-              </Link>
-              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.about")}
               </Link>
               <Link to="/servicos" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
                 {t("nav.services")}
               </Link>
-              <Link to="/portfolio" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.portfolio")}
+              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
+                {t("nav.about")}
               </Link>
               <Link to="/contato" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
                 {t("nav.contact")}

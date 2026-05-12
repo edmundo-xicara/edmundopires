@@ -6,6 +6,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import midiaKitEstranhaHistoria from "@/assets/midia-kit-estranha-historia.png";
 import midiaKitCetaligado from "@/assets/midia-kit-cetaligado.png";
 import midiaKitEntrosamento from "@/assets/midia-kit-entrosamento.png";
+import revista1 from "@/assets/revista-1.png";
+import revista2 from "@/assets/revista-2.png";
+import revista3 from "@/assets/revista-3.png";
+import revista4 from "@/assets/revista-4.png";
+import revista5 from "@/assets/revista-5.png";
+import revista6 from "@/assets/revista-6.png";
 
 const outrosExemplos = [
   { title: "Insider", videoLink: "https://youtu.be/XDOWW7CQmhg?t=243", videoId: "XDOWW7CQmhg" },
@@ -20,10 +26,10 @@ const Portfolio = () => {
   const { t, language } = useLanguage();
 
   const videos = [
-    { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: language === "en" ? "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" : "https://docs.google.com/document/d/1ycmrxjR2g7lB3rcimOyv2z_Y-iO40TfvC2oTZ52Fs5s/edit?usp=drive_link" },
-    { id: "V5VXxyn6G24", title: t("portfolio.video2.title"), description: t("portfolio.video2.desc"), researchLink: "https://docs.google.com/document/d/1HBnwm7k7s1ynkiQayaugg2orrNU9zxRe7rZ7YkWt1k0/edit?usp=drive_link" },
-    { id: "PCJ02veFgfg", title: t("portfolio.video3.title"), description: t("portfolio.video3.desc"), researchLink: "https://docs.google.com/document/d/1hzXc44kfSQ6KZsbnRyvYY1p8lqTqyRKtLEIeIrdbRSs/edit?usp=drive_link" },
-    { id: "cxLm8ZmgKzg", title: t("portfolio.video4.title"), description: t("portfolio.video4.desc"), researchLink: "https://docs.google.com/document/d/1vYyymN2RqjZ_wERrFZ1d4lQ0ONUx4dXB0wGftF0F-T8/edit?tab=t.0" },
+    { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1NbF2fQudJtmKW-RVpGTkJkyURD61C9Tj/view?usp=drive_link" : "https://drive.google.com/file/d/1FVrEYpAMdmRM74lIgvCyD7xnhfrkNsB-/view?usp=drive_link" },
+    { id: "V5VXxyn6G24", title: t("portfolio.video2.title"), description: t("portfolio.video2.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1-Qy0p3S1CLO0stYXLgWwtzWmmcpan9Xm/view?usp=drive_link" : "https://drive.google.com/file/d/1RzJoE4YJIV0hOOjtifrmoHEdzmQZ92lP/view?usp=drive_link" },
+    { id: "PCJ02veFgfg", title: t("portfolio.video3.title"), description: t("portfolio.video3.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1cP3NQMc3Gjaz9Fkgc5wlcDnRrvw1k07d/view?usp=drive_link" : "https://drive.google.com/file/d/1-jh15hc_GMjb-CXa_ad5o949NmQlQ9hj/view?usp=drive_link" },
+    { id: "cxLm8ZmgKzg", title: t("portfolio.video4.title"), description: t("portfolio.video4.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1gtWnBUONlIYiga5d2ttcOfixb70bYEWm/view?usp=drive_link" : "https://drive.google.com/file/d/1iQgbAew_1hhP1ZHXn41aRpJiiViMujTs/view?usp=drive_link" },
   ];
 
   const scripts = [
@@ -32,24 +38,24 @@ const Portfolio = () => {
       title: t("portfolio.script1.title"),
       videoLink: "https://youtube.com/shorts/PuJ2AKtlONM",
       scriptLink: language === "en"
-        ? "https://docs.google.com/document/d/1NI0ZGm6nZHzpm6qwTc74yhrXwT4tsaulM4fJnMbAin4/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1r7D4oCjHNdHhFvv7koFcZHTt82B0vT1_okHLaax3MiI/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1uHjfnyPSma8mx9o2FK6n6ziT8NsRTFjw/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1w2SssFAx4K3LY4DZDlOFzrpe155Ufyyd/view?usp=drive_link",
     },
     {
       id: "lr_kwdM4AkA",
       title: t("portfolio.script2.title"),
       videoLink: "https://youtube.com/shorts/lr_kwdM4AkA",
       scriptLink: language === "en"
-        ? "https://docs.google.com/document/d/1gOtwNBpc5Bawlt44IqXnfLSZNIlzefyANALJ12-_D8U/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1roSmgxwwARZne21TYS13BiSIW1NPn6MVLb298qYYl10/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/12DYB1uuDYJhWAGzi50WA4tUIwPxghEdt/view?usp=drive_link"
+        : "https://drive.google.com/file/d/15JuuJYZdrzjGeRXDNQwo2kinBGfU5kEQ/view?usp=drive_link",
     },
     {
       id: "6OdS2zOgxcE",
       title: t("portfolio.script3.title"),
       videoLink: "https://www.youtube.com/shorts/6OdS2zOgxcE",
       scriptLink: language === "en"
-        ? "https://docs.google.com/document/d/1zEpL1-zXcMoXxljIzToqH2ojyIcSVyqKG0w45eyw_Uo/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1mERt6ARx2R8iGhZ3KKOLD3m4QnZ8aV2JF6XoBgXupGU/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1doR-ockxvhvSSC5PE7bqhLAXlMkXz07d/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1kyYgy3l_Se8p34x1gRDH05a5Df_QuJfG/view?usp=drive_link",
     },
   ];
 
@@ -58,29 +64,29 @@ const Portfolio = () => {
       title: t("portfolio.scriptModel1.title"),
       description: t("portfolio.scriptModel1.desc"),
       link: language === "en"
-        ? "https://docs.google.com/document/d/1IlG-7bYMWEC1vgtyoJOw0vUA4pltVXbk_W0y1j0LJlE/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1kb8Vnf4rO7iJtHYqaNH8RQe1AQlq0uRBy6bhbu356_U/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1QYbPqhEbQb07TgqcCcYUseakzBByYsBw/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1U3E-64pCuSRiuo8le8B0DPlzAET3Dt2l/view?usp=drive_link",
     },
     {
       title: t("portfolio.scriptModel2.title"),
       description: t("portfolio.scriptModel2.desc"),
       link: language === "en"
-        ? "https://docs.google.com/document/d/19b4JJCAJvKfVpF66n_mVq2p8y4-a3cto_HfJhKc7IdA/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1TfsNswKzNZQ40FOt8K1abAuI7FpPPGSAGK9ZW8z2FAY/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1fmx-dkv9PdXc3nLYOpMShrQwj49F2JSn/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1oesTeHMNF8YODB6L0e7F7HyNPcqw1ZUp/view?usp=drive_link",
     },
     {
       title: t("portfolio.scriptModel3.title"),
       description: t("portfolio.scriptModel3.desc"),
       link: language === "en"
-        ? "https://docs.google.com/document/d/1xGA8WgJV5Wg46Oma5Y8ObQDts0TA1XwiGSdd-YFBTSI/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1Kw7sQOKjFdgg_VSGse4nndkY4mAaDfw1l49RbLS72cA/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1SVQGWBU3KlWlclPyt75gnrqEPG5ocDzB/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1Bp0OGFPOZ8hETMeIJbQtJanvuwIupdrA/view?usp=drive_link",
     },
     {
       title: t("portfolio.scriptModel4.title"),
       description: t("portfolio.scriptModel4.desc"),
       link: language === "en"
-        ? "https://docs.google.com/document/d/1GKq2wQ48UaUNy2TgiVPwywh-d0nfvX5pJ6VWdX2DxLQ/edit?usp=drive_link"
-        : "https://docs.google.com/document/d/1epWOYMt6jYekjPdaDJQ3f1McPTb8RqqW7TGjvPWBkzo/edit?usp=drive_link",
+        ? "https://drive.google.com/file/d/1_JVqL2gp3-6WwIgca_7QiunvAID82Igc/view?usp=drive_link"
+        : "https://drive.google.com/file/d/1CYC764IrqsUBdNr1kDouP0Da6nab1m4_/view?usp=drive_link",
     },
   ];
 
@@ -110,7 +116,7 @@ const Portfolio = () => {
             {videos.map((video, index) => (
               <ScrollReveal key={index} delay={index * 80} direction="none">
                 <div className="border border-border bg-card overflow-hidden flex flex-col h-full">
-                  <div className="aspect-video overflow-hidden">
+                  <div className="aspect-video overflow-hidden relative group">
                     <a
                       href={`https://youtu.be/${video.id}`}
                       target="_blank"
@@ -120,9 +126,14 @@ const Portfolio = () => {
                       <img
                         src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                         alt={video.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-250"
+                        className="w-full h-full object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
                       />
                     </a>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">
+                      <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                        {t("portfolio.watchOnYoutube")}
+                      </span>
+                    </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-heading text-xl font-medium mb-3">{video.title}</h3>
@@ -168,13 +179,18 @@ const Portfolio = () => {
                     href={script.videoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block aspect-[9/16] overflow-hidden bg-muted"
+                    className="relative group block aspect-[9/16] overflow-hidden bg-muted"
                   >
                     <img
                       src={`https://img.youtube.com/vi/${script.id}/maxresdefault.jpg`}
                       alt={script.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-250"
+                      className="w-full h-full object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                      <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                        {t("portfolio.watchOnYoutube")}
+                      </span>
+                    </div>
                   </a>
                   <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-heading text-xl font-medium mb-4">{script.title}</h3>
@@ -299,29 +315,36 @@ const Portfolio = () => {
               <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
                 {t("portfolio.others.title")}
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:flex lg:gap-3 lg:[&:hover>div]:flex-[0.5_0.5_0%] lg:[&>div:hover]:!flex-[3_3_0%]">
                 {outrosExemplos.map((exemplo, index) => (
-                  <ScrollReveal key={index} delay={index * 60} direction="none">
-                    <a
-                      href={exemplo.videoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group border border-border bg-card overflow-hidden block"
-                    >
-                      <div className="aspect-square overflow-hidden">
-                        <img
-                          src={`https://img.youtube.com/vi/${exemplo.videoId}/maxresdefault.jpg`}
-                          alt={exemplo.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-250"
-                        />
-                      </div>
-                      <div className="p-3 text-center">
-                        <h4 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground group-hover:text-accent transition-colors duration-250">
-                          {exemplo.title}
-                        </h4>
-                      </div>
-                    </a>
-                  </ScrollReveal>
+                  <div key={index} className="lg:flex-1 lg:min-w-0 lg:transition-all lg:duration-300">
+                    <ScrollReveal delay={index * 60} direction="none">
+                      <a
+                        href={exemplo.videoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group border border-border bg-card overflow-hidden block"
+                      >
+                        <div className="aspect-square lg:h-36 lg:aspect-auto overflow-hidden relative">
+                          <img
+                            src={`https://img.youtube.com/vi/${exemplo.videoId}/maxresdefault.jpg`}
+                            alt={exemplo.title}
+                            className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                            <span className="text-white font-mono text-[9px] uppercase tracking-[0.14em] text-center px-2">
+                              {t("portfolio.watchOnYoutube")}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-3 text-center">
+                          <h4 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground group-hover:text-accent transition-colors duration-250">
+                            {exemplo.title}
+                          </h4>
+                        </div>
+                      </a>
+                    </ScrollReveal>
+                  </div>
                 ))}
               </div>
             </div>
@@ -384,6 +407,46 @@ const Portfolio = () => {
                 </div>
               </ScrollReveal>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram Magazines Section */}
+      <section className="section-padding">
+        <div className="container-wide">
+          <ScrollReveal>
+            <div className="max-w-3xl mb-16">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+                {t("portfolio.magazines.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t("portfolio.magazines.desc")}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[revista1, revista2, revista3, revista4, revista5, revista6].map((src, index) => (
+              <ScrollReveal key={index} delay={index * 60} direction="none">
+                <a
+                  href="https://www.instagram.com/tinocandotv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group overflow-hidden border border-border block"
+                >
+                  <img
+                    src={src}
+                    alt={`Instagram Magazine ${index + 1}`}
+                    className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                    <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                      {t("case.revista.checkInstagram")}
+                    </span>
+                  </div>
+                </a>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

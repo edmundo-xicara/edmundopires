@@ -9,10 +9,10 @@ const Servicos = () => {
 
   const servicos = [
     { num: "01", title: t("servicos.consult.title"), description: t("servicos.consult.desc") },
-    { num: "02", title: t("servicos.research.title"), description: t("servicos.research.desc") },
-    { num: "03", title: t("servicos.script.title"), description: t("servicos.script.desc") },
-    { num: "04", title: t("servicos.kit.title"), description: t("servicos.kit.desc") },
-    { num: "05", title: t("servicos.images.title"), description: t("servicos.images.desc") },
+    { num: "02", title: t("servicos.script.title"), description: t("servicos.script.desc") },
+    { num: "03", title: t("servicos.research.title"), description: t("servicos.research.desc") },
+    { num: "04", title: t("servicos.images.title"), description: t("servicos.images.desc") },
+    { num: "05", title: t("servicos.kit.title"), description: t("servicos.kit.desc") },
   ];
 
   return (

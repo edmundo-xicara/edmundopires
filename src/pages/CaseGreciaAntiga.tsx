@@ -69,7 +69,24 @@ const CaseGreciaAntiga = () => {
             <ScrollReveal>
               <section>
                 <h2 className="font-heading text-2xl font-medium mb-5">{t("case.section.result")}</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">{t("case.grecia.resultText")}</p>
+                <p className="text-muted-foreground leading-relaxed text-lg mb-8">{t("case.grecia.resultText")}</p>
+                <a
+                  href="https://youtu.be/l4cy3ni-4dE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group overflow-hidden border border-border"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/l4cy3ni-4dE/maxresdefault.jpg"
+                    alt={t("case.grecia.title")}
+                    className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                    <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                      {t("case.grecia.watchVideo")}
+                    </span>
+                  </div>
+                </a>
               </section>
             </ScrollReveal>
           </div>
