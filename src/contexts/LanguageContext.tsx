@@ -20,7 +20,11 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.menu": "Menu",
 
     // Hero
-    "hero.title": "Youtube Manager",
+    "hero.title": "Coordenador de Conteúdo",
+    "hero.role1": "Coordenador de Conteúdo",
+    "hero.role2": "Produtor",
+    "hero.role3": "Roteirista",
+    "hero.role4": "Pesquisador",
     "hero.description": "Gestão, pesquisa e produção para canais e criadores de conteúdo de grande escala.",
     "hero.cta.cases": "Portfólio",
     "services.btn": "Serviços",
@@ -171,7 +175,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title": "Sobre mim",
     "about.p1": "Sou produtor, chefe de pesquisa e gestor de conteúdo no TinocandoTV.",
     "about.p2Pre": "Meu principal trabalho dentro do canal é o de",
-    "about.p2Em": "Youtube Manager",
+    "about.p2Em": "Coordenador de Conteúdo",
     "about.p2Post": ", isso significa que atuo basicamente como o coordenador do TinocandoTV, organizando todos os projetos do canal.",
     "about.p3": "Sou eu quem organizo, juntamente com o Tinôco, o calendário completo do canal, decidindo os vídeos que serão postados nos próximos meses e as pessoas responsáveis por cada um. Ou seja, fico responsável por organizar qual vídeo será postado em qual data e quem irá trabalhar nele, desde a pesquisa até a edição final.",
     "about.p4": "E essa é uma palavra chave aqui: \"pesquisa\". Isso porque, como chefe de pesquisa do canal, sou eu quem fica responsável por coordenar a equipe de pesquisa do TinocandoTV, orientando sobre o cada tema e revisando a pesquisa final para garantir a entrega de uma pesquisa correta, coerente e, acima de tudo, otimizada para servir de base para a escrita do roteiro, que fica a cargo do Tinôco.",
@@ -282,7 +286,11 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.menu": "Menu",
 
     // Hero
-    "hero.title": "Youtube Manager",
+    "hero.title": "Content Coordinator",
+    "hero.role1": "Content Coordinator",
+    "hero.role2": "Producer",
+    "hero.role3": "Scriptwriter",
+    "hero.role4": "Researcher",
     "hero.description": "Management, research, and production for large-scale channels and content creators.",
     "hero.cta.cases": "Portfolio",
     "services.btn": "Services",
@@ -433,7 +441,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title": "About me",
     "about.p1": "I'm a producer, head of research, and content manager at TinocandoTV.",
     "about.p2Pre": "My main role within the channel is",
-    "about.p2Em": "Youtube Manager",
+    "about.p2Em": "Content Coordinator",
     "about.p2Post": ", which means I essentially act as TinocandoTV's coordinator, organizing all the channel's projects.",
     "about.p3": "Together with Tinôco, I organize the channel's complete calendar, deciding which videos will be published in the coming months and the people responsible for each one. In other words, I'm in charge of organizing which video will be posted on which date and who will work on it, from research to final editing.",
     "about.p4": "And that's a key word here: \"research.\" As the channel's head of research, I'm responsible for coordinating TinocandoTV's research team, providing guidance on each topic and reviewing the final research to ensure delivery of accurate, coherent, and — above all — optimized research that serves as the basis for the script writing, which is handled by Tinôco.",

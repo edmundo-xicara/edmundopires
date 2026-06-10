@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export function Hero() {
   const { t } = useLanguage();
 
-  const roles = ["Youtube Manager", "Pesquisador", "Roteirista", "Produtor"];
+  const roles = [t("hero.role1"), t("hero.role2"), t("hero.role3"), t("hero.role4")];
 
   return (
     <section className="section-padding flex items-center">
