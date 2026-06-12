@@ -40,7 +40,7 @@ const Index = () => {
           <div className="animate-marquee items-center">
             {[...brands, ...brands].map((brand, i) => (
               <React.Fragment key={i}>
-                <span className="font-heading italic text-4xl text-accent px-5">
+                <span className="font-heading italic text-2xl md:text-4xl text-accent px-5">
                   {brand}
                 </span>
                 <span className="font-mono text-[11px] text-muted-foreground flex-shrink-0">
