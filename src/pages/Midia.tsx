@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import midiaKitEstranhaHistoria from "@/assets/midia-kit-estranha-historia.png";
-import midiaKitCetaligado from "@/assets/midia-kit-cetaligado.png";
-import midiaKitEntrosamento from "@/assets/midia-kit-entrosamento.png";
 import revista1 from "@/assets/revista-1.png";
 import revista2 from "@/assets/revista-2.png";
 import revista3 from "@/assets/revista-3.png";
@@ -26,10 +24,10 @@ const Portfolio = () => {
   const { t, language } = useLanguage();
 
   const videos = [
-    { id: "Jn99lnP5yik", title: t("portfolio.video1.title"), description: t("portfolio.video1.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1NbF2fQudJtmKW-RVpGTkJkyURD61C9Tj/view?usp=drive_link" : "https://drive.google.com/file/d/1FVrEYpAMdmRM74lIgvCyD7xnhfrkNsB-/view?usp=drive_link" },
-    { id: "V5VXxyn6G24", title: t("portfolio.video2.title"), description: t("portfolio.video2.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1-Qy0p3S1CLO0stYXLgWwtzWmmcpan9Xm/view?usp=drive_link" : "https://drive.google.com/file/d/1RzJoE4YJIV0hOOjtifrmoHEdzmQZ92lP/view?usp=drive_link" },
-    { id: "PCJ02veFgfg", title: t("portfolio.video3.title"), description: t("portfolio.video3.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1cP3NQMc3Gjaz9Fkgc5wlcDnRrvw1k07d/view?usp=drive_link" : "https://drive.google.com/file/d/1-jh15hc_GMjb-CXa_ad5o949NmQlQ9hj/view?usp=drive_link" },
-    { id: "cxLm8ZmgKzg", title: t("portfolio.video4.title"), description: t("portfolio.video4.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1gtWnBUONlIYiga5d2ttcOfixb70bYEWm/view?usp=drive_link" : "https://drive.google.com/file/d/1iQgbAew_1hhP1ZHXn41aRpJiiViMujTs/view?usp=drive_link" },
+    { id: "l4cy3ni-4dE", title: t("portfolio.video.grecia.title"), channel: t("portfolio.video.grecia.channel"), description: t("portfolio.video.grecia.desc"), researchLink: "https://drive.google.com/file/d/1rR4v8NogJeAuMg_MgDZhDAU6Imk16QEk/view?usp=drive_link" },
+    { id: "3LlZGDXC2fU", title: t("portfolio.video.groenlandia.title"), channel: t("portfolio.video.groenlandia.channel"), description: t("portfolio.video.groenlandia.desc"), researchLink: "https://drive.google.com/file/d/1P33Nq9rnRfQycBqN4gU4y7LgFt82rD-q/view?usp=drive_link" },
+    { id: "eCNlfj-_U8U", title: t("portfolio.video.reparar.title"), channel: t("portfolio.video.reparar.channel"), description: t("portfolio.video.reparar.desc"), researchLink: "https://drive.google.com/file/d/1WcuPwgeetYcPnP2KOIt6es7Hv--qdbDR/view?usp=drive_link" },
+    { id: "Jn99lnP5yik", title: t("portfolio.video.hitler.title"), channel: t("portfolio.video.hitler.channel"), description: t("portfolio.video.hitler.desc"), researchLink: language === "en" ? "https://drive.google.com/file/d/1NbF2fQudJtmKW-RVpGTkJkyURD61C9Tj/view?usp=drive_link" : "https://drive.google.com/file/d/1FVrEYpAMdmRM74lIgvCyD7xnhfrkNsB-/view?usp=drive_link" },
   ];
 
   const scripts = [
@@ -136,7 +134,8 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-heading text-xl font-medium mb-3">{video.title}</h3>
+                    <h3 className="font-heading text-xl font-medium mb-1">{video.title}</h3>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">{video.channel}</p>
                     <p className="text-muted-foreground leading-relaxed mb-5 flex-1">
                       {video.description}
                     </p>
@@ -369,7 +368,7 @@ const Portfolio = () => {
           <div className="flex flex-col gap-5">
             <ScrollReveal>
               <a
-                href="https://www.figma.com/design/thkL4L1YTCauQSvoR9QPHM/M%C3%ADdia-Kit-Hist%C3%B3ria-Estranha?m=auto&t=28Rb0GjM7P2ImmQo-1"
+                href="https://drive.google.com/file/d/1ECdeEvQ1KBtRe04Kq8e5U_bzNz_s0LrI/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden block border border-border"
@@ -386,27 +385,6 @@ const Portfolio = () => {
                 </div>
               </a>
             </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <ScrollReveal delay={0}>
-                <div className="overflow-hidden border border-border">
-                  <img
-                    src={midiaKitCetaligado}
-                    alt="Mídia Kit Cê Tá Ligado"
-                    className="w-full h-auto object-cover transition-transform duration-250 hover:scale-[1.02]"
-                  />
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={80}>
-                <div className="overflow-hidden border border-border">
-                  <img
-                    src={midiaKitEntrosamento}
-                    alt="Mídia Kit Entrosamento em Dia"
-                    className="w-full h-auto object-cover transition-transform duration-250 hover:scale-[1.02]"
-                  />
-                </div>
-              </ScrollReveal>
-            </div>
           </div>
         </div>
       </section>

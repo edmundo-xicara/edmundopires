@@ -55,9 +55,6 @@ export function Footer() {
               <Link to="/servicos" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
                 {t("nav.services")}
               </Link>
-              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.about")}
-              </Link>
               <Link to="/contato" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
                 {t("nav.contact")}
               </Link>

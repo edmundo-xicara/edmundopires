@@ -11,7 +11,6 @@ import CaseCopaDoMundo from "./pages/CaseCopaDoMundo";
 import CaseShogun from "./pages/CaseShogun";
 import CaseRevistaInstagram from "./pages/CaseRevistaInstagram";
 import CaseNobel from "./pages/CaseNobel";
-import Sobre from "./pages/Sobre";
 import Servicos from "./pages/Servicos";
 import Portfolio from "./pages/Midia";
 import Contato from "./pages/Contato";
@@ -34,7 +33,6 @@ const App = () => (
           <Route path="/cases/shogun-disney" element={<CaseShogun />} />
           <Route path="/cases/revista-instagram" element={<CaseRevistaInstagram />} />
           <Route path="/cases/nobel-2025" element={<CaseNobel />} />
-          <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contato" element={<Contato />} />

@@ -5,6 +5,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export function Credibility() {
   const { t } = useLanguage();
 
+  const titleWords = t("credibility.title").split(" ");
+  const titleLastWord = titleWords.pop();
+
   return (
     <section className="section-padding bg-secondary">
       <div className="container-wide">
@@ -12,7 +15,7 @@ export function Credibility() {
         <ScrollReveal>
           <div className="mb-14">
             <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium">
-              {t("credibility.title")}
+              {titleWords.join(" ")} <span className="text-accent italic">{titleLastWord}</span>
             </h2>
           </div>
         </ScrollReveal>

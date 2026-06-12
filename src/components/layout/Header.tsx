@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -15,7 +14,6 @@ export function Header() {
     { href: "/portfolio", label: t("nav.portfolio") },
     { href: "/cases", label: t("nav.cases") },
     { href: "/servicos", label: t("nav.services") },
-    { href: "/sobre", label: t("nav.about") },
     { href: "/contato", label: t("nav.contact") },
   ];
 
@@ -43,7 +41,6 @@ export function Header() {
           {/* Right controls */}
           <div className="flex items-center gap-2.5 flex-shrink-0">
             <LanguageToggle />
-            <ThemeToggle />
             <button
               className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

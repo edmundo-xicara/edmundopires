@@ -23,6 +23,10 @@ const brands = [
 
 const Index = () => {
   const { t, language } = useLanguage();
+
+  const ctaHighlight = language === "en" ? "build" : "construir";
+  const [ctaBefore, ctaAfter] = t("cta.home.title").split(ctaHighlight);
+
   return (
     <Layout>
       <Hero />
@@ -57,7 +61,7 @@ const Index = () => {
         <ScrollReveal>
           <div className="container-narrow text-center">
             <h2 className="font-heading text-[clamp(28px,4vw,52px)] font-medium mb-6 text-primary-foreground">
-              {t("cta.home.title")}
+              {ctaBefore}<span className="text-accent italic">{ctaHighlight}</span>{ctaAfter}
             </h2>
             <p className="text-primary-foreground/70 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               {t("cta.home.desc")}

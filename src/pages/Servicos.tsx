@@ -5,7 +5,10 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Servicos = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const ctaHighlight = language === "en" ? "project" : "projeto";
+  const [ctaBefore, ctaAfter] = t("servicos.cta.title").split(ctaHighlight);
 
   const servicos = [
     { num: "01", title: t("servicos.consult.title"), description: t("servicos.consult.desc") },
@@ -59,7 +62,7 @@ const Servicos = () => {
         <ScrollReveal>
           <div className="container-narrow text-center">
             <h2 className="font-heading text-[clamp(28px,4vw,52px)] font-medium mb-6">
-              {t("servicos.cta.title")}
+              {ctaBefore}<span className="text-accent italic">{ctaHighlight}</span>{ctaAfter}
             </h2>
             <p className="text-primary-foreground/70 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
               {t("servicos.cta.desc")}

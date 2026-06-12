@@ -36,37 +36,6 @@
 
     --radius: 0rem;
   }
-
-  .dark {
-    --background: 26 10% 6%;
-    --foreground: 40 30% 88%;
-
-    --card: 26 13% 9%;
-    --card-foreground: 40 30% 88%;
-
-    --popover: 26 10% 6%;
-    --popover-foreground: 40 30% 88%;
-
-    --primary: 40 30% 88%;
-    --primary-foreground: 26 10% 6%;
-
-    --secondary: 26 11% 12%;
-    --secondary-foreground: 40 30% 88%;
-
-    --muted: 26 11% 12%;
-    --muted-foreground: 30 10% 48%;
-
-    --accent: 38 58% 56%;
-    --accent-foreground: 26 10% 6%;
-
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 40 30% 88%;
-
-    --border: 40 6% 19%;
-    --border-strong: 40 6% 30%;
-    --input: 40 6% 19%;
-    --ring: 38 58% 56%;
-  }
 }
 
 @layer base {
@@ -286,9 +255,5 @@
 
   .text-ink-2 {
     color: hsl(26 13% 18%);
-  }
-
-  .dark .text-ink-2 {
-    color: hsl(40 23% 79%);
   }
 }
