@@ -19,8 +19,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.menu": "Menu",
 
     // Hero
-    "hero.title": "Coordenador de Conteúdo",
-    "hero.role1": "Coordenador de Conteúdo",
+    "hero.title": "Estrategista de Conteúdo",
+    "hero.role1": "Estrategista de Conteúdo",
     "hero.role2": "Produtor",
     "hero.role3": "Roteirista",
     "hero.role4": "Pesquisador",
@@ -30,7 +30,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services (home)
     "services.title": "O que eu faço",
-    "services.p1": "Meu principal trabalho atualmente é como Coordenador de Conteúdo dentro do TinocandoTV, isso significa que atuo basicamente como o gestor do canal, organizando todos os projetos.",
+    "services.p1": "Meu principal trabalho atualmente é como Estrategista de Conteúdo dentro do TinocandoTV, isso significa que atuo basicamente como o gestor do canal, organizando todos os projetos.",
     "services.p2": "Sou eu quem organizo, juntamente com o Tinôco, o calendário completo do canal, decidindo os vídeos que serão postados nos próximos meses e as pessoas responsáveis por cada um. Ou seja, fico responsável por organizar qual vídeo será postado em qual data e quem irá trabalhar nele, desde a pesquisa até a edição final.",
     "services.p3": "E essa é uma palavra chave aqui: \"pesquisa\". Isso porque, como chefe de pesquisa do canal, sou eu quem fica responsável por coordenar a equipe de pesquisa do TinocandoTV, orientando sobre o cada tema e revisando a pesquisa final para garantir a entrega de uma pesquisa correta, coerente e, acima de tudo, otimizada para servir de base para a escrita do roteiro, que fica a cargo do Tinôco.",
     "services.p4": "Depois disso, participo da revisão de cada roteiro juntamente com os especialistas do canal e sou eu também quem desenvolve a pesquisa de imagens de cada vídeo, selecionando as pinturas, mapas e representações visuais que serão usadas pelos editores no vídeo final.",
@@ -266,8 +266,8 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.menu": "Menu",
 
     // Hero
-    "hero.title": "Content Coordinator",
-    "hero.role1": "Content Coordinator",
+    "hero.title": "Content Strategist",
+    "hero.role1": "Content Strategist",
     "hero.role2": "Producer",
     "hero.role3": "Scriptwriter",
     "hero.role4": "Researcher",
@@ -277,7 +277,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Services (home)
     "services.title": "What I do",
-    "services.p1": "My main job right now is as Content Coordinator at TinocandoTV, which basically means I act as the channel's manager, organizing all the projects.",
+    "services.p1": "My main job right now is as Content Strategist at TinocandoTV, which basically means I act as the channel's manager, organizing all the projects.",
     "services.p2": "Together with Tinôco, I organize the channel's complete calendar, deciding which videos will be published in the coming months and the people responsible for each one. In other words, I'm in charge of organizing which video will be posted on which date and who will work on it, from research to final editing.",
     "services.p3": "And that's a key word here: \"research.\" As the channel's head of research, I'm responsible for coordinating TinocandoTV's research team, providing guidance on each topic and reviewing the final research to ensure delivery of accurate, coherent, and — above all — optimized research that serves as the basis for the script writing, which is handled by Tinôco.",
     "services.p4": "After that, I take part in reviewing each script alongside the channel's specialists, and I'm also the one who develops the image research for each video, selecting the paintings, maps, and visual representations to be used by the editors in the final video.",

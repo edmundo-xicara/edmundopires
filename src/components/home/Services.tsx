@@ -7,7 +7,7 @@ export function Services() {
   const titleWords = t("services.title").split(" ");
   const titleLastWord = titleWords.pop();
 
-  const p1Highlight = language === "en" ? "Content Coordinator" : "Coordenador de Conteúdo";
+  const p1Highlight = language === "en" ? "Content Strategist" : "Estrategista de Conteúdo";
   const [p1Before, p1After] = t("services.p1").split(p1Highlight);
 
   const p7Highlight = language === "en" ? "\"jack-of-all-trades\" of a YouTube channel" : "\"faz-tudo\" de um canal no Youtube";
