@@ -11,6 +11,8 @@ import CaseCopaDoMundo from "./pages/CaseCopaDoMundo";
 import CaseShogun from "./pages/CaseShogun";
 import CaseRevistaInstagram from "./pages/CaseRevistaInstagram";
 import CaseNobel from "./pages/CaseNobel";
+import CaseDetail from "./pages/CaseDetail";
+import { CaseReturnTracker } from "@/lib/caseTransition";
 import Lab from "./pages/Lab";
 import Portfolio from "./pages/Midia";
 import Contato from "./pages/Contato";
@@ -25,6 +27,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <CaseReturnTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/cases" element={<Cases />} />
@@ -33,6 +36,7 @@ const App = () => (
           <Route path="/cases/shogun-disney" element={<CaseShogun />} />
           <Route path="/cases/revista-instagram" element={<CaseRevistaInstagram />} />
           <Route path="/cases/nobel-2025" element={<CaseNobel />} />
+          <Route path="/cases/:slug" element={<CaseDetail />} />
           <Route path="/lab" element={<Lab />} />
           <Route path="/servicos" element={<Navigate to="/" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />

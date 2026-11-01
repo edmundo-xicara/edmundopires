@@ -2,23 +2,16 @@ import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
+import { catalog } from "@/data/catalog";
+import { pick } from "@/data/home";
 
 interface OtherCasesProps {
   currentSlug: string;
 }
 
 export function OtherCases({ currentSlug }: OtherCasesProps) {
-  const { t } = useLanguage();
-
-  const allCases = [
-    { slug: "nobel-2025", titleKey: "case.nobel.shortTitle" },
-    { slug: "grecia-antiga", titleKey: "case.grecia.title" },
-    { slug: "olimpiadas-2024", titleKey: "case.olimpiadas.shortTitle" },
-    { slug: "shogun-disney", titleKey: "case.shogun.title" },
-    { slug: "revista-instagram", titleKey: "case.revista.title" },
-  ];
-
-  const otherCases = allCases.filter((c) => c.slug !== currentSlug);
+  const { t, language } = useLanguage();
+  const otherCases = catalog.filter((c) => c.slug !== currentSlug);
 
   return (
     <ScrollReveal>
@@ -34,7 +27,7 @@ export function OtherCases({ currentSlug }: OtherCasesProps) {
               className="group flex items-center justify-between py-4 border-b border-border transition-colors duration-250 hover:text-accent"
             >
               <span className="font-heading text-lg font-bold group-hover:text-accent transition-colors duration-250">
-                {t(caseItem.titleKey)}
+                {pick(caseItem.title, language)}
               </span>
               <ArrowRight size={14} className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" />
             </Link>
