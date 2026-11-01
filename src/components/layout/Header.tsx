@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { BrandMark } from "@/components/brand/BrandMark";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,66 +11,59 @@ export function Header() {
   const { t } = useLanguage();
 
   const navLinks = [
-    { href: "/", label: t("nav.home") },
     { href: "/portfolio", label: t("nav.portfolio") },
     { href: "/cases", label: t("nav.cases") },
-    { href: "/servicos", label: t("nav.services") },
+    { href: "/lab", label: t("nav.lab") },
     { href: "/contato", label: t("nav.contact") },
   ];
 
+  const isActive = (href: string) => location.pathname === href || location.pathname.startsWith(href + "/");
+
   return (
-    <header className="sticky top-0 z-50 bg-background/92 backdrop-blur-sm border-b border-border">
-      <nav className="container-wide px-6 md:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-[60px] gap-6">
+    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-md border-b border-border">
+      <nav className="container-wide px-5 md:px-12 lg:px-20">
+        <div className="flex items-center justify-between h-16 gap-6">
+          <Link to="/" aria-label="byedstudio" data-header-logo className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+            <BrandMark />
+          </Link>
 
-          {/* Brand placeholder — keeps flex spacing */}
-          <div className="flex-shrink-0 w-8" />
-
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`nav-link${location.pathname === link.href ? " active" : ""}`}
-              >
+              <Link key={link.href} to={link.href} className={`nav-link${isActive(link.href) ? " active" : ""}`}>
                 {link.label}
               </Link>
             ))}
+            <LanguageToggle />
           </div>
 
-          {/* Right controls */}
-          <div className="flex items-center gap-2.5 flex-shrink-0">
+          <div className="flex md:hidden items-center gap-3">
             <LanguageToggle />
             <button
-              className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors"
+              className="p-1.5 text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={t("nav.menu")}
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile nav */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border animate-fade-in">
-            <div className="flex flex-col">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`font-mono text-[11px] uppercase tracking-[0.18em] py-3 border-b border-border transition-colors duration-250 ${
-                    location.pathname === link.href
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+          <div className="md:hidden pb-8 animate-fade-in">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`block py-2 text-4xl font-extrabold tracking-[-0.03em] ${
+                  isActive(link.href) ? "text-primary" : "text-foreground"
+                }`}
+                style={{ fontVariationSettings: '"wdth" 118' }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         )}
       </nav>

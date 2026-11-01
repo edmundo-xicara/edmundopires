@@ -30,13 +30,13 @@ const Contato = () => {
             {/* Left text */}
             <ScrollReveal>
               <div>
-                <h1 className="font-heading text-[clamp(40px,6vw,72px)] font-medium mb-6">
+                <h1 className="font-heading text-[clamp(40px,6vw,72px)] mb-6">
                   {t("contato.title")}
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-5">
                   {t("contato.desc")}
                 </p>
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                <p className="text-sm font-semibold text-muted-foreground">
                   {t("contato.responseTime")}
                 </p>
               </div>
@@ -53,7 +53,7 @@ const Contato = () => {
                     {emailCopied ? <Check size={20} /> : <Mail size={20} />}
                   </div>
                   <div className="flex-1">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                    <p className="text-sm font-semibold text-muted-foreground mb-1">
                       {t("contato.email")}
                     </p>
                     <p className="text-base">
@@ -73,7 +73,7 @@ const Contato = () => {
                     {phoneCopied ? <Check size={20} /> : <Phone size={20} />}
                   </div>
                   <div className="flex-1">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                    <p className="text-sm font-semibold text-muted-foreground mb-1">
                       {t("contato.phone")}
                     </p>
                     <p className="text-base">
@@ -95,7 +95,7 @@ const Contato = () => {
                     <Linkedin size={20} />
                   </div>
                   <div className="flex-1">
-                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                    <p className="text-sm font-semibold text-muted-foreground mb-1">
                       {t("contato.linkedin")}
                     </p>
                     <p className="text-base">{t("contato.linkedinDesc")}</p>

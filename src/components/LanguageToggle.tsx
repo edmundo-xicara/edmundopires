@@ -11,7 +11,7 @@ export function LanguageToggle({ className }: LanguageToggleProps) {
   return (
     <div
       className={cn(
-        "inline-flex border border-[hsl(var(--border-strong))] font-mono text-[10px] tracking-[0.14em]",
+        "inline-flex border border-[hsl(var(--border-strong))] text-sm font-semibold",
         className
       )}
     >

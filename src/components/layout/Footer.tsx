@@ -1,103 +1,105 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Phone, Check } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { HandMark } from "@/components/HandMark";
+
+const EMAIL = "edmundopires@outlook.com";
+const PHONE = "(31) 99333-1644";
+const WHATSAPP = "https://wa.me/5531993331644";
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-[26px] h-[26px] flex-none text-primary" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3" y="5" width="18" height="14" rx="2.5" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-[26px] h-[26px] flex-none text-[#1FAF5A]" fill="currentColor" aria-hidden>
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z" />
+    </svg>
+  );
+}
 
 export function Footer() {
-  const [phoneCopied, setPhoneCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
   const { t } = useLanguage();
 
-  const copyPhone = () => {
-    navigator.clipboard.writeText("31993331644");
-    setPhoneCopied(true);
-    setTimeout(() => setPhoneCopied(false), 2000);
+  const copyEmail = () => {
+    navigator.clipboard.writeText(EMAIL).then(
+      () => {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      },
+      () => {
+        /* clipboard refused: the address stays selectable on screen */
+      },
+    );
   };
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText("edmundopires@outlook.com");
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 2000);
-  };
+  const links = [
+    { href: "/", label: t("nav.home") },
+    { href: "/portfolio", label: t("nav.portfolio") },
+    { href: "/cases", label: t("nav.cases") },
+    { href: "/lab", label: t("nav.lab") },
+    { href: "/contato", label: t("nav.contact") },
+  ];
+
+  const reach = "flex items-center gap-3 sm:gap-3.5 rounded-[18px] bg-card border border-border py-3 pl-4 pr-3 min-w-0";
 
   return (
-    <footer className="border-t border-[hsl(var(--border-strong))] mt-0">
-      <div className="container-wide px-6 md:px-12 lg:px-20 pt-16 pb-8">
+    <footer className="border-t border-border">
+      <div className="container-wide px-5 md:px-12 lg:px-20 pt-20 md:pt-32 pb-8">
+        <h2 className="text-[clamp(36px,8vw,118px)] max-w-[12em]" style={{ fontVariationSettings: '"wdth" 84' }}>
+          {t("footer.titleA")} <HandMark variant="under2" tail={t("footer.titleEnd")}>
+            {t("footer.titleMark")}
+          </HandMark>
+        </h2>
 
-        {/* 3-col grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-
-          {/* Col 1 — Brand */}
-          <div>
-            <p className="font-heading text-2xl font-medium tracking-[-0.02em] mb-3">
-              Edmundo Pires
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {t("footer.tagline")}
-            </p>
+        <div className="mt-10 flex flex-wrap gap-3.5">
+          <div className={reach}>
+            <MailIcon />
+            <span className="font-mono text-[13px] sm:text-base select-all break-all">{EMAIL}</span>
+            <button onClick={copyEmail} className="btn-primary !px-4 !py-2 !text-sm flex-none">
+              {emailCopied ? t("footer.copied") : t("footer.copy")}
+            </button>
           </div>
-
-          {/* Col 2 — Nav */}
-          <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              {t("footer.navTitle")}
-            </h4>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
-              <Link to="/" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.home")}
-              </Link>
-              <Link to="/portfolio" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.portfolio")}
-              </Link>
-              <Link to="/cases" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.cases")}
-              </Link>
-              <Link to="/servicos" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.services")}
-              </Link>
-              <Link to="/contato" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-250">
-                {t("nav.contact")}
-              </Link>
-            </div>
-          </div>
-
-          {/* Col 3 — Contact */}
-          <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              {t("footer.contactTitle")}
-            </h4>
-            <div className="flex flex-col gap-2.5">
-              <button
-                onClick={copyEmail}
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250 text-left"
-              >
-                {emailCopied ? <Check size={14} /> : <Mail size={14} />}
-                {emailCopied ? t("footer.copied") : "edmundopires@outlook.com"}
-              </button>
-              <button
-                onClick={copyPhone}
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250 text-left"
-              >
-                {phoneCopied ? <Check size={14} /> : <Phone size={14} />}
-                {phoneCopied ? t("footer.copied") : "(31) 99333-1644"}
-              </button>
-              <a
-                href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-250"
-              >
-                <Linkedin size={14} />
-                LinkedIn
-              </a>
-            </div>
+          <div className={reach}>
+            <WhatsAppIcon />
+            <span className="font-mono text-sm sm:text-base select-all whitespace-nowrap">{PHONE}</span>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-primary !px-4 !py-2 !text-sm flex-none">
+              <span className="sm:hidden">WhatsApp</span>
+              <span className="hidden sm:inline">{t("footer.whatsapp")}</span>
+            </a>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-border pt-6 flex justify-between items-baseline font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-10 text-[15px]">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            {links.map((l) => (
+              <Link key={l.href} to={l.href} className="font-semibold hover:text-primary transition-colors">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
+            <a
+              href="https://www.linkedin.com/in/edmundo-pires-12ab89237/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold hover:text-primary transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-border flex flex-wrap justify-between gap-2 text-sm text-muted-foreground">
           <span>© {new Date().getFullYear()} Edmundo Pires</span>
-          <span>{t("footer.rights")}</span>
+          <span>{t("footer.tagline")}</span>
         </div>
       </div>
     </footer>

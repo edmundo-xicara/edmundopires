@@ -23,7 +23,7 @@ export function OtherCases({ currentSlug }: OtherCasesProps) {
   return (
     <ScrollReveal>
       <div className="mt-16 pt-12 border-t border-border">
-        <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+        <h3 className="text-sm font-semibold text-muted-foreground mb-8">
           {t("casesPage.others")}
         </h3>
         <div className="border-t border-border">
@@ -33,7 +33,7 @@ export function OtherCases({ currentSlug }: OtherCasesProps) {
               to={`/cases/${caseItem.slug}`}
               className="group flex items-center justify-between py-4 border-b border-border transition-colors duration-250 hover:text-accent"
             >
-              <span className="font-heading text-lg font-medium group-hover:text-accent transition-colors duration-250">
+              <span className="font-heading text-lg font-bold group-hover:text-accent transition-colors duration-250">
                 {t(caseItem.titleKey)}
               </span>
               <ArrowRight size={14} className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all duration-250 flex-shrink-0" />

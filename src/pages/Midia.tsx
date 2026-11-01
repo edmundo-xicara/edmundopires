@@ -101,7 +101,7 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <h1 className="font-heading text-[clamp(40px,6vw,80px)] font-medium mb-6">
+              <h1 className="font-heading text-[clamp(40px,6vw,80px)] mb-6">
                 {t("portfolio.research.title")}
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -128,14 +128,14 @@ const Portfolio = () => {
                       />
                     </a>
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">
-                      <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                      <span className="text-white text-sm font-semibold text-center px-4">
                         {t("portfolio.watchOnYoutube")}
                       </span>
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-heading text-xl font-medium mb-1">{video.title}</h3>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">{video.channel}</p>
+                    <h3 className="font-heading text-xl mb-1">{video.title}</h3>
+                    <p className="text-sm font-semibold text-muted-foreground mb-3">{video.channel}</p>
                     <p className="text-muted-foreground leading-relaxed mb-5 flex-1">
                       {video.description}
                     </p>
@@ -161,7 +161,7 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] mb-6">
                 {t("portfolio.scripts.title")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -186,13 +186,13 @@ const Portfolio = () => {
                       className="w-full h-full object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                      <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                      <span className="text-white text-sm font-semibold text-center px-4">
                         {t("portfolio.watchOnYoutube")}
                       </span>
                     </div>
                   </a>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-heading text-xl font-medium mb-4">{script.title}</h3>
+                    <h3 className="font-heading text-xl mb-4">{script.title}</h3>
                     <a
                       href={script.scriptLink}
                       target="_blank"
@@ -211,7 +211,7 @@ const Portfolio = () => {
           {/* Modelos de Roteiros */}
           <ScrollReveal>
             <div className="max-w-3xl mt-24 mb-12">
-              <h3 className="font-heading text-[clamp(28px,3.5vw,48px)] font-medium mb-4">
+              <h3 className="font-heading text-[clamp(28px,3.5vw,48px)] mb-4">
                 {t("portfolio.scriptModels.title")}
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -230,7 +230,7 @@ const Portfolio = () => {
                   className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                 >
                   <div className="flex-1">
-                    <h4 className="font-heading text-xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                    <h4 className="font-heading text-xl mb-3 group-hover:text-accent transition-colors duration-250">
                       {model.title}
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -253,7 +253,7 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] mb-6">
                 {t("portfolio.publis.title")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -271,7 +271,7 @@ const Portfolio = () => {
                     className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                   >
                     <div className="flex-1">
-                      <h3 className="font-heading text-2xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                      <h3 className="font-heading text-2xl mb-3 group-hover:text-accent transition-colors duration-250">
                         {publi.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -291,7 +291,7 @@ const Portfolio = () => {
                     className="group flex flex-col md:flex-row md:items-center gap-6 py-8 border-b border-border transition-colors duration-250 hover:bg-card/60 -mx-4 px-4"
                   >
                     <div className="flex-1">
-                      <h3 className="font-heading text-2xl font-medium mb-3 group-hover:text-accent transition-colors duration-250">
+                      <h3 className="font-heading text-2xl mb-3 group-hover:text-accent transition-colors duration-250">
                         {publi.title}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -311,7 +311,7 @@ const Portfolio = () => {
           {/* Outros Exemplos */}
           <ScrollReveal>
             <div className="mt-20">
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+              <h3 className="text-sm font-semibold text-muted-foreground mb-8">
                 {t("portfolio.others.title")}
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:flex lg:gap-3 lg:[&:hover>div]:flex-[0.5_0.5_0%] lg:[&>div:hover]:!flex-[3_3_0%]">
@@ -331,13 +331,13 @@ const Portfolio = () => {
                             className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50"
                           />
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                            <span className="text-white font-mono text-[9px] uppercase tracking-[0.14em] text-center px-2">
+                            <span className="text-white font-mono text-[9px] text-center px-2">
                               {t("portfolio.watchOnYoutube")}
                             </span>
                           </div>
                         </div>
                         <div className="p-3 text-center">
-                          <h4 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground group-hover:text-accent transition-colors duration-250">
+                          <h4 className="text-sm font-semibold text-muted-foreground group-hover:text-accent transition-colors duration-250">
                             {exemplo.title}
                           </h4>
                         </div>
@@ -356,7 +356,7 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] mb-6">
                 {t("portfolio.kits.title")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -379,7 +379,7 @@ const Portfolio = () => {
                   className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                  <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em]">
+                  <span className="text-white text-sm font-semibold">
                     {t("portfolio.kits.seeFull")}
                   </span>
                 </div>
@@ -394,7 +394,7 @@ const Portfolio = () => {
         <div className="container-wide">
           <ScrollReveal>
             <div className="max-w-3xl mb-16">
-              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] font-medium mb-6">
+              <h2 className="font-heading text-[clamp(32px,4.5vw,56px)] mb-6">
                 {t("portfolio.magazines.title")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -418,7 +418,7 @@ const Portfolio = () => {
                     className="w-full h-auto object-cover transition-all duration-250 group-hover:brightness-50 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-250">
-                    <span className="text-white font-mono text-[11px] uppercase tracking-[0.18em] text-center px-4">
+                    <span className="text-white text-sm font-semibold text-center px-4">
                       {t("case.revista.checkInstagram")}
                     </span>
                   </div>
