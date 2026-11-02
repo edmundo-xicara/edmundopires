@@ -5,9 +5,11 @@ import { InkFilters } from "@/components/brand/BrandMark";
 
 interface LayoutProps {
   children: ReactNode;
+  /** Leave out the footer's contact block, on pages that are themselves the contact */
+  hideContact?: boolean;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, hideContact = false }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <InkFilters />
@@ -15,7 +17,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         {children}
       </main>
-      <Footer />
+      <Footer hideContact={hideContact} />
     </div>
   );
 }

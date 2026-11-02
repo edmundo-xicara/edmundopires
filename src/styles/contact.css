@@ -1,0 +1,63 @@
+/* Contact: a business card with cables running to each channel. Cable paths are measured from script. */
+
+.contact-mono { font: 500 11px/1.4 "Geist Mono", ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; }
+
+.contact-eta { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; color: hsl(var(--muted-foreground)); }
+.contact-eta i { width: 8px; height: 8px; border-radius: 50%; background: #1FAF5A; flex: none; animation: contact-ping 2s infinite; }
+@keyframes contact-ping { 0% { box-shadow: 0 0 0 0 rgb(31 175 90 / .5); } 70%, 100% { box-shadow: 0 0 0 9px rgb(31 175 90 / 0); } }
+
+.contact-board { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; align-items: center; }
+@media (min-width: 1024px) { .contact-board { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(60px, 9vw, 140px); } }
+
+.contact-cables { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 1; }
+.contact-cables .base { fill: none; stroke: hsl(var(--border)); stroke-width: 2; }
+.contact-cables .draw { transition: stroke-dashoffset 1.2s cubic-bezier(.65,0,.35,1); }
+.contact-cables .flow { fill: none; stroke: hsl(var(--primary)); stroke-width: 2; stroke-dasharray: 4 9; opacity: .45; animation: contact-flow 1.2s linear infinite; transition: opacity .3s, stroke-width .3s; }
+.contact-cables .flow.hot { opacity: 1; stroke-width: 3; stroke-dasharray: none; }
+.contact-cables .spark { fill: hsl(var(--primary)); }
+.contact-cables .spark.wa { fill: #1FAF5A; }
+@keyframes contact-flow { to { stroke-dashoffset: -26; } }
+
+/* the card */
+.contact-card-wrap { position: relative; z-index: 2; perspective: 1200px; transition: opacity .7s, transform .8s cubic-bezier(.2,.8,.2,1); }
+.contact-card-wrap.pending { opacity: 0; transform: translateY(30px); }
+.contact-card { position: relative; width: 100%; border-radius: 22px; overflow: hidden; display: grid; grid-template-columns: 1fr; background: hsl(var(--card));
+  box-shadow: 0 60px 90px -50px rgb(26 16 48 / .55), 0 0 0 1px hsl(var(--border)); transform-style: preserve-3d; transition: transform .25s ease-out; }
+@media (min-width: 521px) { .contact-card { aspect-ratio: 1.75; grid-template-columns: 34% minmax(0, 1fr); } }
+.contact-card::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; border-radius: inherit;
+  background: radial-gradient(600px circle at var(--mx, 70%) var(--my, 20%), rgb(255 255 255 / .55), transparent 45%); mix-blend-mode: soft-light; }
+.contact-card .photo { position: relative; aspect-ratio: 16 / 11; background: hsl(var(--soft)) url(/contact/edmundo.webp) center 30% / cover no-repeat; }
+@media (min-width: 521px) { .contact-card .photo { aspect-ratio: auto; } }
+.contact-card .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgb(26 16 48 / .12)); }
+.contact-card .info { position: relative; display: grid; grid-template-rows: auto 1fr auto auto; gap: 10px; padding: clamp(18px, 2.6vw, 34px);
+  background-image: repeating-linear-gradient(0deg, transparent 0 23px, hsl(var(--primary) / .05) 23px 24px), repeating-linear-gradient(90deg, transparent 0 23px, hsl(var(--primary) / .05) 23px 24px); }
+.contact-card .ring { width: clamp(40px, 4vw, 54px); aspect-ratio: 1; border-radius: 50%; border: 1px solid hsl(var(--border)); display: grid; place-items: center; flex: none;
+  font: 600 clamp(13px, 1.3vw, 17px)/1 "Archivo", sans-serif; letter-spacing: .04em; color: hsl(var(--primary)); }
+.contact-card .name { align-self: end; font-size: clamp(28px, 3.5vw, 50px); line-height: 1; font-variation-settings: "wdth" 112; letter-spacing: .12em; text-transform: uppercase; }
+.contact-card .rule { border-top: 1px solid hsl(var(--foreground)); padding-top: 10px; color: hsl(var(--muted-foreground)); }
+.contact-port { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: hsl(var(--card)); border: 2px solid hsl(var(--primary)); z-index: 3; transform: translate(-50%, -50%); }
+
+/* the channels */
+.contact-nodes { position: relative; z-index: 2; display: grid; gap: clamp(18px, 3vw, 34px); padding-left: 56px; }
+@media (min-width: 1024px) { .contact-nodes { padding-left: 0; } }
+.contact-node { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: center; width: 100%; padding: 14px 16px 14px 14px; text-align: left;
+  border-radius: 18px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); cursor: pointer;
+  transition: opacity .7s, transform .8s cubic-bezier(.2,.8,.2,1), border-color .25s, box-shadow .25s; }
+@media (min-width: 521px) { .contact-node { grid-template-columns: 48px minmax(0, 1fr) auto; } }
+.contact-node.pending { opacity: 0; transform: translateX(30px); }
+.contact-node:hover, .contact-node:focus-visible { transform: translateX(6px); border-color: hsl(var(--primary)); box-shadow: 0 20px 40px -24px hsl(var(--primary) / .55);
+  transition: transform .35s cubic-bezier(.3,1.5,.5,1), border-color .25s, box-shadow .25s; }
+.contact-node .ic { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: hsl(var(--soft)); color: hsl(var(--primary)); }
+@media (min-width: 521px) { .contact-node .ic { width: 48px; height: 48px; } }
+.contact-node.wa .ic { background: rgb(31 175 90 / .12); color: #1FAF5A; }
+.contact-node .ic svg { width: 24px; height: 24px; }
+.contact-node .lab { color: hsl(var(--muted-foreground)); }
+.contact-node .val { display: block; margin-top: 3px; font-weight: 600; font-size: clamp(14px, 3.6vw, 16px); overflow-wrap: anywhere; }
+.contact-node .act { display: none; font-size: 13px; font-weight: 600; color: hsl(var(--primary)); white-space: nowrap; }
+@media (min-width: 521px) { .contact-node .act { display: inline; } }
+.contact-node.wa .act { color: #1FAF5A; }
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-eta i, .contact-cables .flow { animation: none; }
+  .contact-card-wrap, .contact-node, .contact-card { transition: none; }
+}

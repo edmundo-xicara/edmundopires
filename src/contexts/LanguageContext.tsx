@@ -206,6 +206,14 @@ const translations: Record<Language, Record<string, string>> = {
     "contato.copied": "Copiado!",
     "contato.linkedin": "LinkedIn",
     "contato.linkedinDesc": "Conecte-se comigo",
+    "contato.cardLabel": "Cartão de contato de Edmundo Pires",
+    "contato.photoAlt": "Foto de Edmundo Pires",
+    "contato.card.kicker": "Automação & audiovisual",
+    "contato.card.role": "Desenvolvedor · Vibe coding · Pesquisa e roteiro",
+    "contato.card.place": "Minas Gerais · Brasil",
+    "contato.copyAction": "Copiar",
+    "contato.whatsappAction": "Chamar ↗",
+    "contato.openAction": "Abrir ↗",
 
     // Portfólio / Mídia
     "portfolio.research.title": "Pesquisas",
@@ -537,6 +545,14 @@ const translations: Record<Language, Record<string, string>> = {
     "contato.copied": "Copied!",
     "contato.linkedin": "LinkedIn",
     "contato.linkedinDesc": "Connect with me",
+    "contato.cardLabel": "Edmundo Pires' contact card",
+    "contato.photoAlt": "Photo of Edmundo Pires",
+    "contato.card.kicker": "Automation & audiovisual",
+    "contato.card.role": "Developer · Vibe coding · Research and script",
+    "contato.card.place": "Minas Gerais · Brazil",
+    "contato.copyAction": "Copy",
+    "contato.whatsappAction": "Message ↗",
+    "contato.openAction": "Open ↗",
 
     // Portfolio / Media
     "portfolio.research.title": "Research",
