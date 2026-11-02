@@ -10,10 +10,14 @@
 @media (min-width: 1024px) { .contact-board { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(60px, 9vw, 140px); } }
 
 .contact-cables { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 1; }
-.contact-cables .base { fill: none; stroke: hsl(var(--border)); stroke-width: 2; }
-.contact-cables .draw { transition: stroke-dashoffset 1.2s cubic-bezier(.65,0,.35,1); }
-.contact-cables .flow { fill: none; stroke: hsl(var(--primary)); stroke-width: 2; stroke-dasharray: 4 9; opacity: .45; animation: contact-flow 1.2s linear infinite; transition: opacity .3s, stroke-width .3s; }
-.contact-cables .flow.hot { opacity: 1; stroke-width: 3; stroke-dasharray: none; }
+.contact-cables .base { fill: none; stroke: hsl(var(--primary)); stroke-width: 2; transition: stroke .6s; }
+/* once drawn, the stroke settles into a quiet rail and the flowing dashes and sparks take over */
+.contact-cables.wired .base { stroke: hsl(var(--border)); }
+.contact-cables .flow { fill: none; stroke: hsl(var(--primary)); stroke-width: 2; stroke-dasharray: 4 9; opacity: 0; animation: contact-flow 1.2s linear infinite; transition: opacity .5s, stroke-width .3s; }
+.contact-cables.wired .flow { opacity: .45; }
+.contact-cables .spark { opacity: 0; transition: opacity .4s .2s; }
+.contact-cables.wired .spark { opacity: 1; }
+.contact-cables.wired .flow.hot { opacity: 1; stroke-width: 3; stroke-dasharray: none; }
 .contact-cables .spark { fill: hsl(var(--primary)); }
 .contact-cables .spark.wa { fill: #1FAF5A; }
 @keyframes contact-flow { to { stroke-dashoffset: -26; } }

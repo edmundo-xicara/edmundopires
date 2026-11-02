@@ -44,6 +44,7 @@ const Contato = () => {
   const [hot, setHot] = useState(-1);
   const [copied, setCopied] = useState(false);
   const drawn = useRef(false);
+  const [wired, setWired] = useState(false); // the cables have finished drawing: the flowing dashes and sparks can show
 
   // lay the cables from the card's edge to the near side of each channel
   useEffect(() => {
@@ -97,14 +98,28 @@ const Contato = () => {
   useEffect(() => {
     if (!cables.length || drawn.current) return;
     drawn.current = true;
-    if (prefersReducedMotion()) return;
-    svg.current?.querySelectorAll<SVGPathElement>(".base").forEach((p) => {
+    if (prefersReducedMotion()) return setWired(true);
+    // a violet stroke runs from the card out to each channel, one after the other
+    const paths = [...(svg.current?.querySelectorAll<SVGPathElement>(".base") ?? [])];
+    paths.forEach((p, i) => {
       const L = p.getTotalLength();
       p.style.strokeDasharray = `${L}`;
-      p.style.strokeDashoffset = `${L}`;
-      p.classList.add("draw");
-      requestAnimationFrame(() => requestAnimationFrame(() => (p.style.strokeDashoffset = "0")));
+      // Web Animations rather than a CSS transition: it runs regardless of React re-rendering the path
+      p.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
+        duration: 1200,
+        delay: i * 180,
+        easing: "cubic-bezier(.65,0,.35,1)",
+        fill: "backwards",
+      });
     });
+    const done = window.setTimeout(() => {
+      // drop the drawing styles so the cables can be re-measured on resize
+      paths.forEach((p) => {
+        p.style.strokeDasharray = "";
+      });
+      setWired(true);
+    }, 1200 + paths.length * 180);
+    return () => clearTimeout(done);
   }, [cables]);
 
   // the card tilts toward the pointer, with a light sheen following it
@@ -155,7 +170,7 @@ const Contato = () => {
           </header>
 
           <div ref={board} className="contact-board">
-            <svg ref={svg} className="contact-cables" aria-hidden>
+            <svg ref={svg} className={`contact-cables${wired ? " wired" : ""}`} aria-hidden>
               {cables.map((c, i) => (
                 <g key={i}>
                   <path className="base" d={c.d} />
