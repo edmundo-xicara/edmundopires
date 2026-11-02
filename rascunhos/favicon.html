@@ -1,0 +1,111 @@
+<title>Favicon byedStudio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&family=IBM+Plex+Mono:wght@600&family=Kaushan+Script&display=swap">
+<style>
+/* Layout: a sheet of candidate icons, each shown big, at the real 16/32px sizes and inside a light and a dark browser tab */
+:root {
+  --paper: #F3F1F8; --ink: #1A1030; --violet: #6A2BFF; --lilac: #B596FF; --yellow: #FFD23F;
+  --card: #FFFFFF; --line: #E2DCF0; --muted: #6C6480;
+  --tab-light-bar: #DEE1E6; --tab-light-on: #FFFFFF; --tab-light-fg: #1F1F1F;
+  --tab-dark-bar: #1E1F22; --tab-dark-on: #35363A; --tab-dark-fg: #E8EAED;
+  --display: "Archivo", "Arial Narrow", sans-serif; --body: "Geist", system-ui, sans-serif; --mono: "Geist Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #120B22; --card: #1B1330; --line: #2E2448; --muted: #A79DC0; --ink-text: #F3F1F8; color-scheme: dark } }
+:root[data-theme="dark"] { --paper: #120B22; --card: #1B1330; --line: #2E2448; --muted: #A79DC0; --ink-text: #F3F1F8; color-scheme: dark }
+body { background: var(--paper); color: var(--ink-text, var(--ink)); font: 400 15px/1.55 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 48px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.kick { font: 500 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--violet); }
+h1 { margin: 10px 0 0; font: 800 clamp(44px, 8vw, 92px)/.9 var(--display); font-variation-settings: "wdth" 76; letter-spacing: -.04em; text-wrap: balance; }
+.lead { margin-top: 14px; max-width: 60ch; color: var(--muted); }
+h2 { margin: 52px 0 16px; font: 700 13px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; gap: 12px; align-items: center; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+.opt { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.opt .top { display: flex; gap: 16px; align-items: center; }
+.opt .big { width: 96px; height: 96px; flex: none; }
+.opt .id { font: 600 12px var(--mono); color: var(--violet); }
+.opt .nm { font: 800 22px/1.05 var(--display); font-variation-settings: "wdth" 86; letter-spacing: -.01em; margin-top: 4px; }
+.opt p { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); }
+.sizes { display: flex; gap: 14px; align-items: end; font: 500 10px var(--mono); color: var(--muted); }
+.sizes div { display: grid; justify-items: center; gap: 5px; }
+.tabs { display: grid; gap: 6px; }
+.bar { display: flex; align-items: end; height: 34px; padding: 0 8px; border-radius: 10px; }
+.bar .tab { display: flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px; border-radius: 8px 8px 0 0; font: 12px system-ui, sans-serif; min-width: 0; max-width: 220px; }
+.bar .tab span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar .ghost { width: 16px; height: 16px; border-radius: 4px; opacity: .25; background: currentColor; margin: 0 12px 6px; }
+.bar.light { background: var(--tab-light-bar); color: var(--tab-light-fg); }
+.bar.light .tab { background: var(--tab-light-on); }
+.bar.dark { background: var(--tab-dark-bar); color: var(--tab-dark-fg); }
+.bar.dark .tab { background: var(--tab-dark-on); }
+.ic { display: block; flex: none; }
+</style>
+
+<!-- shared ink filter for the painted options (only visible at the big size) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ink" x="-10%" y="-30%" width="120%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.5" numOctaves="3" seed="4" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -13 9" result="m"/>
+    <feComposite in="SourceGraphic" in2="m" operator="in" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="9" result="n2"/>
+    <feDisplacementMap in="d" in2="n2" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="wrap">
+  <div class="kick">byedStudio · favicon</div>
+  <h1>E ou ed, em oito estilos</h1>
+  <p class="lead">Cada opção aparece grande, nos tamanhos reais da aba (32 e 16 px) e numa aba clara e numa escura. O que importa é o 16 px: é ali que o ícone vive.</p>
+
+  <h2>Só o E</h2>
+  <div class="grid" id="g-e"></div>
+
+  <h2>ed</h2>
+  <div class="grid" id="g-ed"></div>
+</div>
+
+<script>
+const C = { violet: "#6A2BFF", lilac: "#B596FF", ink: "#1A1030", yellow: "#FFD23F", paper: "#F3F1F8" };
+const sq = (fill) => `<rect width="64" height="64" rx="15" fill="${fill}"/>`;
+const mono = `font-family="IBM Plex Mono, monospace" font-weight="600"`;
+const brush = `font-family="Kaushan Script, cursive"`;
+const arch = `font-family="Archivo, sans-serif" font-weight="800" style="font-variation-settings:'wdth' 70"`;
+
+// each icon draws on a 64×64 board; `dark` is true when it sits on a dark tab
+const options = [
+  { g: "e", id: "A", nm: "E de código", p: "A letra da parte digitada da logo, branca no roxo. A mais limpa.",
+    svg: () => sq(C.violet) + `<text x="32" y="47" text-anchor="middle" font-size="46" ${mono} fill="#fff">E</text>` },
+  { g: "e", id: "B", nm: "E com cursor", p: "O E e o cursor piscando, no fundo tinta da navbar.",
+    svg: () => sq(C.ink) + `<text x="27" y="46" text-anchor="middle" font-size="42" ${mono} fill="#fff">E</text><rect x="44" y="14" width="6" height="36" rx="1" fill="${C.lilac}"/>` },
+  { g: "e", id: "C", nm: "E pintado", p: "O pincel do “Studio”, sem fundo. Na aba escura troca para lilás.",
+    svg: (dark) => `<text x="31" y="52" text-anchor="middle" font-size="60" ${brush} fill="${dark ? C.lilac : C.violet}" filter="url(#ink)">E</text>` },
+  { g: "e", id: "D", nm: "E de terminal", p: "Um E montado com barras retas; a do meio é o cursor, em amarelo marca-texto.",
+    svg: () => sq(C.violet) + `<rect x="17" y="14" width="8" height="36" fill="#fff"/><rect x="17" y="14" width="30" height="8" fill="#fff"/><rect x="17" y="42" width="30" height="8" fill="#fff"/><rect x="28" y="28" width="14" height="8" fill="${C.yellow}"/>` },
+  { g: "ed", id: "E", nm: "ed de código", p: "As duas letras em mono, como no “byed” da logo.",
+    svg: () => sq(C.violet) + `<text x="32" y="43" text-anchor="middle" font-size="33" ${mono} fill="#fff" letter-spacing="-1.5">ed</text>` },
+  { g: "ed", id: "F", nm: "e digitado, d pintado", p: "Junta os dois lados da logo: o e em código e o d no pincel, em amarelo.",
+    svg: () => sq(C.violet) + `<text x="20" y="44" text-anchor="middle" font-size="34" ${mono} fill="#fff">e</text><text x="42" y="47" text-anchor="middle" font-size="44" ${brush} fill="${C.yellow}">d</text>` },
+  { g: "ed", id: "G", nm: "ed com cursor", p: "ed e o cursor, no fundo tinta. Lê como um prompt.",
+    svg: () => sq(C.ink) + `<text x="27" y="42" text-anchor="middle" font-size="29" ${mono} fill="#fff" letter-spacing="-1.5">ed</text><rect x="49" y="21" width="5" height="25" rx="1" fill="${C.lilac}"/>` },
+  { g: "ed", id: "H", nm: "Ed de título", p: "A fonte dos títulos do site, condensada, no amarelo do marca-texto.",
+    svg: () => sq(C.yellow) + `<text x="32" y="48" text-anchor="middle" font-size="46" ${arch} fill="${C.ink}" letter-spacing="-2">Ed</text>` },
+];
+
+const icon = (o, size, dark = false) =>
+  `<svg class="ic" width="${size}" height="${size}" viewBox="0 0 64 64" role="img" aria-label="Opção ${o.id}">${o.svg(dark)}</svg>`;
+const tab = (o, theme) =>
+  `<div class="bar ${theme}"><div class="tab">${icon(o, 16, theme === "dark")}<span>Byedstudio</span></div><div class="ghost"></div></div>`;
+
+for (const o of options) {
+  const el = document.createElement("article");
+  el.className = "opt";
+  el.innerHTML = `
+    <div class="top">
+      <div class="big">${icon(o, 96)}</div>
+      <div style="min-width:0"><div class="id">Opção ${o.id}</div><div class="nm">${o.nm}</div><p>${o.p}</p></div>
+    </div>
+    <div class="sizes"><div>${icon(o, 32)}32</div><div>${icon(o, 16)}16</div><div>${icon(o, 16, true)}16 · escuro</div></div>
+    <div class="tabs">${tab(o, "light")}${tab(o, "dark")}</div>`;
+  document.getElementById(o.g === "e" ? "g-e" : "g-ed").append(el);
+}
+</script>
