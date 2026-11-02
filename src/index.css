@@ -223,6 +223,10 @@
   @keyframes bm-blink { 50% { opacity: 0; } }
 
 
+  /* home intro: the page waits under the logo and comes in once the navbar is open */
+  main, footer { transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+  html.intro-playing main, html.intro-playing footer { opacity: 0; transform: translateY(30px); }
+
   /* ── Hand-drawn marks: an SVG stroke drawn with dashoffset when it scrolls into view ── */
   .mark { position: relative; display: inline-block; white-space: nowrap; z-index: 0; }
   .mark svg { position: absolute; left: -4%; width: 108%; pointer-events: none; overflow: visible; z-index: -1; }

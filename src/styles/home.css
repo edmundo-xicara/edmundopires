@@ -18,6 +18,19 @@
 .intro-corner.br { bottom: 24px; right: 24px; text-align: right; }
 @keyframes intro-spin { to { transform: rotate(360deg); } }
 
+/* the logo stage under the ring: the mark is written large, then flies to the header */
+.intro-stage { position: fixed; inset: 0; z-index: 99; display: grid; place-items: center; background: hsl(var(--background)); transition: background-color .45s ease; }
+.intro-stage.flying { background-color: transparent; pointer-events: none; }
+.bm.intro-mark { font-size: clamp(44px, 11vw, 132px); transition: transform .95s cubic-bezier(.7,0,.2,1), color .4s ease .45s; will-change: transform; }
+.bm.intro-mark .paint { filter: url(#ink); transition: clip-path 1s cubic-bezier(.6,0,.25,1), color .4s ease .45s; }
+.bm.intro-mark .pr { transition: color .4s ease .45s; }
+.bm.intro-mark .cur { transition: background-color .4s ease .45s; }
+/* as it lands on the dark capsule it takes the header's colors */
+.bm.intro-mark.landing { color: #fff; }
+.bm.intro-mark.landing .pr, .intro-mark.landing .paint { color: #B596FF; }
+.bm.intro-mark.landing .cur { background: #B596FF; }
+.bm.intro-mark.landing .spl { transform: scale(0); opacity: 0; }
+
 /* ── iso scene ── */
 .iso svg { width: 100%; height: auto; overflow: hidden; display: block; }
 .iso .slab { animation: iso-float 6s ease-in-out infinite; }
