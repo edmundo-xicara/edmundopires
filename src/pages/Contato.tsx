@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { prefersReducedMotion } from "@/lib/motion";
+import { ChatContact } from "@/components/contact/ChatContact";
 import "@/styles/contact.css";
 
 const EMAIL = "edmundopires@outlook.com";
@@ -162,12 +163,15 @@ const Contato = () => {
             <h1 className="text-[clamp(48px,8vw,116px)] tracking-[-0.04em]" style={{ fontVariationSettings: '"wdth" 82' }}>
               {t("contato.title")}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-[32em]">{t("contato.desc")}</p>
+            <p className="hidden md:block text-lg md:text-xl text-muted-foreground max-w-[32em]">{t("contato.desc")}</p>
             <span className="contact-eta">
               <i />
               {t("contato.responseTime")}
             </span>
           </header>
+
+          {/* phones get the chat; wider screens the card with its cables */}
+          <ChatContact />
 
           <div ref={board} className="contact-board">
             <svg ref={svg} className={`contact-cables${wired ? " wired" : ""}`} aria-hidden>

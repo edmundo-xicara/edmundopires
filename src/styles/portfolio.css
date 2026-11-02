@@ -32,7 +32,20 @@
 .pf-slide .shot:hover::after { transform: scale(1.15); }
 .pf-slide h3 { margin-top: 10px; font-size: clamp(26px, 2.8vw, 42px); font-variation-settings: "wdth" 84; }
 .pf-slide p { margin-top: 12px; color: hsl(var(--muted-foreground)); font-size: 15px; line-height: 1.6; }
-@media (max-width: 860px) { .pf-slide p { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; } }
+@media (max-width: 860px) {
+  .pf-slide p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  /* phones: the counter sits under the slides instead of floating over their buttons */
+  .pf-reel-stage { flex-direction: column; justify-content: center; align-items: stretch; gap: 18px; }
+  .pf-reel-meta { position: static; padding-inline: 20px; }
+  .pf-slide { gap: 12px; }
+  .pf-slide .acts { margin-top: 12px; gap: 8px; flex-wrap: nowrap; }
+  .pf-slide .acts a { padding: 8px 12px !important; font-size: 13px !important; white-space: nowrap; }
+}
+/* short phones: two lines of text are enough to keep the slide and its buttons in view */
+@media (max-width: 860px) and (max-height: 760px) {
+  .pf-slide p { -webkit-line-clamp: 2; margin-top: 8px; }
+  .pf-slide h3 { font-size: 24px; }
+}
 .pf-slide .acts { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
 .pf-reel-meta { position: absolute; left: 20px; right: 20px; bottom: 22px; display: flex; align-items: center; gap: 16px; max-width: 1280px; margin-inline: auto; }
 @media (min-width: 768px) { .pf-reel-meta { left: 48px; right: 48px; } }
