@@ -4,37 +4,45 @@
 
 @layer base {
   :root {
-    /* Warm parchment editorial palette */
-    --background: 40 30% 88%;
-    --foreground: 26 9% 9%;
+    /* Violeta palette: lilac-grey paper, deep ink, violet for code, marker yellow for the audiovisual side */
+    --background: 257 33% 96%;      /* #F3F1F8 paper */
+    --foreground: 259 50% 13%;      /* #1A1030 ink */
 
-    --card: 40 38% 92%;
-    --card-foreground: 26 9% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 259 50% 13%;
 
-    --popover: 40 30% 88%;
-    --popover-foreground: 26 9% 9%;
+    --popover: 257 33% 96%;
+    --popover-foreground: 259 50% 13%;
 
-    --primary: 26 9% 9%;
-    --primary-foreground: 40 30% 88%;
+    --primary: 258 100% 58%;        /* #6A2BFF violet */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 26% 84%;
-    --secondary-foreground: 26 9% 9%;
+    --secondary: 257 60% 93%;
+    --secondary-foreground: 259 50% 13%;
 
-    --muted: 40 26% 84%;
-    --muted-foreground: 27 13% 37%;
+    --muted: 257 60% 93%;
+    --muted-foreground: 256 14% 41%;
 
-    --accent: 4 54% 31%;
-    --accent-foreground: 40 30% 88%;
+    --accent: 258 100% 58%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 30% 97%;
+    --soft: 257 60% 93%;            /* #E9E3F8 tinted fill */
+    --signal-yellow: 46 100% 62%;   /* #FFD23F marker */
+    --signal-cyan: 186 80% 47%;
+    --signal-magenta: 325 72% 55%;
 
-    --border: 38 14% 77%;
-    --border-strong: 38 7% 61%;
-    --input: 38 14% 77%;
-    --ring: 4 54% 31%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0rem;
+    --border: 262 16% 87%;
+    --border-strong: 258 14% 62%;
+    --input: 262 16% 87%;
+    --ring: 258 100% 58%;
+
+    --font-logo-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+    --font-brush: "Kaushan Script", "Segoe Script", cursive;
+
+    --radius: 0.5rem;
   }
 }
 
@@ -43,51 +51,56 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-feature-settings: "kern" 1, "liga" 1;
-    letter-spacing: -0.005em;
+    font-feature-settings: "kern" 1, "tnum" 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    @apply font-heading;
+    font-weight: 800;
+    font-variation-settings: "wdth" 90;
     letter-spacing: -0.025em;
-    line-height: 1.04;
+    line-height: 1.02;
+    text-wrap: balance;
   }
 
   p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
+    text-wrap: pretty;
   }
+
+  ::selection {
+    background: hsl(var(--signal-yellow));
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 3px solid hsl(var(--signal-yellow));
+    outline-offset: 2px;
+  }
+
+  /* Lenis smooth scroll */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
 }
 
 @layer components {
   .section-padding {
-    @apply px-6 py-16 md:px-12 md:py-24 lg:px-20 lg:py-32;
+    @apply px-5 py-16 md:px-12 md:py-24 lg:px-20 lg:py-28;
   }
 
   .container-narrow {
-    @apply max-w-4xl mx-auto;
+    @apply max-w-3xl mx-auto;
   }
 
   .container-wide {
     @apply max-w-[1440px] mx-auto;
   }
 
-  /* Eyebrow label: mono uppercase with accent lines on both sides */
+  /* Small descriptive line above content — sentence case, no rules */
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-3;
-  }
-
-  .eyebrow::before,
-  .eyebrow::after {
-    content: "";
-    @apply w-7 h-px bg-accent flex-shrink-0;
+    @apply text-sm font-semibold text-muted-foreground flex items-center gap-2;
   }
 
   .editorial-prose {
@@ -98,119 +111,146 @@
     @apply mt-5;
   }
 
-  /* Accent line standalone (for headings without eyebrow) */
   .accent-line {
-    @apply w-7 h-px bg-accent;
+    @apply hidden;
   }
 
-  /* Cards: flat, border-based, no shadow */
   .card-editorial {
-    @apply bg-card p-8 border border-border transition-all duration-250;
+    @apply bg-card p-8 rounded-xl transition-colors duration-200;
   }
 
   .card-editorial:hover {
-    @apply border-[hsl(var(--border-strong))];
-    transform: translateY(-2px);
+    @apply bg-white;
+    box-shadow: inset 0 0 0 2px hsl(var(--primary));
   }
 
-  .card-editorial:active {
-    transform: translateY(0);
-    transition-duration: 100ms;
-  }
-
-  /* Buttons */
+  /* Buttons: solid pill and outline pill */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3.5 bg-primary text-primary-foreground font-mono text-[11px] tracking-[0.18em] uppercase transition-all duration-250;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 bg-primary text-primary-foreground text-[15px] font-semibold transition-colors duration-200;
   }
 
   .btn-primary:hover {
-    transform: translateY(-1px);
-  }
-
-  .btn-primary:active {
-    transform: translateY(0);
-    transition-duration: 100ms;
+    @apply bg-foreground;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3.5 border border-primary text-foreground font-mono text-[11px] tracking-[0.18em] uppercase transition-all duration-250;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-foreground text-[15px] font-semibold transition-colors duration-200;
+    box-shadow: inset 0 0 0 2px currentColor;
   }
 
   .btn-ghost:hover {
-    @apply bg-primary text-primary-foreground;
-    transform: translateY(-1px);
+    @apply bg-foreground text-background;
+    box-shadow: none;
   }
 
-  .btn-ghost:active {
-    transform: translateY(0);
-    transition-duration: 100ms;
-  }
-
-  /* Secondary kept as alias for ghost */
   .btn-secondary {
     @apply btn-ghost;
   }
 
   .btn-accent {
-    @apply inline-flex items-center gap-2 text-accent font-mono text-[11px] tracking-[0.18em] uppercase transition-all duration-250;
+    @apply inline-flex items-center gap-2 text-primary text-[15px] font-semibold underline-offset-4 hover:underline;
   }
 
-  .btn-accent:hover {
-    transform: translateX(2px);
-  }
-
-  .btn-accent:active {
-    transform: translateX(0);
-    transition-duration: 100ms;
-  }
-
-  /* Nav link */
   .nav-link {
-    @apply relative font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors duration-250 hover:text-foreground py-2;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-accent;
-    transition: width 250ms ease-out;
-  }
-
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    @apply w-full;
+    @apply relative text-[15px] font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground py-2;
   }
 
   .nav-link.active {
     @apply text-foreground;
   }
 
-  /* Stats */
+  .nav-link.active::after {
+    content: "";
+    @apply absolute left-0 right-0 -bottom-0.5 h-[3px] rounded-full bg-primary;
+  }
+
   .stat-number {
-    @apply font-heading text-4xl md:text-5xl font-semibold text-foreground;
-    letter-spacing: -0.025em;
+    @apply font-heading text-5xl md:text-6xl text-foreground;
+    font-weight: 800;
+    font-variation-settings: "wdth" 120;
+    letter-spacing: -0.04em;
   }
 
   .stat-label {
-    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mt-2;
+    @apply text-sm font-semibold text-muted-foreground mt-2;
   }
 
-  /* Process list item */
   .process-item {
     @apply flex items-start gap-4 py-4 border-b border-border;
   }
 
   .process-number {
-    @apply font-mono text-[11px] tracking-[0.14em] text-muted-foreground flex-shrink-0 mt-0.5;
+    @apply text-sm font-bold text-primary flex-shrink-0 mt-0.5 tabular-nums;
   }
 
-  /* Icon box */
-  .icon-box {
-    @apply transition-all duration-250;
+  /* Monochrome logo rendered from its own shape, so every brand sits in the same ink */
+  .logo-mask {
+    background-color: currentColor;
+    -webkit-mask: var(--logo) center / contain no-repeat;
+    mask: var(--logo) center / contain no-repeat;
   }
 
-  .icon-box:hover,
-  .group:hover .icon-box {
-    transform: scale(1.05);
+  .case-title {
+    font-variation-settings: "wdth" 100;
+    transition: font-variation-settings 600ms cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .group:hover .case-title,
+  .group:focus-visible .case-title {
+    font-variation-settings: "wdth" 122;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-title { transition: none; }
+  }
+
+  /* Small mono label above a section */
+  .kicker {
+    @apply font-mono text-[13px] font-medium uppercase tracking-[0.1em] text-primary;
+  }
+
+  /* ── Logo: "byed" typed as code with a blinking cursor, "Studio" painted with a dry brush ── */
+  .bm { display: inline-flex; align-items: baseline; font-size: 24px; line-height: 1; white-space: nowrap; color: hsl(var(--foreground)); }
+  .bm .pr { font: 600 .9em/1 var(--font-logo-mono); color: hsl(var(--primary)); margin-right: .28em; opacity: .75; }
+  .bm .tt { font: 600 .9em/1 var(--font-logo-mono); letter-spacing: .01em; }
+  .bm .cur { display: inline-block; width: .09em; height: .95em; margin: 0 .1em 0 .06em; background: hsl(var(--primary)); align-self: center; animation: bm-blink 1.05s steps(2) infinite; }
+  .bm .paint { position: relative; margin-left: .1em; font: 400 1.3em/1 var(--font-brush); color: hsl(var(--primary)); filter: url(#ink-sm); padding: 0 .08em 0 .04em;
+    clip-path: inset(-45% -15% -45% -60%); transition: clip-path 1s cubic-bezier(.6,0,.25,1); }
+  .bm .paint.off { clip-path: inset(-45% 100% -45% -60%); }
+  .bm .spl { position: absolute; left: .02em; bottom: -.24em; width: .42em; height: auto; fill: currentColor; transform-origin: 40% 55%;
+    transition: transform .45s cubic-bezier(.3,1.8,.5,1), opacity .2s; }
+  .bm .spl.off { transform: scale(0); opacity: 0; }
+  @keyframes bm-blink { 50% { opacity: 0; } }
+
+
+  /* home intro: the page waits under the logo and comes in once the navbar is open */
+  main, footer { transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+  html.intro-playing main, html.intro-playing footer { opacity: 0; transform: translateY(30px); }
+
+  /* ── Hand-drawn marks: an SVG stroke drawn with dashoffset when it scrolls into view ── */
+  .mark { position: relative; display: inline-block; white-space: nowrap; z-index: 0; }
+  .mark svg { position: absolute; left: -4%; width: 108%; pointer-events: none; overflow: visible; z-index: -1; }
+  .mark.under svg { bottom: -.16em; height: .32em; }
+  .mark.circle svg { left: -9%; width: 118%; top: -18%; height: 136%; }
+  .mark.hl svg { left: -3%; width: 106%; top: 20%; height: 70%; }
+  .mark path { fill: none; stroke: hsl(var(--signal-yellow)); stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 1.1s cubic-bezier(.65,0,.35,1) .25s; }
+  .mark.under path { stroke-width: 7; }
+  .mark.circle path { stroke-width: 3.2; stroke: hsl(var(--primary)); }
+  .mark.hl path { stroke-width: 34; stroke-opacity: .85; }
+  .mark.pending path { stroke-dashoffset: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bm .cur { animation: none; }
+    .bm .paint, .bm .spl, .mark path { transition: none; }
+  }
+
+  /* Wide display type used for big statements */
+  .display-wide {
+    font-weight: 900;
+    font-variation-settings: "wdth" 125;
+    letter-spacing: -0.045em;
+    line-height: 0.88;
   }
 }
 
@@ -219,12 +259,9 @@
     animation: fadeIn 0.25s ease-out forwards;
   }
 
-  .animate-fade-in-up {
-    animation: fadeInUp 0.4s ease-out forwards;
-  }
-
-  .animate-slide-in {
-    animation: slideIn 0.25s ease-out forwards;
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes marquee {
@@ -234,32 +271,19 @@
 
   .animate-marquee {
     display: flex;
-    white-space: nowrap;
-    animation: marquee 36s linear infinite;
+    width: max-content;
+    animation: marquee 40s linear infinite;
   }
 
-  @media (max-width: 768px) {
-    .animate-marquee {
-      animation-duration: 20s;
-    }
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-16px); }
-    to { opacity: 1; transform: translateX(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee { animation: none; }
   }
 
   .text-ink-2 {
-    color: hsl(26 13% 18%);
+    color: hsl(234 40% 20%);
   }
 }

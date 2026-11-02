@@ -1,0 +1,95 @@
+/* Lab: a tab per project, each a pinned walkthrough with steps on the left and a window on the right. */
+
+.lab-mono { font: 500 12px/1.4 "Geist Mono", ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; }
+
+.lab-hero { padding-top: clamp(44px, 6vw, 84px); padding-bottom: clamp(24px, 3vw, 36px); display: grid; gap: 24px 40px; align-items: end; }
+@media (min-width: 768px) { .lab-hero { grid-template-columns: minmax(0, 1fr) auto; } }
+.lab-hero h1 { font-size: clamp(80px, 15vw, 220px); font-variation-settings: "wdth" 76; letter-spacing: -.05em; line-height: .84; }
+.lab-hero h1 .cur { display: inline-block; width: .08em; height: .72em; margin-left: .06em; background: hsl(var(--primary)); animation: bm-blink 1.05s steps(2) infinite; }
+.lab-hero p { max-width: 26em; color: hsl(var(--muted-foreground)); font-size: clamp(16px, 1.5vw, 19px); }
+
+/* tabs */
+.lab-tabs { position: sticky; top: 64px; z-index: 40; background: hsl(var(--background) / .88); backdrop-filter: blur(12px); border-bottom: 1px solid hsl(var(--border)); }
+.lab-tab { flex: none; display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 10px; border-radius: 99px; border: 1px solid hsl(var(--border)); background: hsl(var(--card));
+  font-weight: 600; font-size: 14px; transition: background .3s, color .3s, border-color .3s; }
+.lab-tab .dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: hsl(var(--soft)); color: hsl(var(--primary)); font: 600 11px "Geist Mono", ui-monospace, monospace; }
+.lab-tab .live { width: 7px; height: 7px; border-radius: 50%; background: #1FAF5A; }
+.lab-tab[aria-selected="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); border-color: hsl(var(--foreground)); }
+.lab-tab[aria-selected="true"] .dot { background: hsl(var(--primary)); color: #fff; }
+
+/* the project */
+.lab-panel { transition: opacity .3s, transform .45s cubic-bezier(.2,.8,.2,1); }
+.lab-panel.leaving { opacity: 0; transform: translateY(16px); }
+.lab-proj { padding-top: clamp(36px, 5vw, 64px); display: grid; gap: 18px 40px; align-items: end; }
+@media (min-width: 768px) { .lab-proj { grid-template-columns: minmax(0, 1fr) auto; } }
+.lab-proj h2 { margin-top: 10px; font-size: clamp(36px, 5vw, 72px); font-variation-settings: "wdth" 84; }
+.lab-proj .meta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.lab-chip { font: 500 12px "Geist Mono", ui-monospace, monospace; padding: 5px 10px; border-radius: 99px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+.lab-chip.ok { background: rgb(31 175 90 / .1); border-color: transparent; color: #137a3e; }
+.lab-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* the walkthrough */
+.lab-walk { position: relative; }
+.lab-stage { position: sticky; top: 122px; height: calc(100svh - 122px); display: flex; align-items: center; }
+/* phones: start at the top so a tall step never spills up over the project's buttons */
+@media (max-width: 900px) { .lab-stage { align-items: flex-start; padding-top: 16px; } }
+.lab-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: center; }
+@media (min-width: 901px) { .lab-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(24px, 5vw, 72px); } }
+.lab-steps { display: grid; gap: 4px; }
+.lab-step { display: grid; text-align: left; padding: 2px 0 2px 20px; border-left: 2px solid hsl(var(--border)); opacity: .38; transition: opacity .4s, border-color .4s; }
+@media (min-width: 901px) { .lab-step { padding-block: 12px; } }
+@media (max-width: 900px) { .lab-step:not(.on) { display: none; } }
+.lab-step.on { opacity: 1; border-color: hsl(var(--primary)); }
+.lab-step .k { font: 500 12px/1 "Geist Mono", ui-monospace, monospace; color: hsl(var(--primary)); letter-spacing: .1em; text-transform: uppercase; }
+.lab-step .h { margin-top: 8px; font: 800 clamp(20px, 2.2vw, 30px)/1.05 "Archivo", sans-serif; font-variation-settings: "wdth" 90; letter-spacing: -.02em; }
+.lab-step .p { margin-top: 8px; color: hsl(var(--muted-foreground)); font-size: 15px; line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height .5s; }
+.lab-step.on .p { max-height: 160px; }
+
+.lab-screen { position: relative; aspect-ratio: 4 / 3.3; max-height: calc(100svh - 122px - 230px); max-width: 100%; border-radius: 20px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); overflow: hidden; box-shadow: 0 50px 80px -46px rgb(26 16 48 / .55); }
+@media (min-width: 901px) { .lab-screen { aspect-ratio: 16 / 11; } }
+.lab-screen .bar { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 16px; border-bottom: 1px solid hsl(var(--border)); }
+.lab-screen .bar i { width: 10px; height: 10px; border-radius: 50%; background: hsl(var(--border)); }
+.lab-screen .bar span { margin-left: 10px; font: 500 12px "Geist Mono", ui-monospace, monospace; color: hsl(var(--muted-foreground)); }
+.lab-screen .count { position: absolute; right: 14px; bottom: 12px; z-index: 2; font: 500 12px "Geist Mono", ui-monospace, monospace; background: hsl(var(--foreground)); color: #fff; padding: 4px 9px; border-radius: 99px; }
+.lab-screen .prog { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: hsl(var(--primary)); z-index: 2; }
+.lab-pane { position: absolute; inset: 38px 0 0; opacity: 0; transform: translateY(20px) scale(.98); transition: opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); overflow: hidden; }
+.lab-pane.on { opacity: 1; transform: none; }
+.lab-pane.pad { padding: clamp(16px, 2.6vw, 28px); display: grid; align-content: start; gap: 12px; }
+.lab-pane > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.lab-pane img.framed { height: auto; border-radius: 10px; border: 1px solid hsl(var(--border)); }
+
+.lab-note { font: 600 22px/1.1 "Caveat", cursive; color: hsl(var(--primary)); }
+.lab-sheet { font: 400 12px/1 "Geist Mono", ui-monospace, monospace; border: 1px solid hsl(var(--border)); border-radius: 10px; overflow: hidden; }
+.lab-sheet table { width: 100%; border-collapse: collapse; }
+.lab-sheet th, .lab-sheet td { text-align: left; padding: 9px 10px; border-bottom: 1px solid hsl(var(--border)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.lab-sheet th { background: hsl(var(--soft)); color: hsl(var(--muted-foreground)); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
+.lab-sheet tr:last-child td { border-bottom: 0; }
+.lab-sheet .tag { display: inline-block; padding: 2px 7px; border-radius: 99px; background: rgb(31 175 90 / .12); color: #137a3e; }
+@media (max-width: 600px) { .lab-sheet th:nth-child(5), .lab-sheet td:nth-child(5), .lab-sheet th:nth-child(2), .lab-sheet td:nth-child(2) { display: none; } }
+.lab-term { background: hsl(var(--foreground)); color: #E9E3F8; border-radius: 12px; padding: 16px 18px; font: 400 13px/1.8 "IBM Plex Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.lab-term .c { color: rgb(233 227 248 / .5); }
+.lab-term .p { color: hsl(var(--signal-yellow)); }
+.lab-term .ok { color: #6BE39A; }
+.lab-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.lab-stats div { border: 1px solid hsl(var(--border)); border-radius: 12px; padding: 12px; }
+.lab-stats b { display: block; font: 800 clamp(22px, 2.6vw, 34px)/1 "Archivo", sans-serif; font-variation-settings: "wdth" 76; }
+.lab-stats span { font-size: 12px; color: hsl(var(--muted-foreground)); }
+.lab-old { position: relative; border: 1px solid hsl(var(--border)); border-radius: 14px; padding: 18px; display: grid; gap: 10px; }
+.lab-old .t { font: 700 26px/1.05 "Geist", sans-serif; color: #3b3b3b; }
+.lab-old p { color: #777; font-size: 14px; }
+.lab-old .b { display: flex; gap: 8px; }
+.lab-old .b i { width: 90px; height: 28px; border-radius: 6px; background: #d9d9d9; }
+.lab-old svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lab-old path { fill: none; stroke: hsl(var(--primary)); stroke-width: 4; stroke-linecap: round; }
+.lab-refs { display: grid; gap: 7px; }
+.lab-refs div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 13px; border: 1px solid hsl(var(--border)); border-radius: 12px; font-size: 14px; }
+.lab-refs b { font: 500 12px "Geist Mono", ui-monospace, monospace; color: hsl(var(--primary)); }
+.lab-swatches { display: flex; gap: 8px; }
+.lab-swatches i { flex: 1; height: 56px; border-radius: 12px; border: 1px solid hsl(var(--border)); }
+.lab-minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.lab-minis img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid hsl(var(--border)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-hero h1 .cur { animation: none; }
+  .lab-panel, .lab-pane, .lab-step, .lab-step .p { transition: none; }
+}

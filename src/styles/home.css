@@ -1,0 +1,95 @@
+/* Home-only motion: the isometric scene, the two worlds, and the tiles that assemble as they scroll in. */
+
+/* ── intro: ring loader that counts to 100, then wipes up ── */
+.intro { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
+  clip-path: inset(0 0 0 0); transition: clip-path .9s cubic-bezier(.76,0,.24,1); }
+.intro.out { clip-path: inset(0 0 100% 0); pointer-events: none; }
+.intro-ring { position: relative; width: 220px; height: 220px; }
+.intro-ring svg { position: absolute; inset: 0; overflow: visible; }
+.intro-ring .track { fill: none; stroke: currentColor; stroke-opacity: .18; stroke-width: 1; }
+.intro-ring .arc { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 110px 110px; }
+.intro-ring .tick { stroke: currentColor; stroke-opacity: .5; }
+.intro-ring .orbit { transform-origin: 110px 110px; animation: intro-spin 6s linear infinite; }
+.intro-center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 6px; }
+.intro-count { font: 800 46px/1 "Archivo", sans-serif; font-variation-settings: "wdth" 80; font-variant-numeric: tabular-nums; }
+.intro-label { font: 500 11px/1.3 "Geist Mono", ui-monospace, monospace; letter-spacing: .18em; text-transform: uppercase; }
+.intro-corner { position: absolute; font: 500 11px/1.5 "Geist Mono", ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.intro-corner.tl { top: 24px; left: 24px; }
+.intro-corner.br { bottom: 24px; right: 24px; text-align: right; }
+@keyframes intro-spin { to { transform: rotate(360deg); } }
+
+/* the logo stage under the ring: the mark is written large, then flies to the header */
+.intro-stage { position: fixed; inset: 0; z-index: 99; display: grid; place-items: center; background: hsl(var(--background)); transition: background-color .45s ease; }
+.intro-stage.flying { background-color: transparent; pointer-events: none; }
+.bm.intro-mark { font-size: clamp(44px, 11vw, 132px); transition: transform .95s cubic-bezier(.7,0,.2,1), color .4s ease .45s; will-change: transform; }
+.bm.intro-mark .paint { filter: url(#ink); transition: clip-path 1s cubic-bezier(.6,0,.25,1), color .4s ease .45s; }
+.bm.intro-mark .pr { transition: color .4s ease .45s; }
+.bm.intro-mark .cur { transition: background-color .4s ease .45s; }
+/* as it lands on the dark capsule it takes the header's colors */
+.bm.intro-mark.landing { color: #fff; }
+.bm.intro-mark.landing .pr, .intro-mark.landing .paint { color: #B596FF; }
+.bm.intro-mark.landing .cur { background: #B596FF; }
+.bm.intro-mark.landing .spl { transform: scale(0); opacity: 0; }
+
+/* ── iso scene ── */
+.iso svg { width: 100%; height: auto; overflow: hidden; display: block; }
+.iso .slab { animation: iso-float 6s ease-in-out infinite; }
+.iso .iso-t { fill: #fff; stroke: hsl(var(--border)); }
+.iso .iso-l { fill: #E2DAF6; stroke: hsl(var(--border)); }
+.iso .iso-r { fill: #CBBDF0; stroke: hsl(var(--border)); }
+.iso .ghost { fill: none; stroke: hsl(var(--border)); stroke-width: 1; stroke-dasharray: 3 6; }
+.iso .wire { fill: none; stroke-width: 1.6; stroke-dasharray: 5 7; animation: iso-flow 1.4s linear infinite; }
+.iso .wire.av { stroke: hsl(var(--signal-yellow)); }
+.iso .wire.tc { stroke: hsl(var(--primary)); }
+.iso .dot-av { fill: hsl(var(--signal-yellow)); }
+.iso .dot-tc { fill: hsl(var(--primary)); }
+.iso text { font: 600 11px "Geist Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; fill: hsl(var(--foreground)); }
+.iso .chip rect { fill: #fff; stroke: hsl(var(--border)); }
+.iso .chip.main rect { fill: hsl(var(--primary)); stroke: none; }
+.iso .chip.main text { fill: hsl(var(--primary-foreground)); }
+.iso .glow { fill: hsl(var(--primary)); opacity: .28; filter: blur(10px); animation: iso-glow 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes iso-float { 50% { transform: translateY(-8px); } }
+@keyframes iso-flow { to { stroke-dashoffset: -24; } }
+@keyframes iso-glow { 50% { opacity: .55; transform: scale(1.15); } }
+
+/* ── dois mundos ── */
+.seam::before { content: ""; position: absolute; top: 24px; bottom: 24px; left: 50%; width: 2px; translate: -50% 0;
+  background: repeating-linear-gradient(hsl(var(--primary)) 0 6px, transparent 6px 12px); animation: seam-run 1.2s linear infinite; }
+@keyframes seam-run { to { background-position: 0 12px; } }
+@media (max-width: 1023px) { .seam::before { top: 0; bottom: 0; } }
+
+.clip-item { transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .6s, background-color .25s, color .25s; }
+.worlds.pending .clip-item { opacity: 0; transform: translateX(-40px); }
+.clip-thumb::after { content: ""; position: absolute; left: 50%; top: 50%; translate: -35% -50%;
+  border-left: 9px solid hsl(var(--primary-foreground)); border-block: 6px solid transparent; }
+
+.code-list a { color: inherit; text-decoration: underline; text-decoration-color: hsl(var(--signal-yellow)); text-underline-offset: 3px; }
+.code-list a:hover { color: hsl(var(--signal-yellow)); }
+.code-list .k { color: #C9B3FF; }
+.code-list .s { color: hsl(var(--signal-yellow)); }
+.code-list .c { color: rgb(233 227 248 / .5); }
+.code-caret { display: inline-block; width: 8px; height: 1.1em; background: hsl(var(--signal-yellow)); vertical-align: -3px; animation: bm-blink 1s steps(2) infinite; }
+
+/* ── tiles that assemble on scroll ── */
+.tile { transition: transform .9s cubic-bezier(.2,.8,.2,1), opacity .7s; }
+.tile.pending { opacity: 0; transform: translateY(60px) rotate(var(--r, 0deg)) scale(.94); }
+
+.growth .ln { fill: none; stroke: hsl(var(--primary)); stroke-width: 3; stroke-linecap: round; }
+.growth .area { fill: hsl(var(--primary)); fill-opacity: .08; }
+.growth .grid line { stroke: hsl(var(--border)); }
+.growth .ms circle { fill: #fff; stroke: hsl(var(--primary)); stroke-width: 2.5; }
+.growth .ms text { font: 600 12px "Geist Mono", ui-monospace, monospace; fill: hsl(var(--foreground)); }
+.growth .ms { opacity: 0; transition: opacity .4s; }
+.growth .ms.on { opacity: 1; }
+
+.thumb { aspect-ratio: 16 / 10; border-radius: 3px; background: rgb(255 255 255 / .16); transition: background .25s; }
+.thumb.on { background: #fff; }
+.thumb.on.hi { background: hsl(var(--signal-yellow)); }
+
+.brand-cell { transition: background .3s, transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s; }
+.brand-cell.pending { opacity: 0; transform: scale(.8); }
+
+@media (prefers-reduced-motion: reduce) {
+  .iso .slab, .iso .wire, .iso .glow, .seam::before, .code-caret { animation: none; }
+  .tile, .clip-item, .brand-cell { transition: none; }
+}

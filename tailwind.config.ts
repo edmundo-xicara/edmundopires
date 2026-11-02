@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["'Newsreader'", "Georgia", "serif"],
-        body: ["'Inter Tight'", "system-ui", "sans-serif"],
-        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
+        heading: ["'Archivo'", "system-ui", "sans-serif"],
+        body: ["'Geist'", "system-ui", "sans-serif"],
+        mono: ["'Geist Mono'", "ui-monospace", "Consolas", "monospace"],
+        hand: ["'Caveat'", "'Segoe Print'", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +52,13 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        marker: "hsl(var(--signal-yellow))",
+        soft: "hsl(var(--soft))",
+        signal: {
+          yellow: "hsl(var(--signal-yellow))",
+          cyan: "hsl(var(--signal-cyan))",
+          magenta: "hsl(var(--signal-magenta))",
         },
       },
       borderRadius: {

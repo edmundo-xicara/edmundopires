@@ -5,38 +5,17 @@ interface LanguageToggleProps {
   className?: string;
 }
 
+/** PT/EN as a toggle: the thumb slides to the chosen language. Styled for the dark capsule. */
 export function LanguageToggle({ className }: LanguageToggleProps) {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   return (
-    <div
-      className={cn(
-        "inline-flex border border-[hsl(var(--border-strong))] font-mono text-[10px] tracking-[0.14em]",
-        className
-      )}
-    >
-      <button
-        className={cn(
-          "px-2.5 py-1.5 transition-colors duration-200",
-          language === "pt"
-            ? "bg-foreground text-background"
-            : "text-muted-foreground hover:text-foreground"
-        )}
-        onClick={() => setLanguage("pt")}
-        aria-label="Mudar para português"
-      >
+    <div className={cn("lang-toggle", className)} data-v={language} role="group" aria-label={t("nav.language")}>
+      <span className="thumb" aria-hidden />
+      <button type="button" aria-pressed={language === "pt"} onClick={() => setLanguage("pt")} aria-label="Mudar para português">
         PT
       </button>
-      <button
-        className={cn(
-          "px-2.5 py-1.5 transition-colors duration-200",
-          language === "en"
-            ? "bg-foreground text-background"
-            : "text-muted-foreground hover:text-foreground"
-        )}
-        onClick={() => setLanguage("en")}
-        aria-label="Switch to English"
-      >
+      <button type="button" aria-pressed={language === "en"} onClick={() => setLanguage("en")} aria-label="Switch to English">
         EN
       </button>
     </div>

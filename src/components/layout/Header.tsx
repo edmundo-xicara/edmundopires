@@ -1,11 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { BrandMark } from "@/components/brand/BrandMark";
+import "@/styles/nav.css";
 
+const EMAIL = "edmundopires@outlook.com";
+const PHONE = "(31) 99333-1644";
+const LINKEDIN = "https://www.linkedin.com/in/edmundo-pires-12ab89237/";
+
+// Every page mounts its own header. Starting from the last page's size lets the capsule animate back to full
+// width when a navigation scrolls to the top, instead of popping.
+let lastSmall = false;
+
+/** A capsule link: on hover the color floods up from the bottom and the label rolls over to black. */
+function CapLink({ to, label, on, onClick }: { to: string; label: string; on?: boolean; onClick?: () => void }) {
+  return (
+    <Link to={to} className={`cap-link${on ? " on" : ""}`} aria-current={on ? "page" : undefined} onClick={onClick}>
+      <span className="roll">
+        <span>{label}</span>
+        <span aria-hidden>{label}</span>
+      </span>
+    </Link>
+  );
+}
+
+/**
+ * The navbar: a dark capsule floating over the page, shrinking once you scroll. On phones it keeps the logo,
+ * the language toggle and a menu button that opens the links full screen.
+ */
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [small, setSmall] = useState(lastSmall);
   const location = useLocation();
   const { t } = useLanguage();
 
@@ -13,66 +39,91 @@ export function Header() {
     { href: "/", label: t("nav.home") },
     { href: "/portfolio", label: t("nav.portfolio") },
     { href: "/cases", label: t("nav.cases") },
-    { href: "/servicos", label: t("nav.services") },
-    { href: "/contato", label: t("nav.contact") },
+    { href: "/lab", label: t("nav.lab") },
   ];
+  const isActive = (href: string) =>
+    href === "/" ? location.pathname === "/" : location.pathname === href || location.pathname.startsWith(href + "/");
+
+  useEffect(() => {
+    const onScroll = () => {
+      lastSmall = window.scrollY > 80;
+      setSmall(lastSmall);
+    };
+    onScroll();
+    addEventListener("scroll", onScroll, { passive: true });
+    return () => removeEventListener("scroll", onScroll);
+  }, []);
+
+  // the menu closes on navigation and with Esc
+  useEffect(() => setMenuOpen(false), [location.pathname]);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
+  }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/92 backdrop-blur-sm border-b border-border">
-      <nav className="container-wide px-6 md:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-[60px] gap-6">
+    <>
+      {/* keeps the page clear of the floating capsule */}
+      <div className="h-16" aria-hidden />
 
-          {/* Brand placeholder — keeps flex spacing */}
-          <div className="flex-shrink-0 w-8" />
+      <header className={`cap${small ? " small" : ""}${menuOpen ? " menu-open" : ""}`}>
+        <Link to="/" aria-label="byedstudio" data-header-logo className="flex items-center">
+          <BrandMark />
+        </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`nav-link${location.pathname === link.href ? " active" : ""}`}
-              >
-                {link.label}
+        <nav className="cap-links" aria-label="Principal">
+          {navLinks.map((l) => (
+            <CapLink key={l.href} to={l.href} label={l.label} on={isActive(l.href)} />
+          ))}
+        </nav>
+
+        <span className="cap-cta">
+          <CapLink to="/contato" label={t("nav.talk")} on={isActive("/contato")} />
+          <span className="arrow" aria-hidden>
+            <svg viewBox="4 4 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14m-7-7 7 7-7 7" />
+            </svg>
+          </span>
+        </span>
+
+        <LanguageToggle />
+
+        <button
+          type="button"
+          className="cap-burger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={t("nav.menu")}
+          aria-expanded={menuOpen}
+          aria-controls="site-menu"
+        >
+          <span className="lines">
+            <i />
+            <i />
+          </span>
+        </button>
+      </header>
+
+      <div id="site-menu" className={`site-menu${menuOpen ? " on" : ""}`} aria-hidden={!menuOpen}>
+        <ol>
+          {[...navLinks, { href: "/contato", label: t("nav.contact") }].map((l, i) => (
+            <li key={l.href}>
+              <Link to={l.href} className={isActive(l.href) ? "on" : ""} tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>
+                <small>{String(i + 1).padStart(2, "0")}</small>
+                {l.label}
               </Link>
-            ))}
-          </div>
-
-          {/* Right controls */}
-          <div className="flex items-center gap-2.5 flex-shrink-0">
-            <LanguageToggle />
-            <button
-              className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={t("nav.menu")}
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+            </li>
+          ))}
+        </ol>
+        <div className="foot">
+          <span>{EMAIL}</span>
+          <span>{PHONE}</span>
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" tabIndex={menuOpen ? 0 : -1}>
+            LinkedIn ↗
+          </a>
         </div>
-
-        {/* Mobile nav */}
-        {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border animate-fade-in">
-            <div className="flex flex-col">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`font-mono text-[11px] uppercase tracking-[0.18em] py-3 border-b border-border transition-colors duration-250 ${
-                    location.pathname === link.href
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }
