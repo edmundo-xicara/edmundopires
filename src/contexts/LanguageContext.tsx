@@ -219,7 +219,6 @@ const translations: Record<Language, Record<string, string>> = {
     "contato.chat.hi": "Oi! Eu sou o Edmundo. 👋",
     "contato.chat.what": "Faço projetos de conteúdo, automações e sites.",
     "contato.chat.where": "Me chama onde for mais fácil pra você:",
-    "contato.chat.role": "Dev · Vibe coding · Audiovisual",
     "contato.chat.reply": "Responder com",
     "contato.chat.copy": "Copiar e-mail",
     // Portfolio 2026
@@ -591,7 +590,6 @@ const translations: Record<Language, Record<string, string>> = {
     "contato.chat.hi": "Hi! I'm Edmundo. 👋",
     "contato.chat.what": "I make content projects, automations and websites.",
     "contato.chat.where": "Reach me wherever is easiest for you:",
-    "contato.chat.role": "Dev · Vibe coding · Audiovisual",
     "contato.chat.reply": "Reply with",
     "contato.chat.copy": "Copy e-mail",
     // Portfolio 2026
