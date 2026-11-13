@@ -67,7 +67,8 @@
 .pf-phone h3 { font-size: clamp(20px, 2vw, 26px); font-variation-settings: "wdth" 86; }
 .pf-phone .acts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 @media (max-width: 767px) {
-  .pf-phones { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; margin-inline: -20px; padding-inline: 20px; scrollbar-width: none; }
+  /* the scroller clips both axes, so it keeps room above and below for the tilted frames, their hover lift and shadow */
+  .pf-phones { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-block: 32px 40px; margin-block: -32px -30px; margin-inline: -20px; padding-inline: 20px; scrollbar-width: none; }
   .pf-phone { scroll-snap-align: center; }
 }
 

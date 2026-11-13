@@ -30,7 +30,7 @@ const Icon = ({ id }: { id: "mail" | "wa" | "in" }) =>
 /** The contact page on phones, as a chat: messages arrive one by one, then quick replies open each channel. */
 export function ChatContact({ className = "" }: { className?: string }) {
   const { t } = useLanguage();
-  const messages = ["contato.chat.hi", "contato.chat.what", "card", "contato.chat.where"];
+  const messages = ["contato.chat.hi", "contato.chat.what", "contato.chat.where"];
   // how many messages have landed, and whether the next one is being typed
   const [landed, setLanded] = useState(() => (prefersReducedMotion() ? messages.length : 0));
   const [typing, setTyping] = useState(false);
@@ -59,7 +59,7 @@ export function ChatContact({ className = "" }: { className?: string }) {
         setTimeout(() => setCopied(false), 1800);
       },
       () => {
-        /* clipboard refused: the address is in the card above */
+        /* clipboard refused: the button just keeps its label */
       },
     );
 
@@ -70,17 +70,7 @@ export function ChatContact({ className = "" }: { className?: string }) {
       {messages.slice(0, landed).map((m, i) => (
         <div key={m} className="msg">
           <span className={`av${i === messages.length - 1 ? "" : " ghost"}`} style={{ backgroundImage: `url(${PHOTO})` }} aria-hidden />
-          {m === "card" ? (
-            <div className="card-msg">
-              <div className="ph" style={{ backgroundImage: `url(${PHOTO})` }} role="img" aria-label={t("contato.photoAlt")} />
-              <div className="in">
-                <div className="nm">Edmundo Pires</div>
-                <div className="rl">{t("contato.chat.role")}</div>
-              </div>
-            </div>
-          ) : (
-            <span className="bubble">{t(m)}</span>
-          )}
+          <span className="bubble">{t(m)}</span>
         </div>
       ))}
 

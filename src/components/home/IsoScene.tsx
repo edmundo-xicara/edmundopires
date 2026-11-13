@@ -41,7 +41,7 @@ function buildScene(labels: IsoSceneProps["labels"]) {
     { x: 0, y: 3.5, kind: "av" as const, label: labels.script, path: [[1, 4.5], [4.5, 4.5]] },
     { x: 2, y: 7, kind: "av" as const, label: labels.research, path: [[3, 8], [4.5, 8], [4.5, 4.5]] },
     { x: 3.5, y: 0, kind: "tc" as const, label: labels.automation, path: [[4.5, 1], [4.5, 4.5]] },
-    { x: 7, y: 2, kind: "tc" as const, label: labels.vibe, path: [[8, 3], [4.5, 3], [4.5, 4.5]] },
+    { x: 7, y: 2, kind: "tc" as const, label: labels.vibe, path: [[8, 3], [8, 4.5], [4.5, 4.5]] },
   ];
 
   let svg = "";
