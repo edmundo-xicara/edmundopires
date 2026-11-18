@@ -107,7 +107,6 @@ export const magazines: { slug: string; title: string; drive: string }[] = [
   { slug: "kuhikugu", title: "O império perdido da Amazônia", drive: "1Iu--UWoqzLx34kW6_PiF1BmAv0AhRzFC" },
   { slug: "bruxaria", title: "A história por trás da “bruxaria”", drive: "1hCYmm9LSmZslyT6ckLOSFceZeDAlQggh" },
   { slug: "realidade-atleta-brasileiro", title: "A realidade do esporte brasileiro", drive: "1qtf5X693RhgbmswjU6_InsRm7j4EnaxN" },
-  { slug: "curupira", title: "Curupira como mascote da COP 30", drive: "16Jb1mmREXr_NTQOhBDH_YiyM5dcgUNwR" },
   { slug: "miss-atomic-bomb", title: "Miss Atomic Bomb", drive: "1opGc5AhlQFAck8jGCmhXvbFa3vaFoiw5" },
   { slug: "tesouros-nao-encontrados", title: "Os tesouros ainda não encontrados", drive: "1XuyOhJavwDXAAdkT3BD9CUCycbVCLXat" },
   { slug: "mapa-mundi", title: "O mapa-múndi que desafiou seu tempo", drive: "1WovjNZyz4xwaP48l_p6sKdGtx3nGq7eC" },
